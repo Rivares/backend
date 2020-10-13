@@ -2,7 +2,7 @@
 
 from finam.export import Exporter, Market, LookupComparator
 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 from threading import Thread

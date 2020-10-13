@@ -303,6 +303,7 @@ def main():
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Stock ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
         list_name_stocks = [
+            'ALRS'
             'PIKK',
             'SBER',
             'GMKN'
@@ -311,10 +312,11 @@ def main():
         for stock in list_name_stocks:
             my_general.time.sleep(1)  # sec
             # print('\n__________________ ' + stock + ' __________________\n')
-            ticker = exporter.lookup(name=stock, market=my_general.Market.,
+            ticker = exporter.lookup(code=stock, market=my_general.Market.SHARES,
                                      name_comparator=my_general.LookupComparator.EQUALS)
-            data = exporter.download(ticker.index[0], market=my_general.Market.ETF_MOEX, start_date=curr_moment)
+            data = exporter.download(id_=ticker.index[0], market=my_general.Market.ETF_MOEX, start_date=curr_moment)
 
+            print(data.get('<TICKER>'))
             open_value = data.get('<OPEN>')
             close_value = data.get('<CLOSE>')
             high_value = data.get('<HIGH>')
