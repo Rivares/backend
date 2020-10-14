@@ -43,10 +43,13 @@ class money:
             self.in_money["low_part"] = sum_low_part % 60
 
     def withdraw_funds(self, money): # out
-        out_money = {"big_part": int(money // 1), "low_part": (money - (money % 1))}
+        out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
 
-        deduction_big = self.out_money["big_part"] - out_money["big_part"]
-        deduction_low = self.out_money["low_part"] - out_money["low_part"]
+        deduction_big = self.in_money["big_part"] - out_money["big_part"]
+        deduction_low = self.in_money["low_part"] - out_money["low_part"]
+        # __________________________________________________________________________________!!!!!
+        print(deduction_big)
+        print(deduction_low)
 
         if deduction_big >= 0:
             self.out_money["big_part"] = deduction_big
@@ -54,10 +57,10 @@ class money:
             self.result_act = -1
 
         if deduction_low >= 0:
-            self.in_money["low_part"] = deduction_low
+            self.out_money["low_part"] = deduction_low
         else:
-            self.in_money["big_part"] -= 1
-            self.in_money["low_part"] = 10 - abs(deduction_low)
+            self.out_money["big_part"] -= 1
+            self.out_money["low_part"] = 10 - abs(deduction_low)
 
 
 class active:
@@ -123,7 +126,13 @@ def main():
 
     current_invest.deposit_funds(16000.0)
 
-    print(current_invest.in_money)
+    print("Income : "); print(current_invest.in_money)
+    print("Outcome : "); print(current_invest.out_money)
+
+    current_invest.withdraw_funds(16000.0)
+
+    print("Income : "); print(current_invest.in_money)
+    print("Outcome : "); print(current_invest.out_money)
 
 
 
