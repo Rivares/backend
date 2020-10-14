@@ -10,22 +10,62 @@ path_name_parser_stocks = 'Parser_market/Parser_market.py'
 market = []
 
 # Properties of BROKER and STOCK EXCHANGE
-com_broker = 0.4 * 2;  # BUY and SELL
-com_stock_exchange = 0.1 * 2;  # _________________________________________________________________________________________________________!!!!!
+com_broker = 0.4 * 2  # BUY and SELL
+com_stock_exchange = 0.1 * 2  # __________________________________________________________________________________!!!!!
 
 
 class money:
-    in_money = 0;
-    out_money = 0;
-    profit = 0;
+    in_money = {"big_part": 0, "low_part": 0}
+    out_money = {"big_part": 0, "low_part": 0}
+    profit_money = {"big_part": 0, "low_part": 0}
+    profit_percent = 0
+    result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+
+    def __init__(self, list_params):
+        for param in list_params[-1]:
+            self.in_money = param["in_money"]
+            self.out_money = param["out_money"]
+            self.profit_money = param["profit_money"]
+            self.profit_percent = param["profit_percent"]
+            self.result_act = param["result_act"]
+
+    def deposit_funds(self, money): # in
+        in_money = {"big_part": int(money // 1), "low_part": (money % 1)}
+
+        self.in_money["big_part"] += in_money["big_part"]
+
+        sum_low_part = self.in_money["low_part"] + in_money["low_part"]
+
+        if sum_low_part < 60:
+            self.in_money["low_part"] = sum_low_part
+        else:
+            self.in_money["big_part"] += 1
+            self.in_money["low_part"] = sum_low_part % 60
+
+    def withdraw_funds(self, money): # out
+        out_money = {"big_part": int(money // 1), "low_part": (money - (money % 1))}
+
+        deduction_big = self.out_money["big_part"] - out_money["big_part"]
+        deduction_low = self.out_money["low_part"] - out_money["low_part"]
+
+        if deduction_big >= 0:
+            self.out_money["big_part"] = deduction_big
+        else:
+            self.result_act = -1
+
+        if deduction_low >= 0:
+            self.in_money["low_part"] = deduction_low
+        else:
+            self.in_money["big_part"] -= 1
+            self.in_money["low_part"] = 10 - abs(deduction_low)
 
 
 class active:
-    ticker = '';
-    price = 0.0;
-    count = 0;
-    act = "";
-    result_act = 0;  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+    ticker = ''
+    price = 0.0
+    count = 0
+    act = ""
+    result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
     date = {
         "year": 2020,  # default values
@@ -36,50 +76,68 @@ class active:
         "hour": 0,
         "minute": 0,
         "second": 0
-    };
+    }
 
     def __init__(self, ticker, price, count, act):
 
-        price = price if (price > 0.0) else 0.0;
+        price = price if (price > 0.0) else 0.0
 
-        count = count if (count >= 1) else 0;
+        count = count if (count >= 1) else 0
 
-        act = act if ((act == "buy") or (act == "sell")) else "";
+        act = act if ((act == "buy") or (act == "sell")) else ""
 
         if (price == 0.0) or (count == 0) or (act == ""):
-            self.result_act = -1;
-            print("__________________>>>>> Incorrect bid!");
+            self.result_act = -1
+            print("__________________>>>>> Incorrect bid!")
         else:
-            self.ticker = ticker;
-            self.price = price;
-            self.count = count;
-            self.act = act;
+            self.ticker = ticker
+            self.price = price
+            self.count = count
+            self.act = act
             self.date = {
                 "year": my_general.datetime.date.year,
                 "month": my_general.datetime.date.month,
                 "day": my_general.datetime.date.day
-            };
+            }
             self.time = {
                 "hour": my_general.datetime.time.hour,
                 "minute": my_general.datetime.time.minute,
                 "second": my_general.datetime.time.second
-            };
+            }
 
 
 def main():
+    print("__________________ PUT MONEY __________________")
+
+    path = 'backend\\'
+    filename = 'money'
+    list_investments = my_general.read_data_json(root_path + path, filename)
+
+    current_invest = money(list_investments)
+
+    print(current_invest.in_money)
+    print(current_invest.out_money)
+    print(current_invest.profit_money)
+    print(current_invest.profit_percent)
+    print(current_invest.result_act)
+
+    current_invest.deposit_funds(16000.0)
+
+    print(current_invest.in_money)
+
+
+
+    print("__________________ BUY __________________")
+
     name_ticker = 'ETLN'
     depart_market = 'STCK'  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
     my_general.name_ticker = name_ticker
     my_general.depart_market = depart_market
 
-    print("__________________ Global training __________________")
-
-    # Need to know current value of stock
     my_general.exec_full(path_name_parser_stocks)
 
     path = 'backend\\Parser_market\\'
     filename = 'market'
-
     list_cur_val = my_general.read_data_json(root_path + path, filename)
 
     for it in list_cur_val:
@@ -92,7 +150,13 @@ def main():
 
     print(current_price)
 
-    stock = active(name_ticker, current_price["last_value"], 1, "buy");
+    count_actives = 1
+    stock = active(name_ticker, current_price["last_value"], count_actives, "buy")
+
+
+
+
+
 
     # time_holding = (time_price_in.mounth - time_price_out.mounth);
     # com_found = * 2;
