@@ -2,17 +2,16 @@
 
 import lib_general as my_general
 
-
 my_general.root_path = 'C:\\Users\\user\\0_Py\\'
-root_path = 'C:\\Users\\user\\0_Py\\'
+root_path = 'C:\\Users\\User\\0_Py\\'
 
 path_name_ta_stocks = 'TA_stocks\\TA_stocks.py'
 path_name_parser_stocks = 'Parser_market/Parser_market.py'
 market = []
 
 # Properties of BROKER and STOCK EXCHANGE
-com_broker = 0.4 * 2; # BUY and SELL
-com_stock_exchange = 0.1 * 2; # _________________________________________________________________________________________________________!!!!!
+com_broker = 0.4 * 2;  # BUY and SELL
+com_stock_exchange = 0.1 * 2;  # _________________________________________________________________________________________________________!!!!!
 
 
 class money:
@@ -26,17 +25,17 @@ class active:
     price = 0.0;
     count = 0;
     act = "";
-    result_act = 0; # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+    result_act = 0;  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
     date = {
-        "year" : 2020,  # default values
-        "month" : 10,
-        "day" : 13
+        "year": 2020,  # default values
+        "month": 10,
+        "day": 13
     }
     time = {
-        "hour" : 0,
-        "minute" : 0,
-        "second" : 0
+        "hour": 0,
+        "minute": 0,
+        "second": 0
     };
 
     def __init__(self, ticker, price, count, act):
@@ -45,7 +44,7 @@ class active:
 
         count = count if (count >= 1) else 0;
 
-        act = act if ( (act == "buy") or (act == "sell") ) else "";
+        act = act if ((act == "buy") or (act == "sell")) else "";
 
         if (price == 0.0) or (count == 0) or (act == ""):
             self.result_act = -1;
@@ -56,20 +55,20 @@ class active:
             self.count = count;
             self.act = act;
             self.date = {
-                "year" : my_general.datetime.date.year,
-                "month" : my_general.datetime.date.month,
-                "day" : my_general.datetime.date.day
+                "year": my_general.datetime.date.year,
+                "month": my_general.datetime.date.month,
+                "day": my_general.datetime.date.day
             };
             self.time = {
-                "hour" : my_general.datetime.time.hour,
-                "minute" : my_general.datetime.time.minute,
-                "second" : my_general.datetime.time.second
+                "hour": my_general.datetime.time.hour,
+                "minute": my_general.datetime.time.minute,
+                "second": my_general.datetime.time.second
             };
 
 
 def main():
-    name_ticker = 'PIKK'
-    depart_market = 'STCK' # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
+    name_ticker = 'ETLN'
+    depart_market = 'STCK'  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
     my_general.name_ticker = name_ticker
     my_general.depart_market = depart_market
 
@@ -80,26 +79,20 @@ def main():
 
     path = 'backend\\Parser_market\\'
     filename = 'market'
-    market = my_general.read_data_json(root_path + path, filename)
 
-    current_price = []
+    list_cur_val = my_general.read_data_json(root_path + path, filename)
 
-    for ticker in market:
-        for input in ticker:
-            current_price.append(input['open_value'])
-            current_price.append(input['close_value'])
-            current_price.append(input['high_value'])
-            current_price.append(input['low_value'])
-            current_price.append(input['volume_value'])
+    for it in list_cur_val:
+        current_price = {
+            "ticker_value": it[0]["ticker_value"],
+            "date_value": it[0]["date_value"],
+            "time_value": it[0]["time_value"],
+            "last_value": it[0]["last_value"]
+        }
 
+    print(current_price)
 
-
-
-    stock = active(name_ticker, current_price['low_value'], 1, "buy");
-
-
-
-
+    stock = active(name_ticker, current_price["last_value"], 1, "buy");
 
     # time_holding = (time_price_in.mounth - time_price_out.mounth);
     # com_found = * 2;
@@ -123,23 +116,6 @@ def main():
     #
     #
     #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     # while (my_general.datetime.datetime.now().hour > 9) and (my_general.datetime.datetime.now().hour < 23):
     #

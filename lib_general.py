@@ -1,6 +1,8 @@
 # coding: UTF-8
 
-from finam.export import Exporter, Market, LookupComparator
+from finam.exception import * # noqa
+from finam.const import * # noqa
+from finam.export import * # noqa
 
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
@@ -59,7 +61,7 @@ def write_data_json(data, path, file_name):
 def read_data_json(path, file_name):
     extension = '.json'
     data = []
-
+    # print(path + file_name + extension)
     with open(path + file_name + extension, encoding="utf-8") as json_file:
         data = json.load(json_file)
 

@@ -5,7 +5,7 @@ import lib_general as my_general
 root_path = my_general.root_path
 curr_ticker = my_general.name_ticker
 
-curr_path = root_path + 'Helper\\Parser_market\\'
+curr_path = root_path + 'backend\\Parser_market\\'
 
 curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
                                        my_general.datetime.datetime.now().month,
@@ -21,6 +21,7 @@ def main():
     list_goods = []
     list_currency = []
     list_indexes = []
+    list_etf = []
     list_stocks = []
 
     # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Goods ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -28,19 +29,19 @@ def main():
 
     if my_general.depart_market == "GDS":
         list_name_goods = [
-                           'Brent',
-                           'Natural Gas',
-                           'Алюминий',
-                           'Бензин',
-                           'Золото',
-                           'Мазут',
-                           'Медь',
-                           'Никель',
-                           'Палладий',
-                           'Платина',
-                           'Пшеница',
-                           'Серебро'
-                          ]
+            'Brent',
+            'Natural Gas',
+            'Алюминий',
+            'Бензин',
+            'Золото',
+            'Мазут',
+            'Медь',
+            'Никель',
+            'Палладий',
+            'Платина',
+            'Пшеница',
+            'Серебро'
+        ]
 
         for goods in list_name_goods:
             my_general.time.sleep(1)  # sec
@@ -74,11 +75,11 @@ def main():
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Currency ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
         list_name_currency = [
-                              'USDRUB_TOD',
-                              'EURRUB_TOD',
-                              'EURUSD_TOD',
-                              'CNYRUB_TOD'
-                             ]
+            'USDRUB_TOD',
+            'EURRUB_TOD',
+            'EURUSD_TOD',
+            'CNYRUB_TOD'
+        ]
 
         for currency in list_name_currency:
             my_general.time.sleep(1)  # sec
@@ -237,7 +238,7 @@ def main():
     elif my_general.depart_market == "ETF":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ ETF ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
-        list_name_stocks = [
+        list_name_etf = [
             'FXCN ETF',
             'FXDE ETF',
             'FXGD ETF',
@@ -265,7 +266,7 @@ def main():
             'VTBM ETF',
         ]
 
-        for stock in list_name_stocks:
+        for stock in list_name_etf:
             my_general.time.sleep(1)  # sec
             # print('\n__________________ ' + stock + ' __________________\n')
             ticker = exporter.lookup(name=stock, market=my_general.Market.ETF_MOEX,
@@ -284,65 +285,159 @@ def main():
             list_low_value = low_value.to_list()
             list_volume_value = volume_value.to_list()
 
-            list_stocks.append({"open_value": list_open_value[-1],
-                                "close_value": list_close_value[-1],
-                                "high_value": list_high_value[-1],
-                                "low_value": list_low_value[-1],
-                                "volume_value": list_volume_value[-1]})
+            list_etf.append({"open_value": list_open_value[-1],
+                             "close_value": list_close_value[-1],
+                             "high_value": list_high_value[-1],
+                             "low_value": list_low_value[-1],
+                             "volume_value": list_volume_value[-1]})
 
-        market.append(list_goods)
-        market.append(list_currency)
-        market.append(list_indexes)
-        market.append(list_stocks)
-
-        file_name_market = 'market'
-
-        my_general.write_data_json(market, curr_path, file_name_market)
 
     elif my_general.depart_market == "STCK":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Stock ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
-        list_name_stocks = [
-            'ALRS'
-            'PIKK',
-            'SBER',
-            'GMKN'
-        ]
+        if my_general.name_ticker == '':
+            list_name_stocks = [
+                'ETLN',
+                'QIWI',
+                'TCSG',
+                'FIVE',
+                'AKRN',
+                'ALRS',
+                'AFLT',
+                'BANE',
+                'BSPB',
+                'VSMO',
+                'VTBR',
+                'GAZP',
+                'SIBN',
+                'PIKK',
+                'DSKY',
+                'IRAO',
+                'KBTK',
+                'LNTA',
+                'LSNG', 'LSNGР',
+                'LSRG',
+                'LKOH',
+                'MVID',
+                'MGNT',
+                'MGTS', 'MGTSР',
+                'MTLR', 'MTLRР',
+                'CBOM',
+                'MAGN',
+                'MOEX',
+                'MSTT',
+                'MSNG',
+                'MSRS',
+                'MRKV',
+                'MRKU',
+                'MRKC',
+                'MRKP',
+                'MTSS',
+                'NKNC', 'NKNCР',
+                'NLMK',
+                'NMTP',
+                'NVTK',
+                'GMKN',
+                'OGKB',
+                'POLY',
+                'PLZL',
+                'PRTK',
+                'RASP',
+                'ROSN',
+                'RSTI', 'RSTIР',
+                'RTKM', 'RTKMР',
+                'AGRO',
+                'RUAL',
+                'HYDR',
+                'RNFT',
+                'SFIN',
+                'SBER', 'SBERP',
+                'CHMF',
+                'AFKS',
+                'SNGS', 'SNGSР',
+                'TATN', 'TATNР',
+                'TGKA',
+                'TRMK',
+                'TRNFP',
+                'PHOR',
+                'FEES',
+                'GCHE',
+                'ENRU',
+                'UPRO',
+                'YNDX'
+            ]
+        else:
+            list_name_stocks = [my_general.name_ticker];
 
         for stock in list_name_stocks:
             my_general.time.sleep(1)  # sec
             # print('\n__________________ ' + stock + ' __________________\n')
             ticker = exporter.lookup(code=stock, market=my_general.Market.SHARES,
                                      name_comparator=my_general.LookupComparator.EQUALS)
-            data = exporter.download(id_=ticker.index[0], market=my_general.Market.ETF_MOEX, start_date=curr_moment)
+            data = exporter.download(id_=ticker.index[0], market=my_general.Market.SHARES, start_date=curr_moment,
+                                     timeframe=my_general.Timeframe.TICKS)
 
-            print(data.get('<TICKER>'))
-            open_value = data.get('<OPEN>')
-            close_value = data.get('<CLOSE>')
-            high_value = data.get('<HIGH>')
-            low_value = data.get('<LOW>')
+            # print(data)
+            ticker_value = data.get('<TICKER>')
+            per_value = data.get('<PER>')
+            date_value = data.get('<DATE>')
+            time_value = data.get('<TIME>')
+            last_value = data.get('<LAST>')
             volume_value = data.get('<VOL>')
 
-            list_open_value = open_value.to_list()
-            list_close_value = close_value.to_list()
-            list_high_value = high_value.to_list()
-            list_low_value = low_value.to_list()
+            # open_value = data.get('<OPEN>')
+            # close_value = data.get('<CLOSE>')
+            # high_value = data.get('<HIGH>')
+            # low_value = data.get('<LOW>')
+            # volume_value = data.get('<VOL>')
+            # print(ticker_value)
+            # list_open_value = open_value.to_list()
+            # list_close_value = close_value.to_list()
+            # list_high_value = high_value.to_list()
+            # list_low_value = low_value.to_list()
+            # list_volume_value = volume_value.to_list()
+
+            list_ticker_value = ticker_value.to_list()
+            list_per_value = per_value.to_list()
+            list_date_value = date_value.to_list()
+            list_time_value = time_value.to_list()
+            list_last_value = last_value.to_list()
             list_volume_value = volume_value.to_list()
 
-            list_stocks.append({"open_value": list_open_value[-1],
-                                "close_value": list_close_value[-1],
-                                "high_value": list_high_value[-1],
-                                "low_value": list_low_value[-1],
+            # list_stocks.append({"open_value": list_open_value[-1],
+            #                     "close_value": list_close_value[-1],
+            #                     "high_value": list_high_value[-1],
+            #                     "low_value": list_low_value[-1],
+            #                     "volume_value": list_volume_value[-1]})
+
+            list_stocks.append({"ticker_value": list_ticker_value[-1],
+                                "per_value": list_per_value[-1],
+                                "date_value": list_date_value[-1],
+                                "time_value": list_time_value[-1],
+                                "last_value": list_last_value[-1],
                                 "volume_value": list_volume_value[-1]})
 
-        market.append(list_goods)
-        market.append(list_currency)
+    # _________________________________________________________________________________
+
+    if len(list_goods) > 0:
+        market.append(list_goods);
+
+    if len(list_currency) > 0:
+        market.append(list_currency);
+
+    if len(list_indexes) > 0:
         market.append(list_indexes)
+
+    if len(list_etf) > 0:
+        market.append(list_etf)
+
+    if len(list_stocks) > 0:
         market.append(list_stocks)
 
-        file_name_market = 'market'
+    # print(market)
+    file_name_market = 'market'
 
-        my_general.write_data_json(market, curr_path, file_name_market)
+    my_general.write_data_json(market, curr_path, file_name_market)
     # _________________________________________________________________________________
 
     # Check on repeat
