@@ -1,8 +1,6 @@
 # coding: UTF-8
 
-from finam.exception import * # noqa
-from finam.const import * # noqa
-from finam.export import * # noqa
+from finam import Exporter, Market, LookupComparator, Timeframe
 
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
@@ -27,6 +25,8 @@ import os
 import re
 import ta
 
+path_1 = 'A:\\0_Py\\'
+path_2 = 'C:\\Users\\user\\0_Py\\'
 
 name_ticker = ''
 depart_market = ''

@@ -2,11 +2,11 @@
 
 import lib_general as my_general
 
-my_general.root_path = 'C:\\Users\\user\\0_Py\\'
-root_path = 'C:\\Users\\User\\0_Py\\'
+my_general.root_path = my_general.path_1 if(my_general.os.path.isdir(my_general.path_1)) else my_general.path_2
+root_path = my_general.root_path
 
 path_name_ta_stocks = 'TA_stocks\\TA_stocks.py'
-path_name_parser_stocks = 'Parser_market/Parser_market.py'
+path_name_parser_stocks = 'Parser_market\\Parser_market.py'
 market = []
 
 # Properties of BROKER and STOCK EXCHANGE
@@ -144,7 +144,6 @@ def main():
 
     print("Income : "); print(current_invest.in_money)
     print("Outcome : "); print(current_invest.out_money)
-
 
 
     print("__________________ BUY __________________")
