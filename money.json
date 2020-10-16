@@ -3,6 +3,7 @@
     {
       "in_money": {"big_part" : 0, "low_part" : 0},
       "out_money": {"big_part" : 0, "low_part" : 0},
+      "current_money": {"big_part" : 0, "low_part" : 0},
       "profit_money": {"big_part" : 0, "low_part" : 0},
       "profit_percent": 0,
       "result_act": 0
@@ -12,6 +13,7 @@
     {
       "in_money": {"big_part" : 100, "low_part" : 10},
       "out_money": {"big_part" : 0, "low_part" : 0},
+      "current_money": {"big_part" : 100, "low_part" : 10},
       "profit_money": {"big_part" : 0, "low_part" : 0},
       "profit_percent": 0,
       "result_act": 0

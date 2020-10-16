@@ -17,6 +17,7 @@ com_stock_exchange = 0.1 * 2  # ________________________________________________
 class money:
     in_money = {"big_part": 0, "low_part": 0}
     out_money = {"big_part": 0, "low_part": 0}
+    current_money = {"big_part": 0, "low_part": 0}
     profit_money = {"big_part": 0, "low_part": 0}
     profit_percent = 0
     result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
@@ -42,6 +43,9 @@ class money:
             self.in_money["big_part"] += 1
             self.in_money["low_part"] = sum_low_part % 60
 
+        self.current_money["big_part"] += self.in_money["big_part"]
+        self.current_money["low_part"] += self.in_money["low_part"]
+
     def withdraw_funds(self, money): # out
         out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
 
@@ -61,6 +65,12 @@ class money:
         else:
             self.out_money["big_part"] -= 1
             self.out_money["low_part"] = 10 - abs(deduction_low)
+
+        print(self.out_money["big_part"])
+        print(self.out_money["low_part"])
+
+        self.current_money["big_part"] -= self.out_money["big_part"]
+        self.current_money["low_part"] -= self.out_money["low_part"]
 
 
 class active:
@@ -120,6 +130,7 @@ def main():
 
     print(current_invest.in_money)
     print(current_invest.out_money)
+    print(current_invest.current_money)
     print(current_invest.profit_money)
     print(current_invest.profit_percent)
     print(current_invest.result_act)
