@@ -364,6 +364,7 @@ def main():
                 'GCHE',
                 'ENRU',
                 'UPRO',
+                'MAIL',
                 'YNDX'
             ]
         else:
@@ -410,12 +411,16 @@ def main():
             #                     "low_value": list_low_value[-1],
             #                     "volume_value": list_volume_value[-1]})
 
-            list_stocks.append({"ticker_value": list_ticker_value[-1],
-                                "per_value": list_per_value[-1],
-                                "date_value": list_date_value[-1],
-                                "time_value": list_time_value[-1],
-                                "last_value": list_last_value[-1],
-                                "volume_value": list_volume_value[-1]})
+            if len(list_ticker_value) > 0:
+                list_stocks.append({"ticker_value": list_ticker_value[-1],
+                                    "per_value": list_per_value[-1],
+                                    "date_value": list_date_value[-1],
+                                    "time_value": list_time_value[-1],
+                                    "last_value": list_last_value[-1],
+                                    "volume_value": list_volume_value[-1]})
+            else:
+                print("It's time little boy!")
+                return
 
     # _________________________________________________________________________________
 

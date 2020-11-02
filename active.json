@@ -1,0 +1,9 @@
+[
+    {
+        "ticker": "MAIL",
+        "price": 2119.8,
+        "count": 1,
+        "market": "STCK",
+        "act": "buy",
+        "date": {
+            "year": 

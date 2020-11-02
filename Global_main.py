@@ -14,7 +14,7 @@ com_broker = 0.4 * 2  # BUY and SELL
 com_stock_exchange = 0.1 * 2  # __________________________________________________________________________________!!!!!
 
 
-class money:
+class Money:
     in_money = {"big_part": 0, "low_part": 0}
     out_money = {"big_part": 0, "low_part": 0}
     current_money = {"big_part": 0, "low_part": 0}
@@ -31,6 +31,8 @@ class money:
             self.result_act = param["result_act"]
 
     def deposit_funds(self, money): # in
+        print("______________ deposit_funds() ______________")
+
         in_money = {"big_part": int(money // 1), "low_part": (money % 1)}
 
         self.in_money["big_part"] += in_money["big_part"]
@@ -46,37 +48,45 @@ class money:
         self.current_money["big_part"] += self.in_money["big_part"]
         self.current_money["low_part"] += self.in_money["low_part"]
 
+        print("Income : ", self.in_money["big_part"], self.in_money["low_part"])
+        print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
+        print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
+
     def withdraw_funds(self, money): # out
+        print("______________ withdraw_funds() ______________")
+
         out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
 
         deduction_big = self.in_money["big_part"] - out_money["big_part"]
         deduction_low = self.in_money["low_part"] - out_money["low_part"]
-        # __________________________________________________________________________________!!!!!
-        print(deduction_big)
-        print(deduction_low)
 
         if deduction_big >= 0:
-            self.out_money["big_part"] = deduction_big
+            self.out_money["big_part"] += out_money["big_part"]
         else:
             self.result_act = -1
 
         if deduction_low >= 0:
-            self.out_money["low_part"] = deduction_low
+            self.out_money["low_part"] += out_money["low_part"]
         else:
-            self.out_money["big_part"] -= 1
-            self.out_money["low_part"] = 10 - abs(deduction_low)
-
-        print(self.out_money["big_part"])
-        print(self.out_money["low_part"])
+            if (self.out_money["big_part"] - 1) >= 0:
+                self.out_money["big_part"] -= 1
+                self.out_money["low_part"] = 10 - abs(deduction_low)
+            else:
+                self.result_act = -1
 
         self.current_money["big_part"] -= self.out_money["big_part"]
         self.current_money["low_part"] -= self.out_money["low_part"]
 
+        print("Income : ", self.in_money["big_part"], self.in_money["low_part"])
+        print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
+        print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
-class active:
+
+class Active:
     ticker = ''
     price = 0.0
     count = 0
+    market = ''
     act = ""
     result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
@@ -91,11 +101,13 @@ class active:
         "second": 0
     }
 
-    def __init__(self, ticker, price, count, act):
+    def __init__(self, ticker, price, count, market, act):
 
         price = price if (price > 0.0) else 0.0
 
         count = count if (count >= 1) else 0
+
+        self.market = market
 
         act = act if ((act == "buy") or (act == "sell")) else ""
 
@@ -118,6 +130,27 @@ class active:
                 "second": my_general.datetime.time.second
             }
 
+            path = 'backend\\'
+            filename = 'active'
+            data = []
+            print("___________________________________________ ", my_general.datetime.time.hour)
+            data.append({"ticker": self.ticker,
+                         "price": self.price,
+                         "count": self.count,
+                         "market": self.market,
+                         "act": self.act,
+                         "date": self.date,
+                         "time": self.time})
+            my_general.write_data_json(data, root_path + path, filename)
+
+    # def count_active(self):
+    #
+    #
+    # def count_active(self, ticker):
+    #
+    #
+    # def cost_active(self):
+
 
 def main():
     print("__________________ PUT MONEY __________________")
@@ -126,29 +159,14 @@ def main():
     filename = 'money'
     list_investments = my_general.read_data_json(root_path + path, filename)
 
-    current_invest = money(list_investments)
-
-    print(current_invest.in_money)
-    print(current_invest.out_money)
-    print(current_invest.current_money)
-    print(current_invest.profit_money)
-    print(current_invest.profit_percent)
-    print(current_invest.result_act)
+    current_invest = Money(list_investments)
 
     current_invest.deposit_funds(16000.0)
-
-    print("Income : "); print(current_invest.in_money)
-    print("Outcome : "); print(current_invest.out_money)
-
-    current_invest.withdraw_funds(16000.0)
-
-    print("Income : "); print(current_invest.in_money)
-    print("Outcome : "); print(current_invest.out_money)
-
+    current_invest.withdraw_funds(16000.5)
 
     print("__________________ BUY __________________")
 
-    name_ticker = 'ETLN'
+    name_ticker = 'MAIL'
     depart_market = 'STCK'  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
     my_general.name_ticker = name_ticker
     my_general.depart_market = depart_market
@@ -160,29 +178,29 @@ def main():
     list_cur_val = my_general.read_data_json(root_path + path, filename)
 
     for it in list_cur_val:
-        current_price = {
+        current_bid = {
             "ticker_value": it[0]["ticker_value"],
             "date_value": it[0]["date_value"],
             "time_value": it[0]["time_value"],
             "last_value": it[0]["last_value"]
         }
 
-    print(current_price)
+    print("Current bid : ", current_bid)
 
     count_actives = 1
-    stock = active(name_ticker, current_price["last_value"], count_actives, "buy")
+    stock = Active(name_ticker, current_bid["last_value"], count_actives, depart_market, "buy")
+    print("Current stock : ", stock.ticker, stock.count, stock.market, stock.price)
 
 
 
 
 
-
-    # time_holding = (time_price_in.mounth - time_price_out.mounth);
-    # com_found = * 2;
-    # current_com_broker = (price_out - price_in) * com_broker;
-    # current_com_stock_inchange = (price_out - price_in) * com_stock_exchange;
-    # current_com_found = (price_out - price_in) * com_found;
-    # current_profit = (price_out - price_in - current_com_broker - current_com_stock_inchange - current_com_found)
+    time_holding = (time_price_in.mounth - time_price_out.mounth);
+    com_found = * 2;
+    current_com_broker = (price_out - price_in) * com_broker;
+    current_com_stock_inchange = (price_out - price_in) * com_stock_exchange;
+    current_com_found = (price_out - price_in) * com_found;
+    current_profit = (price_out - price_in - current_com_broker - current_com_stock_inchange - current_com_found)
     #
     #
     #
