@@ -11,10 +11,11 @@ market = []
 
 # Properties of BROKER and STOCK EXCHANGE
 com_broker = 0.4 * 2  # BUY and SELL
-com_stock_exchange = 0.1 * 2  # __________________________________________________________________________________!!!!!
+com_stock_exchange = 0.1 * 2  # __________________________________________________________________________________ !!!!!
 
 
 class Money:
+
     in_money = {"big_part": 0, "low_part": 0}
     out_money = {"big_part": 0, "low_part": 0}
     current_money = {"big_part": 0, "low_part": 0}
@@ -22,15 +23,25 @@ class Money:
     profit_percent = 0
     result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
-    def __init__(self, list_params):
-        for param in list_params[-1]:
-            self.in_money = param["in_money"]
-            self.out_money = param["out_money"]
-            self.profit_money = param["profit_money"]
-            self.profit_percent = param["profit_percent"]
-            self.result_act = param["result_act"]
+    def __init__(self, list_params=[]):
 
-    def deposit_funds(self, money): # in
+        if len(list_params) > 0:
+            for param in list_params[-1]:
+                self.in_money = param["in_money"]
+                self.out_money = param["out_money"]
+                self.profit_money = param["profit_money"]
+                self.profit_percent = param["profit_percent"]
+                self.result_act = param["result_act"]
+        else:   # default values
+            self.in_money = {"big_part": 0, "low_part": 0}
+            self.out_money = {"big_part": 0, "low_part": 0}
+            self.current_money = {"big_part": 0, "low_part": 0}
+            self.profit_money = {"big_part": 0, "low_part": 0}
+            self.profit_percent = 0
+            self.result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+
+    def deposit_funds(self, money):     # in
+
         print("______________ deposit_funds() ______________")
 
         in_money = {"big_part": int(money // 1), "low_part": (money % 1)}
@@ -52,7 +63,8 @@ class Money:
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
-    def withdraw_funds(self, money): # out
+    def withdraw_funds(self, money):    # out
+
         print("______________ withdraw_funds() ______________")
 
         out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
@@ -83,11 +95,11 @@ class Money:
 
 
 class Active:
+
     ticker = ''
     price = 0.0
     count = 0
     market = ''
-    act = ""
     result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
     date = {
@@ -101,106 +113,188 @@ class Active:
         "second": 0
     }
 
-    def __init__(self, ticker, price, count, market, act):
+    def __init__(self, ticker='', price=0.0, count=0, market=''):
 
-        price = price if (price > 0.0) else 0.0
+        if (ticker != '') and (price > 0.0) and (count > 0) and (market != ''):
+            price = price if (price > 0.0) else 0.0
 
-        count = count if (count >= 1) else 0
+            count = count if (count >= 1) else 0
 
-        self.market = market
+            self.market = market
 
-        act = act if ((act == "buy") or (act == "sell")) else ""
+            if (price == 0.0) or (count == 0):
+                self.result_act = -1
+                print("__________________>>>>> Incorrect bid!")
+            else:
+                self.ticker = ticker
+                self.price = price
+                self.count = count
+                self.date = {
+                    "year": my_general.datetime.datetime.today().strftime("%Y"),
+                    "month": my_general.datetime.datetime.today().strftime("%m"),
+                    "day": my_general.datetime.datetime.today().strftime("%d")
+                }
+                self.time = {
+                    "hour": my_general.datetime.datetime.today().strftime("%H"),
+                    "minute": my_general.datetime.datetime.today().strftime("%M"),
+                    "second": my_general.datetime.datetime.today().strftime("%S")
+                }
 
-        if (price == 0.0) or (count == 0) or (act == ""):
-            self.result_act = -1
-            print("__________________>>>>> Incorrect bid!")
-        else:
-            self.ticker = ticker
-            self.price = price
-            self.count = count
-            self.act = act
+                path = 'backend\\'
+                filename = 'active'
+                data = []
+                data.append({"ticker": self.ticker,
+                             "price": self.price,
+                             "count": self.count,
+                             "market": self.market,
+                             "date": self.date,
+                             "time": self.time})
+                my_general.write_data_json(data, root_path + path, filename)
+        else:   # default values
+            self.ticker = ''
+            self.price = 0.0
+            self.count = 0
+            self.market = ''
+            self.result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+
             self.date = {
-                "year": my_general.datetime.date.year,
-                "month": my_general.datetime.date.month,
-                "day": my_general.datetime.date.day
+                "year": 2020,  # default values
+                "month": 10,
+                "day": 13
             }
             self.time = {
-                "hour": my_general.datetime.time.hour,
-                "minute": my_general.datetime.time.minute,
-                "second": my_general.datetime.time.second
+                "hour": 0,
+                "minute": 0,
+                "second": 0
             }
 
-            path = 'backend\\'
-            filename = 'active'
-            data = []
-            print("___________________________________________ ", my_general.datetime.time.hour)
-            data.append({"ticker": self.ticker,
-                         "price": self.price,
-                         "count": self.count,
-                         "market": self.market,
-                         "act": self.act,
-                         "date": self.date,
-                         "time": self.time})
-            my_general.write_data_json(data, root_path + path, filename)
+    def clear_bid(self):
 
-    # def count_active(self):
+        self.ticker = ''
+        self.price = 0.0
+        self.count = 0
+        self.market = ''
+        self.date = {
+            "year": 2020,  # default values
+            "month": 10,
+            "day": 13
+        }
+        self.time = {
+            "hour": 0,
+            "minute": 0,
+            "second": 0
+        }
+
+
+class Portfolio:
+
+    curr_money = Money()
+    curr_assetes = []
+
+    def __init__(self):
+        self.curr_money = Money()
+        self.curr_assetes = []
+
+    def copy_money_operations(self, curr_money_operations):
+        self.curr_money = curr_money_operations
+
+    def buy(self, bid):
+
+        require_money = (bid.price * bid.count) + com_broker + com_stock_exchange
+        all_money = self.curr_money.current_money["big_part"] + self.curr_money.current_money["low_part"]
+
+        if require_money > all_money:
+            print("__________ >>> There is little money in the brokerage account for this operation. Bid was canceled.")
+            bid.clear_bid()
+        else:
+            self.curr_money.withdraw_funds(require_money)  # get money from portfolio
+            self.curr_assetes.append(bid)
+
+    def sell(self, bid):
+
+        require_assete = (bid.price * bid.count) + com_broker + com_stock_exchange
+        # all_money = self.curr_money.current_money["big_part"] + self.curr_money.current_money["low_part"]
+        #
+        # if require_money > all_money:
+        #     print("__________ >>> There is little money in the brokerage account for this operation. Bid was canceled.")
+        #     bid.clear_bid()
+        # else:
+        #     self.curr_money.withdraw_funds(com_broker + com_stock_exchange)  # get money from portfolio
+        #     self.curr_assetes.append(bid)
+
+    # def count_assetes(self):
     #
     #
-    # def count_active(self, ticker):
+    # def count_assetes(self, ticker):
     #
     #
-    # def cost_active(self):
+    # def cost_assetes(self):
 
 
 def main():
-    print("__________________ PUT MONEY __________________")
 
-    path = 'backend\\'
-    filename = 'money'
-    list_investments = my_general.read_data_json(root_path + path, filename)
+    # Empty portfolio
+    my_portfolio = Portfolio()
 
-    current_invest = Money(list_investments)
+    list_assetes = []
 
-    current_invest.deposit_funds(16000.0)
-    current_invest.withdraw_funds(16000.5)
+    print("____________________________________ PUT MONEY ____________________________________\n")
 
-    print("__________________ BUY __________________")
+    # Download list of operations from backup file
+    list_operations = my_general.read_data_json(root_path + 'backend\\', 'operations')
+
+    # Update list of operations
+    my_portfolio.copy_money_operations(Money(list_operations))
+
+    my_portfolio.curr_money.deposit_funds(16000.0)      # set money to portfolio
+    # my_portfolio.curr_money.withdraw_funds(16000.5)     # get money from portfolio
+    # my_portfolio.curr_money.withdraw_funds(16000000)    # checking. To get money more then this it from portfolio <<<<< ___________________________ ERROR !!!
+
+    print("____________________________________ BUY ____________________________________\n")
 
     name_ticker = 'MAIL'
-    depart_market = 'STCK'  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
+    depart_market = 'STCK'
     my_general.name_ticker = name_ticker
     my_general.depart_market = depart_market
 
+    # Launch of script which parse MOEX
     my_general.exec_full(path_name_parser_stocks)
 
-    path = 'backend\\Parser_market\\'
-    filename = 'market'
-    list_cur_val = my_general.read_data_json(root_path + path, filename)
+    # Get info of ticker in the moment
+    list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
 
-    for it in list_cur_val:
-        current_bid = {
-            "ticker_value": it[0]["ticker_value"],
-            "date_value": it[0]["date_value"],
-            "time_value": it[0]["time_value"],
-            "last_value": it[0]["last_value"]
-        }
+    # Pseudo converting list to object
+    info_ticker = {
+        "ticker_value": list_cur_val[0][0]["ticker_value"],
+        "date_value": list_cur_val[0][0]["date_value"],
+        "time_value": list_cur_val[0][0]["time_value"],
+        "last_value": list_cur_val[0][0]["last_value"]
+    }
 
-    print("Current bid : ", current_bid)
+    print("Current bid : ", info_ticker)
 
     count_actives = 1
-    stock = Active(name_ticker, current_bid["last_value"], count_actives, depart_market, "buy")
-    print("Current stock : ", stock.ticker, stock.count, stock.market, stock.price)
+    bid = Active(name_ticker, info_ticker["last_value"], count_actives, depart_market)
+
+    # Validation bid !!! (date, time) – 10:40 – 23:30 -> true; otherwise -> false; <<<<< ___________________________ TODO
+
+    my_portfolio.buy(bid)
+
+    my_portfolio.sell(bid)
 
 
 
 
 
-    time_holding = (time_price_in.mounth - time_price_out.mounth);
-    com_found = * 2;
-    current_com_broker = (price_out - price_in) * com_broker;
-    current_com_stock_inchange = (price_out - price_in) * com_stock_exchange;
-    current_com_found = (price_out - price_in) * com_found;
-    current_profit = (price_out - price_in - current_com_broker - current_com_stock_inchange - current_com_found)
+
+
+
+    # time_holding = (time_price_in.mounth - time_price_out.mounth);
+    # com_found = * 2;
+    # current_com_broker = (price_out - price_in) * com_broker;
+    # current_com_stock_inchange = (price_out - price_in) * com_stock_exchange;
+    # current_com_found = (price_out - price_in) * com_found;
+    # current_profit = (price_out - price_in - current_com_broker - current_com_stock_inchange - current_com_found)
     #
     #
     #

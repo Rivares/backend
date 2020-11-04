@@ -29,7 +29,7 @@ path_1 = 'A:\\0_Py\\'
 path_2 = 'C:\\Users\\user\\0_Py\\'
 
 name_ticker = ''
-depart_market = ''
+depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
 root_path = ''
 
 
