@@ -11,9 +11,9 @@
   ],
   [
     {
-      "in_money": {"big_part" : 100, "low_part" : 10},
+      "in_money": {"big_part" : 100, "low_part" : 0.1},
       "out_money": {"big_part" : 0, "low_part" : 0},
-      "current_money": {"big_part" : 100, "low_part" : 10},
+      "current_money": {"big_part" : 100, "low_part" : 0.1},
       "profit_money": {"big_part" : 0, "low_part" : 0},
       "profit_percent": 0,
       "result_act": 0

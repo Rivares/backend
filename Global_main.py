@@ -11,11 +11,12 @@ market = []
 
 # Properties of BROKER and STOCK EXCHANGE
 com_broker = 0.4 * 2  # BUY and SELL
-com_stock_exchange = 0.1 * 2  # __________________________________________________________________________________ !!!!!
+com_stock_exchange = 0.1 * 2
 
 
 class Money:
 
+    # Precision 2 decimal places
     in_money = {"big_part": 0, "low_part": 0}
     out_money = {"big_part": 0, "low_part": 0}
     current_money = {"big_part": 0, "low_part": 0}
@@ -43,21 +44,33 @@ class Money:
     def deposit_funds(self, money):     # in
 
         print("______________ deposit_funds() ______________")
+        self.result_act = 1
 
         in_money = {"big_part": int(money // 1), "low_part": (money % 1)}
+        print("in_money[\"low_part\"]  : ", in_money["low_part"] )
 
-        self.in_money["big_part"] += in_money["big_part"]
-
-        sum_low_part = self.in_money["low_part"] + in_money["low_part"]
-
-        if sum_low_part < 60:
-            self.in_money["low_part"] = sum_low_part
+        if ((in_money["low_part"] > 0.99) or (in_money["low_part"] < 0.01)) and (in_money["low_part"] != 0.0):    # Precision limit
+            self.result_act = -1
         else:
-            self.in_money["big_part"] += 1
-            self.in_money["low_part"] = sum_low_part % 60
+            sum_low_part = self.in_money["low_part"] + in_money["low_part"]
 
-        self.current_money["big_part"] += self.in_money["big_part"]
-        self.current_money["low_part"] += self.in_money["low_part"]
+            if (in_money["big_part"] < 0) or (in_money["low_part"] < 0) or (in_money["big_part"] + in_money["low_part"] == 0):
+                self.result_act = -1
+            else:
+                self.in_money["big_part"] += in_money["big_part"]
+
+                if sum_low_part < 60:
+                    self.in_money["low_part"] = sum_low_part
+                else:
+                    self.in_money["big_part"] += 1
+                    self.in_money["low_part"] = sum_low_part % 60
+
+                self.current_money["big_part"] += self.in_money["big_part"]
+                self.current_money["low_part"] += self.in_money["low_part"]
+
+        print("Operation failed. Error : result_act = ", self.result_act) if (self.result_act < 0) else print(
+            "Operation completed successfully.")
+        self.result_act = 0
 
         print("Income : ", self.in_money["big_part"], self.in_money["low_part"])
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
@@ -66,28 +79,43 @@ class Money:
     def withdraw_funds(self, money):    # out
 
         print("______________ withdraw_funds() ______________")
+        self.result_act = 1
 
         out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
+        print("out_money : ", out_money)
 
-        deduction_big = self.in_money["big_part"] - out_money["big_part"]
-        deduction_low = self.in_money["low_part"] - out_money["low_part"]
-
-        if deduction_big >= 0:
-            self.out_money["big_part"] += out_money["big_part"]
-        else:
+        if (out_money["low_part"] > 0.99) or (out_money["low_part"] < 0.01):    # Precision limit
             self.result_act = -1
-
-        if deduction_low >= 0:
-            self.out_money["low_part"] += out_money["low_part"]
         else:
-            if (self.out_money["big_part"] - 1) >= 0:
-                self.out_money["big_part"] -= 1
-                self.out_money["low_part"] = 10 - abs(deduction_low)
-            else:
-                self.result_act = -1
+            deduction_big = self.current_money["big_part"] - out_money["big_part"]
+            deduction_low = self.current_money["low_part"] - out_money["low_part"]
 
-        self.current_money["big_part"] -= self.out_money["big_part"]
-        self.current_money["low_part"] -= self.out_money["low_part"]
+            print("deduction_big : ", deduction_big)
+            print("deduction_low : ", deduction_low)
+
+            if (deduction_big < 0) or (out_money["big_part"] < 0) or (out_money["big_part"] + out_money["low_part"] == 0):
+                self.result_act = -1
+            else:
+                if deduction_low >= 0:
+                    self.current_money["low_part"] = deduction_low
+
+                    if deduction_big >= 0:
+                        self.current_money["big_part"] = deduction_big
+                    else:
+                        self.result_act = -1
+                else:
+                    if (self.current_money["big_part"] - 1) >= 0:
+                        self.current_money["big_part"] = deduction_big - 1
+                        self.current_money["low_part"] = (10 + (10 * abs(self.current_money["low_part"])) - (10 * abs(out_money["low_part"]))) / 10
+                    else:
+                        self.result_act = -1
+
+                self.out_money["big_part"] += out_money["big_part"]
+                self.out_money["low_part"] += out_money["low_part"]
+
+        print("Operation failed. Error : result_act = ", self.result_act) if (self.result_act < 0) else print(
+            "Operation completed successfully.")
+        self.result_act = 0
 
         print("Income : ", self.in_money["big_part"], self.in_money["low_part"])
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
@@ -210,7 +238,7 @@ class Portfolio:
             self.curr_money.withdraw_funds(require_money)  # get money from portfolio
             self.curr_assetes.append(bid)
 
-    def sell(self, bid):
+    def sell(self, bid):    # <<<<< ________________________TODO
 
         require_assete = (bid.price * bid.count) + com_broker + com_stock_exchange
         # all_money = self.curr_money.current_money["big_part"] + self.curr_money.current_money["low_part"]
@@ -246,9 +274,17 @@ def main():
     # Update list of operations
     my_portfolio.copy_money_operations(Money(list_operations))
 
-    my_portfolio.curr_money.deposit_funds(16000.0)      # set money to portfolio
-    # my_portfolio.curr_money.withdraw_funds(16000.5)     # get money from portfolio
-    # my_portfolio.curr_money.withdraw_funds(16000000)    # checking. To get money more then this it from portfolio <<<<< ___________________________ ERROR !!!
+    my_portfolio.curr_money.deposit_funds(16000.0)      # set money to portfolio : TRUE
+    my_portfolio.curr_money.withdraw_funds(16000.5)     # get money from portfolio : TRUE
+
+    my_portfolio.curr_money.withdraw_funds(16000000)    # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(0)  # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(0.000001)  # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(0.9)  # CHECK : TRUE
+    my_portfolio.curr_money.withdraw_funds(0.99)  # CHECK : TRUE
+    my_portfolio.curr_money.withdraw_funds(0.991)  # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(-0.91)  # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(-0.0001)  # CHECK : FALSE
 
     print("____________________________________ BUY ____________________________________\n")
 
@@ -276,7 +312,7 @@ def main():
     count_actives = 1
     bid = Active(name_ticker, info_ticker["last_value"], count_actives, depart_market)
 
-    # Validation bid !!! (date, time) – 10:40 – 23:30 -> true; otherwise -> false; <<<<< ___________________________ TODO
+    # Validation bid !!! (date, time) – 10:40 – 23:30 -> true; otherwise -> false; <<<<< ________________________TODO
 
     my_portfolio.buy(bid)
 

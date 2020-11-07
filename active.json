@@ -1,18 +1,18 @@
 [
     {
         "ticker": "MAIL",
-        "price": 2119.8,
+        "price": 2241.4,
         "count": 1,
         "market": "STCK",
         "date": {
             "year": "2020",
             "month": "11",
-            "day": "05"
+            "day": "07"
         },
         "time": {
-            "hour": "02",
-            "minute": "30",
-            "second": "15"
+            "hour": "03",
+            "minute": "18",
+            "second": "20"
         }
     }
 ]
