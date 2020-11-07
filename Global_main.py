@@ -286,6 +286,9 @@ def main():
     my_portfolio.curr_money.withdraw_funds(-0.91)  # CHECK : FALSE
     my_portfolio.curr_money.withdraw_funds(-0.0001)  # CHECK : FALSE
 
+    my_portfolio.curr_money.withdraw_funds(97.710)  # set money to portfolio : TRUE ( must 0): TODO
+    my_portfolio.curr_money.deposit_funds(20000.0)  # set money to portfolio : TRUE ( must 20000) TODO
+
     print("____________________________________ BUY ____________________________________\n")
 
     name_ticker = 'MAIL'
