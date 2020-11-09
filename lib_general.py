@@ -52,10 +52,10 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 
-def write_data_json(data, path, file_name):
+def write_data_json(data, path, file_name, option="w"):
     extension = '.json'
 
-    with open(path + file_name + extension, "w", encoding="utf-8") as json_file:
+    with open(path + file_name + extension, option, encoding="utf-8") as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=4)
 
 

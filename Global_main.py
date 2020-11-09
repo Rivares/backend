@@ -27,7 +27,8 @@ class Money:
     def __init__(self, list_params=[]):
 
         if len(list_params) > 0:
-            for param in list_params[-1]:
+            for param in list_params:
+                print("param : ", param)
                 self.in_money = param["in_money"]
                 self.out_money = param["out_money"]
                 self.profit_money = param["profit_money"]
@@ -72,6 +73,22 @@ class Money:
                     self.current_money["big_part"] += 1
                     self.current_money["low_part"] = self.in_money["low_part"]
 
+        path = 'backend\\'
+        filename = 'money_movement'
+
+        prev_data = my_general.read_data_json(root_path + path, filename)
+
+        new_data = prev_data
+        new_data.append({
+                          "in_money": {"big_part" : self.in_money["big_part"], "low_part" : self.in_money["low_part"]},
+                          "out_money": {"big_part" : self.out_money["big_part"], "low_part" : self.out_money["low_part"]},
+                          "current_money": {"big_part" : self.current_money["big_part"], "low_part" : self.current_money["low_part"]},
+                          "profit_money": {"big_part" : self.profit_money["big_part"], "low_part" : self.profit_money["low_part"]},
+                          "profit_percent": self.profit_percent,
+                          "result_act": self.result_act
+                        })
+
+        my_general.write_data_json(new_data, root_path + path, filename)
 
         print("Operation failed. Error : result_act = ", self.result_act) if (self.result_act < 0) else print(
             "Operation completed successfully.")
@@ -135,6 +152,23 @@ class Money:
                     else:
                         self.result_act = -1
 
+        path = 'backend\\'
+        filename = 'money_movement'
+
+        prev_data = my_general.read_data_json(root_path + path, filename)
+
+        new_data = prev_data
+        new_data.append({
+                          "in_money": {"big_part" : self.in_money["big_part"], "low_part" : self.in_money["low_part"]},
+                          "out_money": {"big_part" : self.out_money["big_part"], "low_part" : self.out_money["low_part"]},
+                          "current_money": {"big_part" : self.current_money["big_part"], "low_part" : self.current_money["low_part"]},
+                          "profit_money": {"big_part" : self.profit_money["big_part"], "low_part" : self.profit_money["low_part"]},
+                          "profit_percent": self.profit_percent,
+                          "result_act": self.result_act
+                        })
+
+        my_general.write_data_json(new_data, root_path + path, filename)
+
         print("Operation failed. Error : result_act = ", self.result_act) if (self.result_act < 0) else print(
             "Operation completed successfully.")
         self.result_act = 0
@@ -171,8 +205,10 @@ class Money:
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
+
 class Active:
 
+    act = ''
     ticker = ''
     price = 0.0
     count = 0
@@ -190,12 +226,18 @@ class Active:
         "second": 0
     }
 
-    def __init__(self, ticker='', price=0.0, count=0, market=''):
+    def __init__(self, act, ticker='', price=0.0, count=0, market=''):
 
-        if (ticker != '') and (price > 0.0) and (count > 0) and (market != ''):
+        curr_date_d = my_general.datetime.datetime.today().isoweekday()
+        curr_time_h = my_general.datetime.datetime.today().strftime("%H")
+
+        if (ticker != '') and (price > 0.0) and (count > 0) and (market != '') and \
+           (int(curr_time_h) < 10) and (int(curr_time_h) < 23) and (curr_date_d != 6) and (curr_date_d != 7): # int(curr_time_h) < 10) TODO
             price = price if (price > 0.0) else 0.0
 
             count = count if (count >= 1) else 0
+
+            self.act = act if ((act == 'B') or (act == 'S')) else ''
 
             self.market = market
 
@@ -206,6 +248,7 @@ class Active:
                 self.ticker = ticker
                 self.price = price
                 self.count = count
+                self.result_act = 0
                 self.date = {
                     "year": my_general.datetime.datetime.today().strftime("%Y"),
                     "month": my_general.datetime.datetime.today().strftime("%m"),
@@ -217,22 +260,13 @@ class Active:
                     "second": my_general.datetime.datetime.today().strftime("%S")
                 }
 
-                path = 'backend\\'
-                filename = 'active'
-                data = []
-                data.append({"ticker": self.ticker,
-                             "price": self.price,
-                             "count": self.count,
-                             "market": self.market,
-                             "date": self.date,
-                             "time": self.time})
-                my_general.write_data_json(data, root_path + path, filename)
         else:   # default values
+            self.act = ''
             self.ticker = ''
             self.price = 0.0
             self.count = 0
             self.market = ''
-            self.result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
+            self.result_act = -1  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
             self.date = {
                 "year": 2020,  # default values
@@ -244,13 +278,15 @@ class Active:
                 "minute": 0,
                 "second": 0
             }
+            print("__________________>>>>> Incorrect bid!")
 
     def clear_bid(self):
-
+        self.act = ''
         self.ticker = ''
         self.price = 0.0
         self.count = 0
         self.market = ''
+        self.result_act = 0
         self.date = {
             "year": 2020,  # default values
             "month": 10,
@@ -272,12 +308,24 @@ class Portfolio:
         self.curr_money = Money()
         self.curr_assetes = []
 
+        # Load current assetes TODO
+        path = 'backend\\'
+        filename = 'assets_movement'
+
+        curr_data = my_general.read_data_json(root_path + path, filename)
+
+
+
     def copy_money_operations(self, curr_money_operations):
         self.curr_money = curr_money_operations
 
     def buy(self, bid):
 
         print("\n______________ buy() ______________\n")
+
+        if bid.result_act == -1:
+            print("__________________>>>>> Incorrect bid! : bid.result_act = ", bid.result_act)
+            return
 
         cost = bid.price * bid.count
         commissions = round((((cost * com_broker) + (cost * com_stock_exchange)) * 0.01), 2)
@@ -295,14 +343,61 @@ class Portfolio:
             print("__________ >>> There is little money in the brokerage account for this operation. Bid was canceled.")
             bid.clear_bid()
         else:
-            self.curr_money.withdraw_funds(require_money)  # get money from portfolio
-            self.curr_assetes.append(bid)                  # added bid to list
 
             # connect to API Tinkoff Invest TODO
 
-    def sell(self, bid):    # <<<<< ________________________ TODO
+            status_bid = True   # Answer from API Tinkoff Invest
+
+            curr_time = {
+                "hour": my_general.datetime.datetime.today().strftime("%H"),
+                "minute": my_general.datetime.datetime.today().strftime("%M"),
+                "second": my_general.datetime.datetime.today().strftime("%S")
+            }
+            curr_date = {
+                "year": my_general.datetime.datetime.today().strftime("%Y"),
+                "month": my_general.datetime.datetime.today().strftime("%m"),
+                "day": my_general.datetime.datetime.today().strftime("%d")
+            }
+
+            if status_bid:
+
+                # BOUGHT
+
+                self.curr_money.withdraw_funds(require_money)  # get money from portfolio
+
+                path = 'backend\\'
+                filename = 'assets_movement'
+
+                prev_data = my_general.read_data_json(root_path + path, filename)
+
+                new_data = prev_data
+                new_data.append({"id": 25418934579615,  # Pseudo random numbers TODO
+                                 "act": bid.act,
+                                 "ticker": bid.ticker,
+                                 "price": bid.price,
+                                 "count": bid.count,
+                                 "cost": cost,
+                                 "commissions": commissions,
+                                 "full_cost": require_money,
+                                 "market": bid.market,
+                                 "date": curr_date,
+                                 "time": curr_time})
+
+                print("__________ >>> Bid executed.")
+                my_general.write_data_json(new_data, root_path + path, filename)
+
+                filename = 'history'
+                my_general.write_data_json(new_data, root_path + path, filename)
+            else:
+                print("__________ >>> Bid not executed.")
+
+    def sell(self, bid):
 
         print("\n______________ sell() ______________\n")
+
+        if bid.result_act == -1:
+            print("__________________>>>>> Incorrect bid! : bid.result_act = ", bid.result_act)
+            return
 
         cost = bid.price * bid.count
         commissions = round((((cost * com_broker) + (cost * com_stock_exchange)) * 0.01), 2)
@@ -314,17 +409,105 @@ class Portfolio:
         print("Commissions : ", commissions)
         print("Get money : ", get_money)
 
-        my_asset = self.curr_assetes.pop(bid)  # Find bid to list and pop her TODO
+        my_asset = []
 
-        # profit_money = get_money - my_asset.price TODO
+        path = 'backend\\'
+        filename = 'assets_movement'
 
-        if my_asset.isNotExist():
+        prev_data = my_general.read_data_json(root_path + path, filename)
+
+        # Get all purchase the ticker
+        for it in prev_data:
+            if (it["ticker"] == bid.ticker) and (it["act"] == 'B') and (int(it["count"]) >= bid.count):
+                data = {
+                    "id": int(it["id"]),
+                    "full_cost": float(it["full_cost"]),
+                    "count": int(it["count"])
+                }
+                my_asset.append(data)
+
+        if len(my_asset) <= 0:
             print("__________ >>> There is not asset in the brokerage account for this operation. Bid was canceled.")
             bid.clear_bid()
+            return
         else:
-            self.curr_money.deposit_funds(get_money)  # get money from portfolio
+
+            # Get average full_cost purchase the ticker
+            sum_cost = 0
+            sum_count = 0
+            for it in my_asset:
+                sum_cost += it["full_cost"]
+                sum_count += it["count"]
+
+            average_cost = sum_cost / sum_count
+
+            # Profit on sale
+            profit_money = get_money - average_cost
+            percent_profit = profit_money * 100 / average_cost
+
+            print("percent_profit : ", percent_profit)
+
+            if percent_profit < 1.4:    # Customize coefficient TODO
+                print("Warning!!! Profit more small!!! >>> ", profit_money, " : ", percent_profit, "%")
+                # Ask to user ! TODO
+            else:
+                print("Great deal!!! >>> ", profit_money, " : ", percent_profit, "%")
 
             # connect to API Tinkoff Invest TODO
+
+            status_bid = True   # Answer from API Tinkoff Invest
+
+            curr_time = {
+                "hour": my_general.datetime.datetime.today().strftime("%H"),
+                "minute": my_general.datetime.datetime.today().strftime("%M"),
+                "second": my_general.datetime.datetime.today().strftime("%S")
+            }
+
+            curr_date = {
+                "year": my_general.datetime.datetime.today().strftime("%Y"),
+                "month": my_general.datetime.datetime.today().strftime("%m"),
+                "day": my_general.datetime.datetime.today().strftime("%d")
+            }
+
+            if status_bid:
+
+                # SOLD
+                self.curr_money.deposit_funds(get_money)  # get money from portfolio ERROR : current money TODO
+
+                new_data = prev_data
+                new_data.append({"id": 25418274579615,  # Pseudo random numbers TODO
+                                 "act": bid.act,
+                                 "ticker": bid.ticker,
+                                 "price": bid.price,
+                                 "count": bid.count,
+                                 "cost": cost,
+                                 "commissions": commissions,
+                                 "market": bid.market,
+                                 "date": curr_date,
+                                 "time": curr_time})
+
+                print("__________ >>> Bid executed.")
+                my_general.write_data_json(new_data, root_path + path, filename)
+
+                filename = 'history'
+                my_general.write_data_json(new_data, root_path + path, filename)
+
+                # Delete previously purchase TODO
+                path = 'backend\\'
+                filename = 'assets_movement'
+
+                new_data = my_general.read_data_json(root_path + path, filename)
+
+                # Get all purchase the ticker
+                for it_1 in new_data:
+                    for it_2 in my_asset:
+                        if it_1["id"] == it_2["id"]:
+                            new_data.remove(it_1)
+
+                # Rewrite data without previously purchase
+                my_general.write_data_json(new_data, root_path + path, filename)
+            else:
+                print("__________ >>> Bid not executed.")
 
 
     # def count_assetes(self): TODO
@@ -346,10 +529,10 @@ def main():
     print("____________________________________ PUT MONEY ____________________________________\n")
 
     # Download list of operations from backup file
-    list_operations = my_general.read_data_json(root_path + 'backend\\', 'operations')
+    list_money_movement = my_general.read_data_json(root_path + 'backend\\', 'money_movement')
 
     # Update list of operations
-    my_portfolio.copy_money_operations(Money(list_operations))
+    my_portfolio.copy_money_operations(Money(list_money_movement))
 
     my_portfolio.curr_money.deposit_funds(16000.0)      # set money to portfolio : TRUE
     my_portfolio.curr_money.withdraw_funds(16000.5)     # get money from portfolio : TRUE
@@ -389,7 +572,7 @@ def main():
     my_general.depart_market = depart_market
 
     # Launch of script which parse MOEX
-    my_general.exec_full(path_name_parser_stocks)
+    # my_general.exec_full(path_name_parser_stocks)
 
     # Get info of ticker in the moment
     list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
@@ -405,12 +588,11 @@ def main():
     print("Current bid : ", info_ticker)
 
     count_actives = 1
-    bid = Active(name_ticker, info_ticker["last_value"], count_actives, depart_market)
 
-    # Validation bid !!! (date, time) – 10:40 – 23:30 -> true; otherwise -> false; <<<<< ________________________ TODO
+    # bid = Active('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
+    # my_portfolio.buy(bid)
 
-    my_portfolio.buy(bid)
-
+    bid = Active('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     my_portfolio.sell(bid)
 
 

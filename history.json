@@ -1,0 +1,43 @@
+[
+    {
+        "id": 25418934579615,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2241.4,
+        "count": 1,
+        "cost": 2241.4,
+        "commissions": 22.41,
+        "full_cost": 2263.81,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "11",
+            "day": "09"
+        },
+        "time": {
+            "hour": "02",
+            "minute": "26",
+            "second": "47"
+        }
+    },
+    {
+        "id": 25418274579615,
+        "act": "S",
+        "ticker": "MAIL",
+        "price": 2241.4,
+        "count": 1,
+        "cost": 2241.4,
+        "commissions": 22.41,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "11",
+            "day": "09"
+        },
+        "time": {
+            "hour": "03",
+            "minute": "02",
+            "second": "42"
+        }
+    }
+]
