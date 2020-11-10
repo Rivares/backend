@@ -2,7 +2,7 @@
 
 import lib_general as my_general
 
-my_general.root_path = my_general.path_1 if(my_general.os.path.isdir(my_general.path_1)) else my_general.path_2
+my_general.root_path = my_general.path_1 if (my_general.os.path.isdir(my_general.path_1)) else my_general.path_2
 root_path = my_general.root_path
 
 path_name_ta_stocks = 'TA_stocks\\TA_stocks.py'
@@ -15,7 +15,6 @@ com_stock_exchange = 0.1 * 2
 
 
 class Money:
-
     # Precision 2 decimal places
     in_money = {"big_part": 0, "low_part": 0.0}
     out_money = {"big_part": 0, "low_part": 0.0}
@@ -24,8 +23,10 @@ class Money:
     profit_percent = 0.0
     result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
-    def __init__(self, list_params=[]):
+    def __init__(self, list_params=None):
 
+        if list_params is None:
+            list_params = []
         if len(list_params) > 0:
             for param in list_params:
                 print("param : ", param)
@@ -34,7 +35,7 @@ class Money:
                 self.profit_money = param["profit_money"]
                 self.profit_percent = param["profit_percent"]
                 self.result_act = param["result_act"]
-        else:   # default values
+        else:  # default values
             self.in_money = {"big_part": 0, "low_part": 0.0}
             self.out_money = {"big_part": 0, "low_part": 0.0}
             self.current_money = {"big_part": 0, "low_part": 0.0}
@@ -42,7 +43,7 @@ class Money:
             self.profit_percent = 0.0
             self.result_act = 0  # 2 - success; 1 - cancel; 0 - i.c.; -1 - error;
 
-    def deposit_funds(self, money):     # in
+    def deposit_funds(self, money):  # in
 
         print("\n______________ deposit_funds() ______________\n")
         self.result_act = 1
@@ -50,13 +51,16 @@ class Money:
         in_money = {"big_part": int(money // 1), "low_part": (money % 1)}
         print("in_money  : ", in_money)
 
-        if ((in_money["low_part"] > 0.99) or (in_money["low_part"] < 0.01)) and (in_money["low_part"] != 0.0):    # Precision limit
+        # Precision limit
+
+        if ((in_money["low_part"] > 0.99) or (in_money["low_part"] < 0.01)) and (in_money["low_part"] != 0.0):
             self.result_act = -1
         else:
             sum_low_part = self.in_money["low_part"] + in_money["low_part"]
             print("sum_low_part  : ", sum_low_part)
 
-            if (in_money["big_part"] < 0) or (in_money["low_part"] < 0) or (in_money["big_part"] + in_money["low_part"] == 0):
+            if (in_money["big_part"] < 0) or (in_money["low_part"] < 0) or \
+                    (in_money["big_part"] + in_money["low_part"] == 0):
                 self.result_act = -1
             else:
                 self.in_money["big_part"] += in_money["big_part"]
@@ -80,13 +84,13 @@ class Money:
 
         new_data = prev_data
         new_data.append({
-                          "in_money": {"big_part" : self.in_money["big_part"], "low_part" : self.in_money["low_part"]},
-                          "out_money": {"big_part" : self.out_money["big_part"], "low_part" : self.out_money["low_part"]},
-                          "current_money": {"big_part" : self.current_money["big_part"], "low_part" : self.current_money["low_part"]},
-                          "profit_money": {"big_part" : self.profit_money["big_part"], "low_part" : self.profit_money["low_part"]},
-                          "profit_percent": self.profit_percent,
-                          "result_act": self.result_act
-                        })
+            "in_money": {"big_part": self.in_money["big_part"], "low_part": self.in_money["low_part"]},
+            "out_money": {"big_part": self.out_money["big_part"], "low_part": self.out_money["low_part"]},
+            "current_money": {"big_part": self.current_money["big_part"], "low_part": self.current_money["low_part"]},
+            "profit_money": {"big_part": self.profit_money["big_part"], "low_part": self.profit_money["low_part"]},
+            "profit_percent": self.profit_percent,
+            "result_act": self.result_act
+        })
 
         my_general.write_data_json(new_data, root_path + path, filename)
 
@@ -98,7 +102,7 @@ class Money:
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
-    def withdraw_funds(self, money):    # out
+    def withdraw_funds(self, money):  # out
 
         print("\n______________ withdraw_funds() ______________\n")
         self.result_act = 1
@@ -106,7 +110,8 @@ class Money:
         out_money = {"big_part": int(money // 1), "low_part": (money % 1)}
         print("out_money : ", out_money)
 
-        if ((out_money["low_part"] > 0.99) or (out_money["low_part"] < 0.01)) and (round(out_money["low_part"], 2) != 0.0):    # Precision limit
+        if ((out_money["low_part"] > 0.99) or (out_money["low_part"] < 0.01)) and (
+                round(out_money["low_part"], 2) != 0.0):  # Precision limit
             self.result_act = -1
         else:
             out_money["low_part"] = round((money % 1), 2)
@@ -119,8 +124,9 @@ class Money:
             print("deduction_low : ", deduction_low)
 
             if (deduction_big < 0) or (out_money["big_part"] < 0) or \
-               (out_money["big_part"] + out_money["low_part"] == 0) or \
-               ((self.current_money["big_part"] + self.current_money["low_part"] - (out_money["big_part"] + out_money["low_part"])) < 0):
+                    (out_money["big_part"] + out_money["low_part"] == 0) or \
+                    ((self.current_money["big_part"] + self.current_money["low_part"] - (
+                            out_money["big_part"] + out_money["low_part"])) < 0):
                 self.result_act = -1
             else:
                 if deduction_low >= 0:
@@ -141,7 +147,8 @@ class Money:
                 else:
                     if (self.current_money["big_part"] - 1) >= 0:
                         self.current_money["big_part"] = deduction_big - 1
-                        self.current_money["low_part"] = round(((10 + (10 * abs(self.current_money["low_part"])) - (10 * abs(out_money["low_part"]))) / 10), 2)
+                        self.current_money["low_part"] = round(((10 + (10 * abs(self.current_money["low_part"])) - (
+                                    10 * abs(out_money["low_part"]))) / 10), 2)
 
                         if sum_low_part >= 1.0:
                             self.out_money["big_part"] += 1
@@ -159,13 +166,13 @@ class Money:
 
         new_data = prev_data
         new_data.append({
-                          "in_money": {"big_part" : self.in_money["big_part"], "low_part" : self.in_money["low_part"]},
-                          "out_money": {"big_part" : self.out_money["big_part"], "low_part" : self.out_money["low_part"]},
-                          "current_money": {"big_part" : self.current_money["big_part"], "low_part" : self.current_money["low_part"]},
-                          "profit_money": {"big_part" : self.profit_money["big_part"], "low_part" : self.profit_money["low_part"]},
-                          "profit_percent": self.profit_percent,
-                          "result_act": self.result_act
-                        })
+            "in_money": {"big_part": self.in_money["big_part"], "low_part": self.in_money["low_part"]},
+            "out_money": {"big_part": self.out_money["big_part"], "low_part": self.out_money["low_part"]},
+            "current_money": {"big_part": self.current_money["big_part"], "low_part": self.current_money["low_part"]},
+            "profit_money": {"big_part": self.profit_money["big_part"], "low_part": self.profit_money["low_part"]},
+            "profit_percent": self.profit_percent,
+            "result_act": self.result_act
+        })
 
         my_general.write_data_json(new_data, root_path + path, filename)
 
@@ -177,7 +184,7 @@ class Money:
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
-    def withdraw_all_funds(self):    # out all
+    def withdraw_all_funds(self):  # out all
 
         print("\n______________ withdraw_all_funds() ______________\n")
 
@@ -191,7 +198,7 @@ class Money:
         print("Outcome : ", self.out_money["big_part"], self.out_money["low_part"])
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
-    def withdraw_all_funds_plus_taxes(self):    # out all + taxes (13%) TODO
+    def withdraw_all_funds_plus_taxes(self):  # out all + taxes (13%) TODO (4)
 
         print("\n______________ withdraw_all_funds_plus_taxes() ______________\n")
 
@@ -206,8 +213,7 @@ class Money:
         print("Current money : ", self.current_money["big_part"], self.current_money["low_part"])
 
 
-class Active:
-
+class Bid:
     act = ''
     ticker = ''
     price = 0.0
@@ -231,8 +237,10 @@ class Active:
         curr_date_d = my_general.datetime.datetime.today().isoweekday()
         curr_time_h = my_general.datetime.datetime.today().strftime("%H")
 
+        # int(curr_time_h) < 10) TODO (!)
         if (ticker != '') and (price > 0.0) and (count > 0) and (market != '') and \
-           (int(curr_time_h) < 10) and (int(curr_time_h) < 23) and (curr_date_d != 6) and (curr_date_d != 7): # int(curr_time_h) < 10) TODO
+           (int(curr_time_h) < 10) and (int(curr_time_h) < 23) and (curr_date_d != 6) and (curr_date_d != 7):
+
             price = price if (price > 0.0) else 0.0
 
             count = count if (count >= 1) else 0
@@ -260,7 +268,7 @@ class Active:
                     "second": my_general.datetime.datetime.today().strftime("%S")
                 }
 
-        else:   # default values
+        else:  # default values
             self.act = ''
             self.ticker = ''
             self.price = 0.0
@@ -300,22 +308,18 @@ class Active:
 
 
 class Portfolio:
-
     curr_money = Money()
-    curr_assetes = []
+    curr_assets = []
 
     def __init__(self):
         self.curr_money = Money()
-        self.curr_assetes = []
+        self.curr_assets = []
 
-        # Load current assetes TODO
-        path = 'backend\\'
-        filename = 'assets_movement'
+    # Load current assets
+    def copy_current_assets(self, curr_assets):
+        self.curr_assets = curr_assets
 
-        curr_data = my_general.read_data_json(root_path + path, filename)
-
-
-
+    # Load current money
     def copy_money_operations(self, curr_money_operations):
         self.curr_money = curr_money_operations
 
@@ -344,9 +348,9 @@ class Portfolio:
             bid.clear_bid()
         else:
 
-            # connect to API Tinkoff Invest TODO
+            # connect to API Tinkoff Invest TODO (3)
 
-            status_bid = True   # Answer from API Tinkoff Invest
+            status_bid = True  # Answer from API Tinkoff Invest
 
             curr_time = {
                 "hour": my_general.datetime.datetime.today().strftime("%H"),
@@ -366,12 +370,12 @@ class Portfolio:
                 self.curr_money.withdraw_funds(require_money)  # get money from portfolio
 
                 path = 'backend\\'
-                filename = 'assets_movement'
+                filename = 'list_current_assets'
 
                 prev_data = my_general.read_data_json(root_path + path, filename)
 
                 new_data = prev_data
-                new_data.append({"id": 25418934579615,  # Pseudo random numbers TODO
+                new_data.append({"id": my_general.random.randint(1000000000, 9999999999),
                                  "act": bid.act,
                                  "ticker": bid.ticker,
                                  "price": bid.price,
@@ -386,7 +390,7 @@ class Portfolio:
                 print("__________ >>> Bid executed.")
                 my_general.write_data_json(new_data, root_path + path, filename)
 
-                filename = 'history'
+                filename = 'list_operations_assets'
                 my_general.write_data_json(new_data, root_path + path, filename)
             else:
                 print("__________ >>> Bid not executed.")
@@ -412,7 +416,7 @@ class Portfolio:
         my_asset = []
 
         path = 'backend\\'
-        filename = 'assets_movement'
+        filename = 'list_current_assets'
 
         prev_data = my_general.read_data_json(root_path + path, filename)
 
@@ -447,15 +451,15 @@ class Portfolio:
 
             print("percent_profit : ", percent_profit)
 
-            if percent_profit < 1.4:    # Customize coefficient TODO
+            if percent_profit < 1.4:  # Customize coefficient TODO (2.1)
                 print("Warning!!! Profit more small!!! >>> ", profit_money, " : ", percent_profit, "%")
-                # Ask to user ! TODO
+                # Ask to user ! TODO (4)
             else:
                 print("Great deal!!! >>> ", profit_money, " : ", percent_profit, "%")
 
-            # connect to API Tinkoff Invest TODO
+            # connect to API Tinkoff Invest TODO (3)
 
-            status_bid = True   # Answer from API Tinkoff Invest
+            status_bid = True  # Answer from API Tinkoff Invest
 
             curr_time = {
                 "hour": my_general.datetime.datetime.today().strftime("%H"),
@@ -472,10 +476,10 @@ class Portfolio:
             if status_bid:
 
                 # SOLD
-                self.curr_money.deposit_funds(get_money)  # get money from portfolio ERROR : current money TODO
+                self.curr_money.deposit_funds(get_money)
 
                 new_data = prev_data
-                new_data.append({"id": 25418274579615,  # Pseudo random numbers TODO
+                new_data.append({"id": my_general.random.randint(1000000000, 9999999999),
                                  "act": bid.act,
                                  "ticker": bid.ticker,
                                  "price": bid.price,
@@ -489,12 +493,12 @@ class Portfolio:
                 print("__________ >>> Bid executed.")
                 my_general.write_data_json(new_data, root_path + path, filename)
 
-                filename = 'history'
+                filename = 'list_operations_assets'
                 my_general.write_data_json(new_data, root_path + path, filename)
 
-                # Delete previously purchase TODO
+                # Delete previously purchase
                 path = 'backend\\'
-                filename = 'assets_movement'
+                filename = 'list_current_assets'
 
                 new_data = my_general.read_data_json(root_path + path, filename)
 
@@ -509,22 +513,20 @@ class Portfolio:
             else:
                 print("__________ >>> Bid not executed.")
 
-
-    # def count_assetes(self): TODO
+    # def count_assets(self): TODO (2.2)
     #
     #
-    # def count_assetes(self, ticker): TODO
+    # def count_assets(self, ticker): TODO (2.3)
     #
     #
-    # def cost_assetes(self): TODO
+    # def cost_assets(self): TODO (2.4)
 
 
 def main():
-
     # Empty portfolio
     my_portfolio = Portfolio()
 
-    list_assetes = []
+    list_assets = []
 
     print("____________________________________ PUT MONEY ____________________________________\n")
 
@@ -534,10 +536,10 @@ def main():
     # Update list of operations
     my_portfolio.copy_money_operations(Money(list_money_movement))
 
-    my_portfolio.curr_money.deposit_funds(16000.0)      # set money to portfolio : TRUE
-    my_portfolio.curr_money.withdraw_funds(16000.5)     # get money from portfolio : TRUE
+    my_portfolio.curr_money.deposit_funds(16000.0)  # set money to portfolio : TRUE
+    my_portfolio.curr_money.withdraw_funds(16000.5)  # get money from portfolio : TRUE
 
-    my_portfolio.curr_money.withdraw_funds(16000000)    # CHECK : FALSE
+    my_portfolio.curr_money.withdraw_funds(16000000)  # CHECK : FALSE
     my_portfolio.curr_money.withdraw_funds(0)  # CHECK : FALSE
     my_portfolio.curr_money.withdraw_funds(0.000001)  # CHECK : FALSE
     my_portfolio.curr_money.withdraw_funds(0.1)  # CHECK : TRUE
@@ -550,7 +552,7 @@ def main():
 
     # my_portfolio.curr_money.withdraw_all_funds()  # CHECK : TRUE
     my_portfolio.curr_money.withdraw_funds(15998.0)  # CHECK : TRUE
-    # my_portfolio.curr_money.withdraw_all_funds_plus_taxes(self):  # out all + taxes (13%) TODO
+    # my_portfolio.curr_money.withdraw_all_funds_plus_taxes(self):  # out all + taxes (13%) TODO (4)
 
     print("\n_______________________________________________________________________________________________________\n")
 
@@ -589,18 +591,11 @@ def main():
 
     count_actives = 1
 
-    # bid = Active('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
+    # bid = Bid('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.buy(bid)
 
-    bid = Active('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
+    bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     my_portfolio.sell(bid)
-
-
-
-
-
-
-
 
     # time_holding = (time_price_in.mounth - time_price_out.mounth);
     # com_found = * 2;
