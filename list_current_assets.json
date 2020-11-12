@@ -1,6 +1,6 @@
 [
     {
-        "id": 2702564672,
+        "id": 9961024145,
         "act": "S",
         "ticker": "MAIL",
         "price": 2241.4,
@@ -11,12 +11,32 @@
         "date": {
             "year": "2020",
             "month": "11",
-            "day": "11"
+            "day": "12"
         },
         "time": {
-            "hour": "01",
-            "minute": "00",
-            "second": "46"
+            "hour": "03",
+            "minute": "22",
+            "second": "37"
+        }
+    },
+    {
+        "id": 7492414694,
+        "act": "S",
+        "ticker": "MAIL",
+        "price": 2241.4,
+        "count": 1,
+        "cost": 2241.4,
+        "commissions": 22.41,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "11",
+            "day": "12"
+        },
+        "time": {
+            "hour": "03",
+            "minute": "22",
+            "second": "49"
         }
     }
 ]

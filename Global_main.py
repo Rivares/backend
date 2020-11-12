@@ -14,6 +14,10 @@ com_broker = 0.4 * 2  # BUY and SELL
 com_stock_exchange = 0.1 * 2
 
 
+# Properties of STRATEGY
+coeff_profit = 1.5  # in month
+
+
 class Money:
     # Precision 2 decimal places
     in_money = {"big_part": 0, "low_part": 0.0}
@@ -56,7 +60,7 @@ class Money:
         if ((in_money["low_part"] > 0.99) or (in_money["low_part"] < 0.01)) and (in_money["low_part"] != 0.0):
             self.result_act = -1
         else:
-            sum_low_part = self.in_money["low_part"] + in_money["low_part"]
+            sum_low_part = round(self.current_money["low_part"] + in_money["low_part"], 2)
             print("sum_low_part  : ", sum_low_part)
 
             if (in_money["big_part"] < 0) or (in_money["low_part"] < 0) or \
@@ -64,12 +68,12 @@ class Money:
                 self.result_act = -1
             else:
                 self.in_money["big_part"] += in_money["big_part"]
+                self.current_money["big_part"] += in_money["big_part"]
 
                 if sum_low_part < 1.0:
                     self.in_money["low_part"] = sum_low_part
 
-                    self.current_money["big_part"] += in_money["big_part"]
-                    self.current_money["low_part"] += in_money["low_part"]
+                    self.current_money["low_part"] = sum_low_part
                 else:
                     self.in_money["big_part"] += 1
                     self.in_money["low_part"] = round(sum_low_part - 1, 2)
@@ -387,6 +391,8 @@ class Portfolio:
                                  "date": curr_date,
                                  "time": curr_time})
 
+                self.curr_assets.append(new_data)
+
                 print("__________ >>> Bid executed.")
                 my_general.write_data_json(new_data, root_path + path, filename)
 
@@ -414,6 +420,8 @@ class Portfolio:
         print("Get money : ", get_money)
 
         my_asset = []
+        buff_month = 0
+        count_month = 0
 
         path = 'backend\\'
         filename = 'list_current_assets'
@@ -426,7 +434,8 @@ class Portfolio:
                 data = {
                     "id": int(it["id"]),
                     "full_cost": float(it["full_cost"]),
-                    "count": int(it["count"])
+                    "count": int(it["count"]),
+                    "month": int(it["date"]["month"])
                 }
                 my_asset.append(data)
 
@@ -435,6 +444,17 @@ class Portfolio:
             bid.clear_bid()
             return
         else:
+
+            # Get count month which hide this ticker
+            buff_month = int(my_asset[0]["month"])
+            count_month += 1
+            for it in my_asset:
+
+                if int(it["month"]) != buff_month:
+                    count_month += 1
+                    buff_month = int(it["month"])
+
+            print("_________________________________ <<<<<<<<<<< TEST 3 <<<<<<<<<<< ", count_month)
 
             # Get average full_cost purchase the ticker
             sum_cost = 0
@@ -451,7 +471,7 @@ class Portfolio:
 
             print("percent_profit : ", percent_profit)
 
-            if percent_profit < 1.4:  # Customize coefficient TODO (2.1)
+            if percent_profit < coeff_profit * count_month:     # coeff_profit * count_month = 1.5 * month => 15% / year
                 print("Warning!!! Profit more small!!! >>> ", profit_money, " : ", percent_profit, "%")
                 # Ask to user ! TODO (4)
             else:
@@ -513,13 +533,33 @@ class Portfolio:
             else:
                 print("__________ >>> Bid not executed.")
 
-    # def count_assets(self): TODO (2.2)
-    #
-    #
-    # def count_assets(self, ticker): TODO (2.3)
-    #
-    #
-    # def cost_assets(self): TODO (2.4)
+    def count_assets(self):
+        return len(self.curr_assets)
+
+    def count_assets(self, ticker):
+
+        count = 0
+        for it in self.curr_assets:
+            if it["ticker"] == ticker:
+                count += 1
+
+        return count
+
+    def count_assets_procent(self, ticker):
+
+        count_ticker = 0
+        for it in self.curr_assets:
+            if it["ticker"] == ticker:
+                count_ticker += 1
+
+        return (count_ticker * 100) / len(self.curr_assets)
+
+    # def cost_assets(self): TODO (1)
+    # to need current_price of asset * count_assets
+
+    # def cost_assets(self, ticker): TODO (1)
+    # to need ((current_price * count_assets) - (initial_price * count_assets)) of asset
+    # may be average price ???
 
 
 def main():
@@ -591,8 +631,8 @@ def main():
 
     count_actives = 1
 
-    # bid = Bid('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
-    # my_portfolio.buy(bid)
+    bid = Bid('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
+    my_portfolio.buy(bid)
 
     bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     my_portfolio.sell(bid)
