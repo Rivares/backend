@@ -315,11 +315,36 @@ class Portfolio:
     def __init__(self):
         self.curr_money = Money()
         self.curr_assets = []
-        count_all_assets = 0
+        self.count_all_assets = 0
 
     # Load current money
     def copy_money_operations(self, curr_money_operations):
         self.curr_money = curr_money_operations
+
+    # Load assets from file
+    def copy_current_data_of_assets(self):
+
+        print("\n______________ copy_current_data_of_assets() ______________\n")
+
+        path = 'backend\\'
+        filename = 'list_current_assets'
+
+        curr_assets = my_general.read_data_json(root_path + path, filename)
+        self.curr_assets.clear()
+
+        for it in curr_assets:
+            if it["act"] == "B":
+                self.curr_assets.append({"id": it["id"],
+                                         "act": it["act"],
+                                         "ticker": it["ticker"],
+                                         "price": it["price"],
+                                         "count": it["count"],
+                                         "cost": it["cost"],
+                                         "commissions": it["commissions"],
+                                         "full_cost": it["full_cost"],
+                                         "market": it["market"],
+                                         "date": it["date"],
+                                         "time": it["time"]})
 
     def buy(self, bid):
 
@@ -483,8 +508,7 @@ class Portfolio:
                     for it_2 in my_asset:
                         if it_1["id"] == it_2["id"]:
                             new_data.remove(it_1)
-
-                # TODO (1) : self.curr_assets.pop(new_data)
+                            self.curr_assets.pop(it_1)
 
                 # Rewrite data without previously purchase
                 my_general.write_data_json(new_data, root_path + path, filename)
@@ -526,30 +550,6 @@ class Portfolio:
 
         return (count_ticker * 100) / len(self.curr_assets)
 
-    def copy_current_data_of_assets(self):
-
-        print("\n______________ copy_current_data_of_assets() ______________\n")
-
-        path = 'backend\\'
-        filename = 'list_current_assets'
-
-        curr_assets = my_general.read_data_json(root_path + path, filename)
-        self.curr_assets.clear()
-
-        for it in curr_assets:
-            if it["act"] == "B":
-                self.curr_assets.append({"id": it["id"],
-                                         "act": it["act"],
-                                         "ticker": it["ticker"],
-                                         "price": it["price"],
-                                         "count": it["count"],
-                                         "cost": it["cost"],
-                                         "commissions": it["commissions"],
-                                         "full_cost": it["full_cost"],
-                                         "market": it["market"],
-                                         "date": it["date"],
-                                         "time": it["time"]})
-
     def average_cost_assets(self, name_ticker, count_ticker=1):
 
         print("\n______________ average_cost_assets() ______________\n")
@@ -586,15 +586,47 @@ class Portfolio:
                     buff_month = int(it["month"])
 
             # Get average full_cost purchase the ticker
-            sum_cost = 0
+            sum_cost = 0.0
             count = 0
             for it in my_asset:
                 sum_cost += it["full_cost"]
                 count += 1
 
-            average_cost = sum_cost / count
+            average_cost = float(sum_cost / count)
 
             return average_cost, count_month, my_asset, prev_data
+
+    def average_commission_ticker(self, name_ticker):
+
+        print("\n______________ average_commission_ticker() ______________\n")
+
+        self.copy_current_data_of_assets()
+        sum_commission = 0.0
+        count = 0
+
+        # Get all purchase the ticker
+        for it in self.curr_assets:
+            if (it["ticker"] == name_ticker) and (int(it["count"]) > 0):
+                sum_commission += float(it["commissions"])
+                count += 1
+
+        average_commission = sum_commission / count
+
+        return average_commission
+
+    def sum_commission_ticker(self, name_ticker):
+
+        print("\n______________ sum_commission_ticker() ______________\n")
+
+        self.copy_current_data_of_assets()
+        sum_commission = 0.0
+
+        # Get all purchase the ticker
+        for it in self.curr_assets:
+            if (it["ticker"] == name_ticker) and (int(it["count"]) > 0):
+                sum_commission += float(it["commissions"])
+
+        return sum_commission
 
     def cost_all_assets(self):
 
@@ -681,38 +713,157 @@ class Portfolio:
 
         print("\n______________ current_profit_ticker_percent() ______________\n")
 
-        current_cost_assets, current_full_price, initial_average_full_price = self.current_profit_ticker(name_ticker, depart_market)
+        current_cost_assets, current_full_price, initial_average_full_price = \
+            self.current_profit_ticker(name_ticker, depart_market)
 
         return round((((current_full_price * 100) / initial_average_full_price) - 100.0), 2)
 
-    def current_profit_all(self):   # TODO (1)
+    def current_profit_all(self):
 
         print("\n______________ current_profit_all() ______________\n")
 
         self.copy_current_data_of_assets()  # Update current_list_assets
 
         full_profit = 0.0
+        prev_ticker = ''
 
         for it in self.curr_assets:
-            current_cost_assets, current_full_price, initial_average_full_price = self.current_profit_ticker(it["ticker"], it["market"])
-            full_profit += current_cost_assets
+            if prev_ticker != it["ticker"]:
+                current_cost_assets, current_full_price, initial_average_full_price = \
+                    self.current_profit_ticker(it["ticker"], it["market"])
+                full_profit += current_cost_assets
+                prev_ticker = it["ticker"]
 
         return round(full_profit, 2)
 
-    # def current_profit_all_percent(self, name_ticker, depart_market): TODO (1)
-    #
-    #     current_cost_assets, current_full_price, initial_average_full_price = self.current_profit_ticker(name_ticker, depart_market)
-    #
-    #     return (current_full_price * 100) / initial_average_full_price
+    def current_profit_all_percent(self):
 
+        print("\n______________ current_profit_all_percent() ______________\n")
 
-    # def print_current_list_assets(self): TODO (1)
+        full_profit = self.current_profit_all()
+        prev_ticker = ''
 
-    # def print_market(self, depart_market): TODO (1)
+        initial_average_full_price = 0.0
 
-    # def print_active_bids(self, depart_market): TODO (1)
+        for it in self.curr_assets:
+            if prev_ticker != it["ticker"]:
+                count_assets = self.count_assets(it["ticker"])
+                initial_average_full_price_ticker, count_month, my_asset, prev_data = \
+                    self.average_cost_assets(it["ticker"])
+                initial_average_full_price += round(initial_average_full_price_ticker * count_assets, 2)
 
-    # def print_graph(self): TODO (1)
+                # print("initial_average_full_price_ticker : ", initial_average_full_price_ticker)
+                # print("initial_average_full_price : ", initial_average_full_price)
+
+                prev_ticker = it["ticker"]
+
+        return round(((full_profit * 100) / initial_average_full_price), 2)
+
+    def print_list_current_assets(self):
+
+        print("\n______________ print_list_current_assets() ______________\n")
+
+        prev_ticker = ''
+
+        for it in self.curr_assets:
+            if prev_ticker != it["ticker"]:
+                ticker = it["ticker"]
+                aver_price, count_month, my_asset, prev_data = self.average_cost_assets(it["ticker"])
+                count = self.count_assets(it["ticker"])
+                sum_commissions = self.sum_commission_ticker(it["ticker"])
+
+                prev_ticker = it["ticker"]
+
+                print("Ticker : ", ticker)
+                print("Average price : ", aver_price)
+                print("Count : ", count)
+                print("Sum of commission : ", sum_commissions)
+
+    def print_market(self, depart_market):  # TODO (1)
+
+        print("\n______________ print_market() ______________\n")
+
+        name_ticker = ''
+        my_general.name_ticker = name_ticker
+        my_general.depart_market = depart_market
+
+        # Launch of script which parse MOEX
+        # my_general.exec_full(path_name_parser_stocks)
+
+        # Get info of ticker in the moment
+        list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
+
+        for ticker in list_cur_val:
+            info_ticker = {
+                "ticker_value": ticker["ticker_value"],
+                "date_value": ticker["date_value"],
+                "time_value": ticker["time_value"],
+                "last_value": ticker["last_value"]
+            }
+
+        # for it in list_cur_val:
+        #     print("Ticker : ", ticker)
+        #     print("Average price : ", aver_price)
+        #     print("? : ", ???)
+        #     print("? : ", ???)
+
+    def print_graph(self, name_ticker, depart_market):    # TODO (1)
+
+        print("\n______________ print_market() ______________\n")
+
+        # 1. Get historical data
+        curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
+                                               my_general.datetime.datetime.now().month,
+                                               my_general.datetime.datetime.now().day)
+
+        exporter = my_general.Exporter()
+
+        market = []
+
+        if depart_market == "GDS":
+            list_name_goods = [
+                'Brent',
+                'Natural Gas',
+                'Алюминий',
+                'Бензин',
+                'Золото',
+                'Мазут',
+                'Медь',
+                'Никель',
+                'Палладий',
+                'Платина',
+                'Пшеница',
+                'Серебро'
+            ]
+
+            for goods in list_name_goods:
+                my_general.time.sleep(1)  # sec
+                # print('\n__________________ ' + goods + ' __________________\n')
+                ticker = exporter.lookup(name=goods, market=my_general.Market.COMMODITIES,
+                                         name_comparator=my_general.LookupComparator.EQUALS)
+                data = exporter.download(ticker.index[0], market=my_general.Market.COMMODITIES, start_date=curr_moment)
+
+                open_value = data.get('<OPEN>')
+                close_value = data.get('<CLOSE>')
+                high_value = data.get('<HIGH>')
+                low_value = data.get('<LOW>')
+                volume_value = data.get('<VOL>')
+
+                list_open_value = open_value.to_list()
+                list_close_value = close_value.to_list()
+                list_high_value = high_value.to_list()
+                list_low_value = low_value.to_list()
+                list_volume_value = volume_value.to_list()
+
+                market.append({"open_value": list_open_value[-1],
+                               "close_value": list_close_value[-1],
+                               "high_value": list_high_value[-1],
+                               "low_value": list_low_value[-1],
+                               "volume_value": list_volume_value[-1]})
+
+                # print(data.tail(1))
+
+    # def print_active_bids(self, depart_market): TODO (2)
 
 
 def main():
@@ -786,11 +937,16 @@ def main():
     bid = Bid('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     my_portfolio.buy(bid)
 
-    print("Current cost assets : ", my_portfolio.current_profit_ticker(name_ticker, depart_market))
-    print("Current cost assets percent : ", my_portfolio.current_profit_ticker_percent(name_ticker, depart_market))
-    print("Current cost all assets : ", my_portfolio.cost_all_assets())
-    print("Share assets portfolio percent : ", my_portfolio.share_assets_portfolio_percent())
-    print("Current profit all : ", my_portfolio.current_profit_all())
+    print("Current cost assets --------> ", my_portfolio.current_profit_ticker(name_ticker, depart_market))
+    print("Current cost assets percent --------> ", my_portfolio.current_profit_ticker_percent(name_ticker, depart_market))
+    print("Current cost all assets --------> ", my_portfolio.cost_all_assets())
+    print("Share assets portfolio percent --------> ", my_portfolio.share_assets_portfolio_percent())
+    print("Current profit all --------> ", my_portfolio.current_profit_all())
+    print("Current profit all to percent --------> ", my_portfolio.current_profit_all_percent())
+    print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
+
+
+
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
 
