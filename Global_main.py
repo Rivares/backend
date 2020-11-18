@@ -493,6 +493,8 @@ class Portfolio:
 
     def count_assets(self, ticker=''):
 
+        print("\n______________ count_assets() ______________\n")
+
         self.copy_current_data_of_assets()
         count_all_assets = 0
         count_ticker = 0
@@ -513,6 +515,8 @@ class Portfolio:
 
     def count_assets_percent(self, ticker):
 
+        print("\n______________ count_assets_percent() ______________\n")
+
         self.copy_current_data_of_assets()
         count_ticker = 0
 
@@ -523,6 +527,8 @@ class Portfolio:
         return (count_ticker * 100) / len(self.curr_assets)
 
     def copy_current_data_of_assets(self):
+
+        print("\n______________ copy_current_data_of_assets() ______________\n")
 
         path = 'backend\\'
         filename = 'list_current_assets'
@@ -545,6 +551,8 @@ class Portfolio:
                                          "time": it["time"]})
 
     def average_cost_assets(self, name_ticker, count_ticker=1):
+
+        print("\n______________ average_cost_assets() ______________\n")
 
         my_asset = []
         count_month = 0
@@ -589,6 +597,9 @@ class Portfolio:
             return average_cost, count_month, my_asset, prev_data
 
     def cost_all_assets(self):
+
+        print("\n______________ cost_all_assets() ______________\n")
+
         self.copy_current_data_of_assets()  # Update current_list_assets
 
         all_full_price = 0
@@ -599,28 +610,26 @@ class Portfolio:
 
         return round(all_full_price, 2)
 
-    def cost_all_assets_percent(self):  # TODO (1)
+    def share_assets_portfolio_percent(self):
         self.copy_current_data_of_assets()  # Update current_list_assets
 
         curr_all_full_price = self.cost_all_assets()
+        curr_all_money = self.curr_money.current_money["big_part"] + self.curr_money.current_money["low_part"]
 
-        return round((((current_full_price * 100) / initial_average_full_price) - 100.0), 2)
+        return round((100.0 - ((curr_all_money * 100) / (curr_all_full_price + curr_all_money))), 2)
 
     def cost_ticker_assets(self, name_ticker):
+
+        print("\n______________ cost_ticker_assets() ______________\n")
 
         self.copy_current_data_of_assets()  # Update current_list_assets
         average_cost, count_month, my_asset, prev_data = self.average_cost_assets(name_ticker)
 
         return average_cost
 
-    # def cost_ticker_assets_percent(self, name_ticker):  # TODO (1)
-    #
-    #     self.copy_current_data_of_assets()  # Update current_list_assets
-    #     average_cost, count_month, my_asset, prev_data = self.average_cost_assets(name_ticker)
-    #
-    #     return average_cost
-
     def current_profit_ticker(self, name_ticker, depart_market):
+
+        print("\n______________ current_profit_ticker() ______________\n")
 
         # 1. Get initial_price of ticker from my_assets
 
@@ -628,7 +637,7 @@ class Portfolio:
         initial_average_full_price, count_month, my_asset, prev_data = self.average_cost_assets(name_ticker)
         initial_average_full_price = round(initial_average_full_price * count_assets, 2)
 
-        print("initial_average_full_price : ", initial_average_full_price)
+        print("Initial average full price : ", initial_average_full_price)
 
         if initial_average_full_price > 0:
 
@@ -670,58 +679,25 @@ class Portfolio:
 
     def current_profit_ticker_percent(self, name_ticker, depart_market):
 
+        print("\n______________ current_profit_ticker_percent() ______________\n")
+
         current_cost_assets, current_full_price, initial_average_full_price = self.current_profit_ticker(name_ticker, depart_market)
 
         return round((((current_full_price * 100) / initial_average_full_price) - 100.0), 2)
 
-    # def current_profit_all(self, name_ticker, depart_market): TODO (1)
-    #
-    #     count_assets = self.count_assets(name_ticker)
-    #
-    #     # 1. Get initial_price of ticker from my_assets
-    #
-    #     initial_average_full_price, count_month, my_asset, prev_data = self.average_cost_assets(name_ticker)
-    #     initial_average_full_price = round(initial_average_full_price * count_assets, 2)
-    #
-    #     print("initial_average_full_price : ", initial_average_full_price)
-    #
-    #     if initial_average_full_price > 0:
-    #
-    #         # 2. Get current_price of ticker from market
-    #
-    #         my_general.name_ticker = name_ticker
-    #         my_general.depart_market = depart_market
-    #
-    #         # Launch of script which parse MOEX
-    #         my_general.exec_full(path_name_parser_stocks)
-    #
-    #         # Get info of ticker in the moment
-    #         list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
-    #
-    #         # Pseudo converting list to object
-    #         info_ticker = {
-    #             "ticker_value": list_cur_val[0][0]["ticker_value"],
-    #             "date_value": list_cur_val[0][0]["date_value"],
-    #             "time_value": list_cur_val[0][0]["time_value"],
-    #             "last_value": list_cur_val[0][0]["last_value"]
-    #         }
-    #
-    #         current_price = float(info_ticker["last_value"])
-    #         print("Current price : ", current_price)
-    #
-    #         cost = current_price * count_assets
-    #         commissions = round((((cost * com_broker) + (cost * com_stock_exchange)) * 0.01), 2)
-    #         current_full_price = round(cost - commissions, 2)
-    #
-    #         print("Full price (with commissions) : ", current_full_price)
-    #
-    #         # 3. Get current_cost_assets of ticker
-    #
-    #         current_cost_assets = current_full_price - initial_average_full_price
-    #
-    #         return round(current_cost_assets, 2), current_full_price, initial_average_full_price
-    #     else:
-    #         return -1, -1, -1
+    def current_profit_all(self):   # TODO (1)
+
+        print("\n______________ current_profit_all() ______________\n")
+
+        self.copy_current_data_of_assets()  # Update current_list_assets
+
+        full_profit = 0.0
+
+        for it in self.curr_assets:
+            current_cost_assets, current_full_price, initial_average_full_price = self.current_profit_ticker(it["ticker"], it["market"])
+            full_profit += current_cost_assets
+
+        return round(full_profit, 2)
 
     # def current_profit_all_percent(self, name_ticker, depart_market): TODO (1)
     #
@@ -731,6 +707,12 @@ class Portfolio:
 
 
     # def print_current_list_assets(self): TODO (1)
+
+    # def print_market(self, depart_market): TODO (1)
+
+    # def print_active_bids(self, depart_market): TODO (1)
+
+    # def print_graph(self): TODO (1)
 
 
 def main():
@@ -807,7 +789,8 @@ def main():
     print("Current cost assets : ", my_portfolio.current_profit_ticker(name_ticker, depart_market))
     print("Current cost assets percent : ", my_portfolio.current_profit_ticker_percent(name_ticker, depart_market))
     print("Current cost all assets : ", my_portfolio.cost_all_assets())
-
+    print("Share assets portfolio percent : ", my_portfolio.share_assets_portfolio_percent())
+    print("Current profit all : ", my_portfolio.current_profit_all())
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
 
