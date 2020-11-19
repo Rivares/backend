@@ -394,7 +394,7 @@ class Portfolio:
 
                 self.copy_current_data_of_assets()
 
-                self.curr_assets.append({"id": my_general.random.randint(1000000000, 9999999999),
+                self.curr_assets.append({"id": my_general.md5(my_general.random.randint(1000000000, 9999999999)),
                                          "act": bid.act,
                                          "ticker": bid.ticker,
                                          "price": bid.price,
@@ -477,7 +477,7 @@ class Portfolio:
                 self.curr_money.deposit_funds(get_money)
 
                 new_data = prev_data
-                new_data.append({"id": my_general.random.randint(1000000000, 9999999999),
+                new_data.append({"id": my_general.md5(my_general.random.randint(1000000000, 9999999999)),
                                  "act": bid.act,
                                  "ticker": bid.ticker,
                                  "price": bid.price,
@@ -779,89 +779,220 @@ class Portfolio:
                 print("Count : ", count)
                 print("Sum of commission : ", sum_commissions)
 
-    def print_market(self, depart_market):  # TODO (1)
+    def print_market(self, depart_market):
 
         print("\n______________ print_market() ______________\n")
 
-        name_ticker = ''
+        name_ticker = ''    # All ticker
         my_general.name_ticker = name_ticker
         my_general.depart_market = depart_market
 
         # Launch of script which parse MOEX
-        # my_general.exec_full(path_name_parser_stocks)
+        my_general.exec_full(path_name_parser_stocks)
 
         # Get info of ticker in the moment
         list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
 
         for ticker in list_cur_val:
-            info_ticker = {
-                "ticker_value": ticker["ticker_value"],
-                "date_value": ticker["date_value"],
-                "time_value": ticker["time_value"],
-                "last_value": ticker["last_value"]
-            }
+            print("Ticker : ", ticker["ticker_value"])
+            print("Price : ", ticker["last_value"])
+            print("Volume : ", ticker["volume_value"])
 
-        # for it in list_cur_val:
-        #     print("Ticker : ", ticker)
-        #     print("Average price : ", aver_price)
-        #     print("? : ", ???)
-        #     print("? : ", ???)
-
-    def print_graph(self, name_ticker, depart_market):    # TODO (1)
+    def print_graph(self, name_ticker, depart_market):
 
         print("\n______________ print_market() ______________\n")
 
         # 1. Get historical data
-        curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
-                                               my_general.datetime.datetime.now().month,
-                                               my_general.datetime.datetime.now().day)
+
+        time_frame = [my_general.Timeframe.TICKS, my_general.Timeframe.MINUTES5]    # TODO (1)
+        start_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
+                                                my_general.datetime.datetime.now().month,
+                                                my_general.datetime.datetime.now().day)
 
         exporter = my_general.Exporter()
 
         market = []
 
-        if depart_market == "GDS":
-            list_name_goods = [
-                'Brent',
-                'Natural Gas',
-                'Алюминий',
-                'Бензин',
-                'Золото',
-                'Мазут',
-                'Медь',
-                'Никель',
-                'Палладий',
-                'Платина',
-                'Пшеница',
-                'Серебро'
+        list_goods = []
+        list_currency = []
+        list_indexes = []
+        list_etf = []
+        list_stocks = []
+
+        if name_ticker == '':
+            list_name_stocks = [
+                'ETLN',
+                'QIWI',
+                'TCSG',
+                'FIVE',
+                'AKRN',
+                'ALRS',
+                'AFLT',
+                'BANE',
+                'BSPB',
+                'VSMO',
+                'VTBR',
+                'GAZP',
+                'SIBN',
+                'PIKK',
+                'DSKY',
+                'IRAO',
+                'KBTK',
+                'LNTA',
+                'LSNG', 'LSNGР',
+                'LSRG',
+                'LKOH',
+                'MVID',
+                'MGNT',
+                'MGTS', 'MGTSР',
+                'MTLR', 'MTLRР',
+                'CBOM',
+                'MAGN',
+                'MOEX',
+                'MSTT',
+                'MSNG',
+                'MSRS',
+                'MRKV',
+                'MRKU',
+                'MRKC',
+                'MRKP',
+                'MTSS',
+                'NKNC', 'NKNCР',
+                'NLMK',
+                'NMTP',
+                'NVTK',
+                'GMKN',
+                'OGKB',
+                'POLY',
+                'PLZL',
+                'PRTK',
+                'RASP',
+                'ROSN',
+                'RSTI', 'RSTIР',
+                'RTKM', 'RTKMР',
+                'AGRO',
+                'RUAL',
+                'HYDR',
+                'RNFT',
+                'SFIN',
+                'SBER', 'SBERP',
+                'CHMF',
+                'AFKS',
+                'SNGS', 'SNGSР',
+                'TATN', 'TATNР',
+                'TGKA',
+                'TRMK',
+                'TRNFP',
+                'PHOR',
+                'FEES',
+                'GCHE',
+                'ENRU',
+                'UPRO',
+                'MAIL',
+                'YNDX',
+                'INTC',
+                'CSCO',
+                'HPQ',
+                'HPE',
+                'T'
             ]
+        else:
+            list_name_stocks = [name_ticker]
 
-            for goods in list_name_goods:
-                my_general.time.sleep(1)  # sec
-                # print('\n__________________ ' + goods + ' __________________\n')
-                ticker = exporter.lookup(name=goods, market=my_general.Market.COMMODITIES,
-                                         name_comparator=my_general.LookupComparator.EQUALS)
-                data = exporter.download(ticker.index[0], market=my_general.Market.COMMODITIES, start_date=curr_moment)
+        for stock in list_name_stocks:
+            my_general.time.sleep(1)  # sec
+            # print('\n__________________ ' + stock + ' __________________\n')
+            ticker = exporter.lookup(code=stock, market=my_general.Market.SHARES,
+                                     name_comparator=my_general.LookupComparator.EQUALS)
+            data = exporter.download(id_=ticker.index[0], market=my_general.Market.SHARES,  # start_date=start_moment,
+                                     timeframe=time_frame[0])
 
-                open_value = data.get('<OPEN>')
-                close_value = data.get('<CLOSE>')
-                high_value = data.get('<HIGH>')
-                low_value = data.get('<LOW>')
-                volume_value = data.get('<VOL>')
+            # print(data)
+            ticker_value = data.get('<TICKER>')
+            per_value = data.get('<PER>')
+            date_value = data.get('<DATE>')
+            time_value = data.get('<TIME>')
+            last_value = data.get('<LAST>')
+            volume_value = data.get('<VOL>')
 
-                list_open_value = open_value.to_list()
-                list_close_value = close_value.to_list()
-                list_high_value = high_value.to_list()
-                list_low_value = low_value.to_list()
-                list_volume_value = volume_value.to_list()
+            # open_value = data.get('<OPEN>')
+            # close_value = data.get('<CLOSE>')
+            # high_value = data.get('<HIGH>')
+            # low_value = data.get('<LOW>')
+            # volume_value = data.get('<VOL>')
+            # print(ticker_value)
+            # list_open_value = open_value.to_list()
+            # list_close_value = close_value.to_list()
+            # list_high_value = high_value.to_list()
+            # list_low_value = low_value.to_list()
+            # list_volume_value = volume_value.to_list()
 
-                market.append({"open_value": list_open_value[-1],
-                               "close_value": list_close_value[-1],
-                               "high_value": list_high_value[-1],
-                               "low_value": list_low_value[-1],
-                               "volume_value": list_volume_value[-1]})
+            list_ticker_value = ticker_value.to_list()
+            list_per_value = per_value.to_list()
+            list_date_value = date_value.to_list()
+            list_time_value = time_value.to_list()
+            list_last_value = last_value.to_list()
+            list_volume_value = volume_value.to_list()
 
-                # print(data.tail(1))
+            # list_stocks.append({"open_value": list_open_value[-1],
+            #                     "close_value": list_close_value[-1],
+            #                     "high_value": list_high_value[-1],
+            #                     "low_value": list_low_value[-1],
+            #                     "volume_value": list_volume_value[-1]})
+
+            if len(list_ticker_value) > 0:
+                list_stocks.append({"ticker_value": list_ticker_value[-1],
+                                    "per_value": list_per_value[-1],
+                                    "date_value": list_date_value[-1],
+                                    "time_value": list_time_value[-1],
+                                    "last_value": list_last_value[-1],
+                                    "volume_value": list_volume_value[-1]})
+            else:
+                print("It's time little boy!")
+                return
+
+        # _________________________________________________________________________________
+
+        if len(list_goods) > 0:
+            market.append(list_goods);
+
+        if len(list_currency) > 0:
+            market.append(list_currency);
+
+        if len(list_indexes) > 0:
+            market.append(list_indexes)
+
+        if len(list_etf) > 0:
+            market.append(list_etf)
+
+        if len(list_stocks) > 0:
+            market.append(list_stocks)
+
+        # print(market)
+        file_name_market = 'print_graph_market'
+
+        curr_path = root_path + 'backend\\'
+
+        my_general.write_data_json(market, curr_path, file_name_market)
+        # _________________________________________________________________________________
+
+        # Check on repeat
+        hash_market = my_general.read_data_json(curr_path, 'hash_print_graph_market')
+
+        file_name = 'print_graph_market'
+        new_hash = my_general.md5(curr_path + 'print_graph_market' + '.json')
+
+        if new_hash == hash_market[0]["hash"]:
+            print("___ No the new market values ___")
+            return
+
+        hash_market = [{"hash": new_hash}]
+        file_name = 'hash_print_graph_market'
+        my_general.write_data_json(hash_market, curr_path, file_name)
+
+        # 2. Plot graph
+
+        my_general.plt.plot(list_stocks)
 
     # def print_active_bids(self, depart_market): TODO (2)
 
@@ -944,19 +1075,13 @@ def main():
     print("Current profit all --------> ", my_portfolio.current_profit_all())
     print("Current profit all to percent --------> ", my_portfolio.current_profit_all_percent())
     print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
-
-
+    print("Print market --------> ", my_portfolio.print_market(depart_market))
+    print("Print graph --------> ", my_portfolio.print_graph(name_ticker, depart_market))
 
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
 
-    # time_holding = (time_price_in.mounth - time_price_out.mounth);
-    # com_found = * 2;
-    # current_com_broker = (price_out - price_in) * com_broker;
-    # current_com_stock_inchange = (price_out - price_in) * com_stock_exchange;
-    # current_com_found = (price_out - price_in) * com_found;
-    # current_profit = (price_out - price_in - current_com_broker - current_com_stock_inchange - current_com_found)
-    #
+    # time_holding = (time_price_in.mounth - time_price_out.mounth); # before sell TODO (1)
     #
     #
     #

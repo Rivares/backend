@@ -235,7 +235,7 @@ def main():
                                      "low_value": 0.0,
                                      "volume_value": 0.0})
 
-    elif my_general.depart_market == "ETF":
+    elif my_general.depart_market == "ETF":  # Implementation -> my_general.name_ticker == '' TODO (3)
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ ETF ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
         list_name_etf = [
@@ -290,7 +290,6 @@ def main():
                              "high_value": list_high_value[-1],
                              "low_value": list_low_value[-1],
                              "volume_value": list_volume_value[-1]})
-
 
     elif my_general.depart_market == "STCK":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Stock ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -365,10 +364,15 @@ def main():
                 'ENRU',
                 'UPRO',
                 'MAIL',
-                'YNDX'
+                'YNDX',
+                'INTC',
+                'CSCO',
+                'HPQ',
+                'HPE',
+                'T'
             ]
         else:
-            list_name_stocks = [my_general.name_ticker];
+            list_name_stocks = [my_general.name_ticker]
 
         for stock in list_name_stocks:
             my_general.time.sleep(1)  # sec
