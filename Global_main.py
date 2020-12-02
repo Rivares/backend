@@ -845,6 +845,12 @@ class Portfolio:
                 list_last_value = last_value.to_list()
                 list_volume_value = volume_value.to_list()
 
+                # Convert price to %
+                max_val = max(list_last_value)
+
+                for i in range(list_last_value):
+                    list_last_value[i] = (list_last_value[i] * 100) / max_val
+
                 list_tickers.append({"ticker_value": list_ticker_value,
                                      "per_value": list_per_value,
                                      "date_value": list_date_value,
@@ -878,6 +884,12 @@ class Portfolio:
                 list_high_value = high_value.to_list()
                 list_low_value = low_value.to_list()
                 list_volume_value = volume_value.to_list()
+
+                # Convert price to %
+                max_val = max(list_close_value)
+
+                for i in range(list_close_value):
+                    list_close_value[i] = (list_close_value[i] * 100) / max_val
 
                 list_tickers.append({"open_value": list_open_value,
                                      "close_value": list_close_value,
@@ -919,25 +931,24 @@ class Portfolio:
         # 2. Plot graph
 
         fig, ax = my_general.plt.subplots(figsize=(8, 6))
-        ax.set_title("Price", fontsize=16)
-        ax.set_xlabel("time", fontsize=14)
-        ax.set_ylabel(list_name_tickers[0], fontsize=14)
-        ax.grid(linestyle="--", color="gray", linewidth=0.5)
+        fig.ax.set_title("Price", fontsize=16)
+        fig.ax.set_xlabel("time", fontsize=14)
+        fig.ax.set_ylabel(list_name_tickers[0], fontsize=14)
+        fig.ax.grid(linestyle="--", color="gray", linewidth=0.5)
 
         if idx == 0:
-            ax.stackplot(my_general.np.asarray(list_tickers[0]["ticker_value"]),
-                         my_general.np.asarray(list_tickers[1]["ticker_value"]),
-                         labels=[str(list_name_tickers[0]), str(list_name_tickers[1])])
-            ax.plot(my_general.np.asarray(list_tickers["ticker_value"]), c="red", linestyle='solid',
-                    label=str(list_name_tickers[i]))
+            fig.ax.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid',
+                        labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
+            fig.ax.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid',
+                        labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
 
         if idx == 1:
-            ax.stackplot(my_general.np.asarray(list_tickers[0]["close_value"]),
-                         my_general.np.asarray(list_tickers[1]["close_value"]),
-                         labels=[str(list_name_tickers[0]), str(list_name_tickers[1])])
-            # ax.plot(my_general.np.asarray(list_tickers["list_close_value"]), '-g', label=str(list_name_tickers[i]))  # solid green
+            fig.ax.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
+                        labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
+            fig.ax.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
+                        labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
 
-
+        my_general.plt.legend()
         my_general.plt.show()
 
     # def print_active_bids(self, depart_market): TODO (2)
