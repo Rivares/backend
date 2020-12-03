@@ -819,134 +819,144 @@ class Portfolio:
             return -1
 
         curr_path = root_path + 'backend\\'
-        i = 0
-        for ticker in list_name_tickers:
-            my_general.time.sleep(1)  # sec
-            ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
-                                          name_comparator=my_general.LookupComparator.EQUALS)
-            data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES,  # start_date=start_moment,
-                                     timeframe=time_frame[idx])
-
-            # print(data)
-            file_name_tickers = 'print_graph_'
-
-            if idx == 0:
-                ticker_value = data.get('<TICKER>')
-                per_value = data.get('<PER>')
-                date_value = data.get('<DATE>')
-                time_value = data.get('<TIME>')
-                last_value = data.get('<LAST>')
-                volume_value = data.get('<VOL>')
-
-                list_ticker_value = ticker_value.to_list()
-                list_per_value = per_value.to_list()
-                list_date_value = date_value.to_list()
-                list_time_value = time_value.to_list()
-                list_last_value = last_value.to_list()
-                list_volume_value = volume_value.to_list()
-
-                # Convert price to %
-                max_val = max(list_last_value)
-
-                for i in range(list_last_value):
-                    list_last_value[i] = (list_last_value[i] * 100) / max_val
-
-                list_tickers.append({"ticker_value": list_ticker_value,
-                                     "per_value": list_per_value,
-                                     "date_value": list_date_value,
-                                     "time_value": list_time_value,
-                                     "last_value": list_last_value,
-                                     "volume_value": list_volume_value})
-
-                if len(list_ticker_value) > 0:
-                    list_tickers.append({"ticker_value": list_ticker_value[-1],
-                                        "per_value": list_per_value[-1],
-                                        "date_value": list_date_value[-1],
-                                        "time_value": list_time_value[-1],
-                                        "last_value": list_last_value[-1],
-                                        "volume_value": list_volume_value[-1]})
-                else:
-                    print("It's time little boy!")
-                    return
-
-                my_general.write_data_json(list_ticker_value,
-                                           curr_path, file_name_tickers + str(list_name_tickers[i]))
-
-            if idx == 1:
-                open_value = data.get('<OPEN>')
-                close_value = data.get('<CLOSE>')
-                high_value = data.get('<HIGH>')
-                low_value = data.get('<LOW>')
-                volume_value = data.get('<VOL>')
-
-                list_open_value = open_value.to_list()
-                list_close_value = close_value.to_list()
-                list_high_value = high_value.to_list()
-                list_low_value = low_value.to_list()
-                list_volume_value = volume_value.to_list()
-
-                # Convert price to %
-                max_val = max(list_close_value)
-
-                for i in range(list_close_value):
-                    list_close_value[i] = (list_close_value[i] * 100) / max_val
-
-                list_tickers.append({"open_value": list_open_value,
-                                     "close_value": list_close_value,
-                                     "high_value": list_high_value,
-                                     "low_value": list_low_value,
-                                     "volume_value": list_volume_value})
-
-                if len(list_open_value) > 0:
-                    list_tickers.append({"open_value": list_open_value[-1],
-                                        "close_value": list_close_value[-1],
-                                        "high_value": list_high_value[-1],
-                                        "low_value": list_low_value[-1],
-                                        "volume_value": list_volume_value[-1]})
-                else:
-                    print("It's time little boy!")
-                    return
-
-                my_general.write_data_json(list_close_value,
-                                           curr_path, file_name_tickers + str(list_name_tickers[i]))
-
-            # _________________________________________________________________________________
-
-            # Check on repeat
-            hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
-
-            file_name = 'hash_print_graph'
-            new_hash = my_general.md5(curr_path + file_name + '.json')
-
-            if new_hash == hash_market[0]["hash"]:
-                print("___ No the new market values ___")
-                return
-
-            hash_market = [{"hash": new_hash}]
-            file_name = 'hash_print_graph'
-            my_general.write_data_json(hash_market, curr_path, file_name)
-
-            i += 1
+        # i = 0
+        # for ticker in list_name_tickers:
+        #     my_general.time.sleep(1)  # sec
+        #     ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
+        #                                   name_comparator=my_general.LookupComparator.EQUALS)
+        #     data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES,  # start_date=start_moment,
+        #                              timeframe=time_frame[idx])
+        #
+        #     # print(data)
+        #     file_name_tickers = 'print_graph_'
+        #
+        #     if idx == 0:
+        #         ticker_value = data.get('<TICKER>')
+        #         per_value = data.get('<PER>')
+        #         date_value = data.get('<DATE>')
+        #         time_value = data.get('<TIME>')
+        #         last_value = data.get('<LAST>')
+        #         volume_value = data.get('<VOL>')
+        #
+        #         list_ticker_value = ticker_value.to_list()
+        #         list_per_value = per_value.to_list()
+        #         list_date_value = date_value.to_list()
+        #         list_time_value = time_value.to_list()
+        #         list_last_value = last_value.to_list()
+        #         list_volume_value = volume_value.to_list()
+        #
+        #         # Convert price to %
+        #         max_val = max(list_last_value)
+        #
+        #         j = 0
+        #         while j < len(list_last_value):
+        #             list_last_value[i] = (list_last_value[j] * 100) / max_val
+        #             j += 1
+        #
+        #         list_tickers.append({"ticker_value": list_ticker_value,
+        #                              "per_value": list_per_value,
+        #                              "date_value": list_date_value,
+        #                              "time_value": list_time_value,
+        #                              "last_value": list_last_value,
+        #                              "volume_value": list_volume_value})
+        #
+        #         if len(list_ticker_value) > 0:
+        #             list_tickers.append({"ticker_value": list_ticker_value[-1],
+        #                                 "per_value": list_per_value[-1],
+        #                                 "date_value": list_date_value[-1],
+        #                                 "time_value": list_time_value[-1],
+        #                                 "last_value": list_last_value[-1],
+        #                                 "volume_value": list_volume_value[-1]})
+        #         else:
+        #             print("It's time little boy!")
+        #             return
+        #
+        #         my_general.write_data_json(list_ticker_value,
+        #                                    curr_path, file_name_tickers + str(list_name_tickers[i]))
+        #
+        #     if idx == 1:
+        #         open_value = data.get('<OPEN>')
+        #         close_value = data.get('<CLOSE>')
+        #         high_value = data.get('<HIGH>')
+        #         low_value = data.get('<LOW>')
+        #         volume_value = data.get('<VOL>')
+        #
+        #         list_open_value = open_value.to_list()
+        #         list_close_value = close_value.to_list()
+        #         list_high_value = high_value.to_list()
+        #         list_low_value = low_value.to_list()
+        #         list_volume_value = volume_value.to_list()
+        #
+        #         # Convert price to %
+        #         max_val = max(list_close_value)
+        #
+        #         j = 0
+        #         while j < len(list_close_value):
+        #             list_close_value[j] = (list_close_value[j] * 100) / max_val
+        #             j += 1
+        #
+        #         list_tickers.append({"open_value": list_open_value,
+        #                              "close_value": list_close_value,
+        #                              "high_value": list_high_value,
+        #                              "low_value": list_low_value,
+        #                              "volume_value": list_volume_value})
+        #
+        #         if len(list_open_value) > 0:
+        #             list_tickers.append({"open_value": list_open_value[-1],
+        #                                 "close_value": list_close_value[-1],
+        #                                 "high_value": list_high_value[-1],
+        #                                 "low_value": list_low_value[-1],
+        #                                 "volume_value": list_volume_value[-1]})
+        #         else:
+        #             print("It's time little boy!")
+        #             return
+        #
+        #         my_general.write_data_json(list_close_value,
+        #                                    curr_path, file_name_tickers + str(list_name_tickers[i]))
+        #
+        #     # _________________________________________________________________________________
+        #
+        #     # Check on repeat
+        #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
+        #
+        #     file_name = 'hash_print_graph'
+        #     new_hash = my_general.md5(curr_path + file_name + '.json')
+        #
+        #     if new_hash == hash_market[0]["hash"]:
+        #         print("___ No the new market values ___")
+        #         return
+        #
+        #     hash_market = [{"hash": new_hash}]
+        #     file_name = 'hash_print_graph'
+        #     my_general.write_data_json(hash_market, curr_path, file_name)
+        #
+        #     i += 1
 
         # 2. Plot graph
 
+        file_name_tickers = 'print_graph_'
+        list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+                                                                      file_name_tickers + str(list_name_tickers[0]))})
+        list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+                                                                      file_name_tickers + str(list_name_tickers[1]))})
+
         fig, ax = my_general.plt.subplots(figsize=(8, 6))
-        fig.ax.set_title("Price", fontsize=16)
-        fig.ax.set_xlabel("time", fontsize=14)
-        fig.ax.set_ylabel(list_name_tickers[0], fontsize=14)
-        fig.ax.grid(linestyle="--", color="gray", linewidth=0.5)
+        ax.set_title("Price", fontsize=16)
+        ax.set_xlabel("time", fontsize=14)
+        ax.set_ylabel(list_name_tickers[0], fontsize=14)
+        ax.grid(linestyle="--", color="gray", linewidth=0.5)
 
         if idx == 0:
-            fig.ax.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid',
-                        labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
-            fig.ax.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid',
-                        labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
+            ax.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid')   # ,
+                        #labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
+            ax.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid')     # ,
+                        #labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
 
         if idx == 1:
-            fig.ax.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
-                        labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
-            fig.ax.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
-                        labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
+            ax.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
+                        label=str(list_name_tickers[0]))
+            ax.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
+                        label=str(list_name_tickers[1]))
 
         my_general.plt.legend()
         my_general.plt.show()
@@ -1033,7 +1043,7 @@ def main():
     # print("Current profit all to percent --------> ", my_portfolio.current_profit_all_percent())
     # print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
     # print("Print market --------> ", my_portfolio.print_market(depart_market))
-    print("Print graph --------> ", my_portfolio.print_graph([name_ticker, 'NVTK'], depart_market))
+    print("Print graph --------> ", my_portfolio.print_graph(['TATN', 'NVTK'], depart_market))
 
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
