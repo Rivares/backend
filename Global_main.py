@@ -798,7 +798,7 @@ class Portfolio:
             print("Price : ", ticker["last_value"])
             print("Volume : ", ticker["volume_value"])
 
-    def print_graph(self, list_name_tickers, depart_market):
+    def print_graph(self, list_name_tickers, depart_market, list_name_indicators):
 
         print("\n______________ print_graph() ______________\n")
 
@@ -940,6 +940,10 @@ class Portfolio:
         list_tickers.append({"close_value": my_general.read_data_json(curr_path,
                                                                       file_name_tickers + str(list_name_tickers[1]))})
 
+        # Launch of script which get indicators
+        my_general.exec_full(curr_path + "\\TA_stocks\\TA_stocks.py")
+
+
         fig, ax = my_general.plt.subplots(figsize=(8, 6))
         ax.set_title("Price", fontsize=16)
         ax.set_xlabel("time", fontsize=14)
@@ -1043,7 +1047,7 @@ def main():
     # print("Current profit all to percent --------> ", my_portfolio.current_profit_all_percent())
     # print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
     # print("Print market --------> ", my_portfolio.print_market(depart_market))
-    print("Print graph --------> ", my_portfolio.print_graph(['TATN', 'NVTK'], depart_market))
+    print("Print graph --------> ", my_portfolio.print_graph(['TATN', 'NVTK'], depart_market, ['MACD', 'RSI', 'ATR', 'EMA']))
 
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)

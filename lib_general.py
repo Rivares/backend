@@ -30,6 +30,7 @@ path_2 = 'C:\\Users\\user\\0_Py\\'
 
 name_ticker = ''
 depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
+indicators_market = []
 root_path = ''
 
 
