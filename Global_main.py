@@ -81,7 +81,7 @@ class Money:
                     self.current_money["big_part"] += 1
                     self.current_money["low_part"] = self.in_money["low_part"]
 
-        path = 'backend\\'
+        path = 'backend\\data\\'
         filename = 'money_movement'
 
         new_data = my_general.read_data_json(root_path + path, filename)
@@ -161,7 +161,7 @@ class Money:
                     else:
                         self.result_act = -1
 
-        path = 'backend\\'
+        path = 'backend\\data\\'
         filename = 'money_movement'
 
         new_data = my_general.read_data_json(root_path + path, filename)
@@ -326,7 +326,7 @@ class Portfolio:
 
         print("\n______________ copy_current_data_of_assets() ______________\n")
 
-        path = 'backend\\'
+        path = 'backend\\data\\'
         filename = 'list_current_assets'
 
         curr_assets = my_general.read_data_json(root_path + path, filename)
@@ -406,7 +406,7 @@ class Portfolio:
                                          "date": curr_date,
                                          "time": curr_time})
 
-                path = 'backend\\'
+                path = 'backend\\data\\'
                 filename = 'list_current_assets'
 
                 print("__________ >>> Bid executed.")
@@ -489,7 +489,7 @@ class Portfolio:
                                  "date": curr_date,
                                  "time": curr_time})
 
-                path = 'backend\\'
+                path = 'backend\\data\\'
                 filename = 'list_current_assets'
 
                 print("__________ >>> Bid executed.")
@@ -935,32 +935,41 @@ class Portfolio:
         # 2. Plot graph
 
         file_name_tickers = 'print_graph_'
-        list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+        list_tickers.append({"close_value": my_general.read_data_json(curr_path + "data\\",
                                                                       file_name_tickers + str(list_name_tickers[0]))})
-        list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+        list_tickers.append({"close_value": my_general.read_data_json(curr_path + "data\\",
                                                                       file_name_tickers + str(list_name_tickers[1]))})
 
         # Launch of script which get indicators
+        my_general.indicators_market = list_name_indicators
         my_general.exec_full(curr_path + "\\TA_stocks\\TA_stocks.py")
 
+        my_general.gridsize = (2, 1)
+        fig = my_general.plt.figure(figsize=(12, 8))
+        ax1 = my_general.plt.subplot2grid(my_general.gridsize, (0, 0))
+        ax2 = my_general.plt.subplot2grid(my_general.gridsize, (1, 0))
 
-        fig, ax = my_general.plt.subplots(figsize=(8, 6))
-        ax.set_title("Price", fontsize=16)
-        ax.set_xlabel("time", fontsize=14)
-        ax.set_ylabel(list_name_tickers[0], fontsize=14)
-        ax.grid(linestyle="--", color="gray", linewidth=0.5)
+        ax1.set_title("Price", fontsize=12)
+
+        ax1.set_xlabel("time", fontsize=12)
+
+        ax1.set_ylabel(list_name_tickers[0], fontsize=12)
+        ax2.set_ylabel(list_name_indicators[0], fontsize=12)
+
+        ax1.grid(linestyle="--", color="gray", linewidth=0.5)
+        ax2.grid(linestyle="--", color="gray", linewidth=0.5)
 
         if idx == 0:
-            ax.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid')   # ,
-                        #labels=[str(list_name_tickers[0]), str(list_name_tickers[0])])
-            ax.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid')     # ,
-                        #labels=[str(list_name_tickers[1]), str(list_name_tickers[1])])
+            ax1.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid')   # ,
+            ax1.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid')     # ,
 
         if idx == 1:
-            ax.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
-                        label=str(list_name_tickers[0]))
-            ax.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
-                        label=str(list_name_tickers[1]))
+            ax1.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
+                     label=str(list_name_tickers[0]))
+            ax1.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
+                     label=str(list_name_tickers[1]))
+            ax2.plot(my_general.np.asarray(list_name_indicators[0]), '-b',
+                     label=str(list_name_indicators[0]))
 
         my_general.plt.legend()
         my_general.plt.show()
@@ -976,7 +985,7 @@ def main():
     print("____________________________________ PUT MONEY ____________________________________\n")
 
     # Download list of operations from backup file
-    list_money_movement = my_general.read_data_json(root_path + 'backend\\', 'money_movement')
+    list_money_movement = my_general.read_data_json(root_path + 'backend\\data\\', 'money_movement')
 
     # Update list of operations
     my_portfolio.copy_money_operations(Money(list_money_movement))
@@ -1022,7 +1031,7 @@ def main():
     # my_general.exec_full(path_name_parser_stocks)
 
     # Get info of ticker in the moment
-    list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
+    list_cur_val = my_general.read_data_json(root_path + 'backend\\data\\', 'market')
 
     # Pseudo converting list to object
     info_ticker = {

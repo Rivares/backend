@@ -5,7 +5,7 @@ import lib_general as my_general
 root_path = my_general.root_path
 curr_ticker = my_general.name_ticker
 
-curr_path = root_path + 'backend\\TA_stocks\\'
+curr_path = root_path + 'backend\\data\\'
 
 start = my_general.datetime.date(my_general.datetime.datetime.now().year - 1,
                                  my_general.datetime.datetime.now().month,
@@ -974,31 +974,6 @@ def main():
         i += 1
 
     my_general.write_data_json(list_indicators_target_ticker, curr_path, file_name_ta + '_' + name_ta)
-
-    # _________________________________________________________________________________
-
-    # Check on repeat
-    hash_result_ta = my_general.read_data_json(curr_path,
-                                               'hash_result_ta' +
-                                               '_' +
-                                               name_ta)
-
-    new_hash = my_general.md5(curr_path +
-                              file_name_ta +
-                              name_ta +
-                              '.json')
-
-    if new_hash == hash_result_ta[0]["hash"]:
-        print("___ No the new TA values ___")
-        return
-
-    hash_result_ta = [{"hash": new_hash}]
-
-    my_general.write_data_json(hash_result_ta, curr_path +
-                               'hash_result_ta' +
-                               '_' +
-                               name_ta +
-                               '.json')
 
     # _________________________________________________________________________________
 
