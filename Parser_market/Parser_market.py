@@ -4,7 +4,7 @@ import lib_general as my_general
 
 root_path = my_general.root_path
 
-curr_path = root_path + 'backend\\Parser_market\\'
+curr_path = root_path + 'backend\\data\\'
 
 curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
                                        my_general.datetime.datetime.now().month,
@@ -292,7 +292,7 @@ def main():
     elif my_general.depart_market == "STCK":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Stock ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
-        if my_general.name_ticker == '':
+        if len(my_general.name_tickers) < 1:
             list_name_stocks = [
                 'ETLN',
                 'QIWI',
@@ -370,7 +370,7 @@ def main():
                 'T'
             ]
         else:
-            list_name_stocks = my_general.name_ticker
+            list_name_stocks = my_general.name_tickers
 
         for stock in list_name_stocks:
             my_general.time.sleep(1)  # sec

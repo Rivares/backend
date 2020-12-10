@@ -921,8 +921,6 @@ class Portfolio:
         #
         #     # _________________________________________________________________________________
         #
-        #     list_tickers.append({"close_value": my_general.read_data_json(curr_path,
-        #                                                                  'print_graph_' + str(list_name_tickers[i]))})
         #     # Check on repeat
         #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
         #
@@ -947,6 +945,14 @@ class Portfolio:
         curr_path = root_path + 'backend\\data\\'
         name_indicators = 'result_ta' + '_' + list_name_tickers[0]
 
+        # Load tickers value
+        curr_path = root_path + 'backend\\data\\'
+        i = 0
+        for ticker in list_name_tickers:
+            list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+                                                                          'print_graph_' + str(ticker))})
+            i += 1
+
         for indicator in list_name_indicators:
             name_indicators += '_' + indicator
 
@@ -961,6 +967,7 @@ class Portfolio:
 
         i = 0
         axes = []
+
         for it in list_name_indicators:
 
             ax = my_general.plt.subplot2grid(my_general.gridsize, (i, 0))
@@ -968,37 +975,59 @@ class Portfolio:
 
             i += 1
 
+        # style
+        my_general.plt.style.use('seaborn-darkgrid')
+
+        # create a color palette
+        palette = my_general.plt.get_cmap('Set1')
+
         axes[0].set_ylabel("Price", fontsize=9)
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
         i = 0
-        for it in list_name_indicators:
+        for it in list_name_tickers:
 
-            coeff = i / len(list_name_indicators)
             if idx == 0:
-                axes[0].plot(my_general.np.asarray(list_tickers[i]["last_value"]), c=str(coeff), linestyle='solid')
+                axes[0].plot(my_general.np.asarray(list_tickers[i]["last_value"]), color=palette(i), linestyle='solid')
 
             if idx == 1:
-                axes[0].plot(my_general.np.asarray(list_tickers[i]["close_value"]), c=str(coeff), linestyle='solid',
-                             label=str(list_name_tickers[i]))
+                axes[0].plot(my_general.np.asarray(list_tickers[i]["close_value"]), c=palette(i), linestyle='solid',
+                             label=str(it))
 
             i += 1
 
-        i = 1
-        for it in list_name_indicators:
+        # Get name indicators from array
 
-            coeff = i / len(list_name_indicators)
-            axes[i].set_ylabel(it[i], fontsize=9)
+        i = 0
+        list_keys_indicators = []
+        while i < len(result_ta):
+            list_keys_indicators += result_ta[i].keys()
+            i += 1
+
+        print("----> ", list_keys_indicators)   # ['atr_i', 'ema_i', 'macd', 'macd_diff', 'macd_sig', 'rsi_i']
+        print("----> ", list_name_indicators)   # ['TATN', 'MACD', 'RSI', 'ATR', 'EMA']
+
+        sublist_keys = [[]]
+        for it in list_keys_indicators:
+
+
+        i = 1
+        while i < len(list_name_indicators):
+
+            axes[i].set_ylabel(list_name_indicators[i], fontsize=9)
             axes[i].grid(linestyle="--", color="gray", linewidth=0.5)
 
-            if idx == 0:
-                axes[i].plot(my_general.np.asarray(result_ta["atr_i"]), c=str(coeff), linestyle='solid',
-                             label=str(it))
+            j = 0
+            while j < len(sublist_keys):
+                if idx == 0:
+                    axes[i].plot(my_general.np.asarray(result_ta[0][list_keys_indicators[i-1]]), c=palette(i), linestyle='solid',
+                                 label=str(list_name_indicators[i]))
 
-            if idx == 1:
-                axes[i].plot(my_general.np.asarray(result_ta["atr_i"]), c=str(coeff), linestyle='solid',
-                             label=str(it))
+                if idx == 1:
+                    axes[i].plot(my_general.np.asarray(result_ta[0][list_keys_indicators[i-1]]), c=palette(i), linestyle='solid',
+                                 label=str(list_name_indicators[i]))
+                j += 1
 
             i += 1
 
@@ -1055,7 +1084,7 @@ def main():
 
     name_ticker = ['MAIL']
     depart_market = 'STCK'
-    my_general.name_ticker = name_ticker
+    my_general.name_tickers = name_ticker
     my_general.depart_market = depart_market
 
     # Launch of script which parse MOEX

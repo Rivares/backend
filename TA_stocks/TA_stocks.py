@@ -16,11 +16,10 @@ curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
 
 
 def main():
+
     print("\n__________________ TA __________________\n")
 
-    exporter = my_general.Exporter()
-
-    target_ticker = my_general.name_ticker[0]
+    target_ticker = my_general.name_tickers[0]
     list_indicators_target_ticker = []
 
     # Load ticker of values
@@ -75,7 +74,7 @@ def main():
             "bb_bbm": bb_bbm
         })
 
-    elif 'KC' in my_general.indicators_market:
+    if 'KC' in my_general.indicators_market:
 
         # __________________________________________ Keltner Channel __________________________________________
 
@@ -112,7 +111,7 @@ def main():
             "kc_kcl": kc_kcl
         })
 
-    elif 'ATR' in my_general.indicators_market:
+    if 'ATR' in my_general.indicators_market:
 
         # __________________________________________ Average true range (ATR) __________________________________________
 
@@ -136,7 +135,7 @@ def main():
             "atr_i": atr_i
         })
 
-    elif 'DC' in my_general.indicators_market:
+    if 'DC' in my_general.indicators_market:
 
         # __________________________________________ Donchian Channel __________________________________________
 
@@ -168,7 +167,7 @@ def main():
             "dc_dcl": dc_dcl
         })
 
-    elif 'ADX' in my_general.indicators_market:
+    if 'ADX' in my_general.indicators_market:
 
         # _____________________________________________________________________________________________________
         # __________________________________________ Trend Indicators _________________________________________
@@ -203,7 +202,7 @@ def main():
             "adx_DI_neg": adx_DI_neg
         })
 
-    elif 'AI' in my_general.indicators_market:
+    if 'AI' in my_general.indicators_market:
 
         # _____________________________ Aroon Indicator ________________________________
 
@@ -233,7 +232,7 @@ def main():
             "ai_down": ai_down
         })
 
-    elif 'CCI' in my_general.indicators_market:
+    if 'CCI' in my_general.indicators_market:
 
         # _____________________________ Commodity Channel Index (CCI) ________________________________
 
@@ -257,7 +256,7 @@ def main():
             "ccl_i": ccl_i
         })
 
-    elif 'DPO' in my_general.indicators_market:
+    if 'DPO' in my_general.indicators_market:
 
         # _____________________________ Detrended Price Oscillator (DPO) ________________________________
 
@@ -278,7 +277,7 @@ def main():
             "dpo_i": dpo_i
         })
 
-    elif 'EMA' in my_general.indicators_market:
+    if 'EMA' in my_general.indicators_market:
 
         # _____________________________ Exponential Moving Average (EMA) ________________________________
 
@@ -300,7 +299,7 @@ def main():
             "ema_i": ema_i
         })
 
-    elif 'Ichimoku' in my_general.indicators_market:
+    if 'Ichimoku' in my_general.indicators_market:
 
         # _____________________________ Ichimoku Kinkō Hyō (Ichimoku) ________________________________
 
@@ -327,7 +326,7 @@ def main():
             "ichimoku_b": ichimoku_b
         })
 
-    elif 'KST' in my_general.indicators_market:
+    if 'KST' in my_general.indicators_market:
 
         # _____________________________ KST Oscillator (KST Signal) ________________________________
 
@@ -357,7 +356,7 @@ def main():
             "kst_sig": kst_sig
         })
 
-    elif 'MACD' in my_general.indicators_market:
+    if 'MACD' in my_general.indicators_market:
 
         # _____________________________ Moving Average Convergence Divergence (MACD) ________________________________
 
@@ -386,7 +385,7 @@ def main():
             "macd_sig": macd_sig
         })
 
-    elif 'MI' in my_general.indicators_market:
+    if 'MI' in my_general.indicators_market:
 
         # _____________________________ Mass Index (MI) ________________________________
 
@@ -407,7 +406,7 @@ def main():
             "mi": mi
         })
 
-    elif 'P_SAR' in my_general.indicators_market:
+    if 'P_SAR' in my_general.indicators_market:
 
         # _____________________________ Parabolic Stop and Reverse (Parabolic SAR) ________________________________
 
@@ -442,7 +441,7 @@ def main():
             "psar_down": psar_down
         })
 
-    elif 'TRIX' in my_general.indicators_market:
+    if 'TRIX' in my_general.indicators_market:
 
         # _____________________________ Trix (TRIX) ________________________________
 
@@ -464,7 +463,7 @@ def main():
             "trix_i": trix_i
         })
 
-    elif 'VI' in my_general.indicators_market:
+    if 'VI' in my_general.indicators_market:
 
         # _____________________________ Vortex Indicator (VI) ________________________________
 
@@ -496,7 +495,7 @@ def main():
             "vi_pos": vi_pos
         })
 
-    elif 'CR' in my_general.indicators_market:
+    if 'CR' in my_general.indicators_market:
 
         # _____________________________________________________________________________________________________
         # _________________________________________ Others Indicators _________________________________________
@@ -520,7 +519,7 @@ def main():
             "cr_i": cr_i
         })
 
-    elif 'DLR' in my_general.indicators_market:
+    if 'DLR' in my_general.indicators_market:
 
         # ______________________________________ Daily Log Return (DLR) _______________________________________
         #
@@ -541,7 +540,7 @@ def main():
             "dlr_i": dlr_i
         })
 
-    elif 'ADI' in my_general.indicators_market:
+    if 'ADI' in my_general.indicators_market:
 
         # _____________________________________________________________________________________________________
         # _________________________________________ Volume Indicators _________________________________________
@@ -567,7 +566,7 @@ def main():
             "adi_i": adi_i
         })
 
-    elif 'CMF' in my_general.indicators_market:
+    if 'CMF' in my_general.indicators_market:
 
         # ______________________________ Chaikin Money Flow (CMF) ________________________________
         #
@@ -591,7 +590,7 @@ def main():
             "cmf_i": cmf_i
         })
 
-    elif 'EoM' in my_general.indicators_market:
+    if 'EoM' in my_general.indicators_market:
 
         # ______________________________ Ease of movement (EoM, EMV) ________________________________
 
@@ -619,7 +618,7 @@ def main():
             "eom_signal": eom_signal
         })
 
-    elif 'FI' in my_general.indicators_market:
+    if 'FI' in my_general.indicators_market:
 
         # ______________________________ Force Index (FI) ________________________________
         #
@@ -642,7 +641,7 @@ def main():
             "fi_i": fi_i
         })
 
-    elif 'NVI' in my_general.indicators_market:
+    if 'NVI' in my_general.indicators_market:
 
         # ______________________________ Negative Volume Index (NVI) ________________________________
         #
@@ -665,7 +664,7 @@ def main():
             "nvi_i": nvi_i
         })
 
-    elif 'OBV' in my_general.indicators_market:
+    if 'OBV' in my_general.indicators_market:
 
         # ______________________________ On-balance volume (OBV) ________________________________
         #
@@ -688,7 +687,7 @@ def main():
             "obv_i": obv_i
         })
 
-    elif 'VPT' in my_general.indicators_market:
+    if 'VPT' in my_general.indicators_market:
 
         # ______________________________ Volume-price trend (VPT) ________________________________
         #
@@ -711,7 +710,7 @@ def main():
             "vpt_i": vpt_i
         })
 
-    elif 'AO' in my_general.indicators_market:
+    if 'AO' in my_general.indicators_market:
 
         # _____________________________________________________________________________________________________
         # ________________________________________ Momentum Indicators ________________________________________
@@ -737,7 +736,7 @@ def main():
             "ao_i": ao_i
         })
 
-    elif 'KAMA' in my_general.indicators_market:
+    if 'KAMA' in my_general.indicators_market:
 
         # ________________________________ Kaufman’s Adaptive Moving Average (KAMA) __________________________________
         #
@@ -761,7 +760,7 @@ def main():
             "kama_i": kama_i
         })
 
-    elif 'MFI' in my_general.indicators_market:
+    if 'MFI' in my_general.indicators_market:
 
         # ________________________________ Money Flow Index (MFI) __________________________________
         #
@@ -787,7 +786,7 @@ def main():
             "mfi_i": mfi_i
         })
 
-    elif 'ROC' in my_general.indicators_market:
+    if 'ROC' in my_general.indicators_market:
 
         # ________________________________ Rate of Change (ROC) __________________________________
         #
@@ -810,7 +809,7 @@ def main():
             "roc_i": roc_i
         })
 
-    elif 'RSI' in my_general.indicators_market:
+    if 'RSI' in my_general.indicators_market:
 
         # ________________________________ Relative Strength Index (RSI) __________________________________
         #
@@ -833,7 +832,7 @@ def main():
             "rsi_i": rsi_i
         })
 
-    elif 'STOCH' in my_general.indicators_market:
+    if 'STOCH' in my_general.indicators_market:
 
         # ________________________________ Stochastic Oscillator __________________________________
         # Initialize RSI Indicator
@@ -861,7 +860,7 @@ def main():
             "stoch_signal": stoch_signal
         })
 
-    elif 'TSI' in my_general.indicators_market:
+    if 'TSI' in my_general.indicators_market:
 
         # ________________________________ True strength index (TSI) __________________________________
         #
@@ -885,7 +884,7 @@ def main():
             "tsi_i": tsi_i
         })
 
-    elif 'UO' in my_general.indicators_market:
+    if 'UO' in my_general.indicators_market:
 
         # ________________________________ Ultimate Oscillator __________________________________
         # Initialize Ultimate Oscillator Indicator
@@ -910,7 +909,7 @@ def main():
             "uo_i": uo_i
         })
 
-    elif 'WR' in my_general.indicators_market:
+    if 'WR' in my_general.indicators_market:
 
         # ________________________________ Williams %R __________________________________
         # Initialize Williams Indicator
@@ -937,15 +936,13 @@ def main():
     # Write to file
 
     file_name_ta = 'result_ta'
-    name_ta = my_general.name_ticker
+    name_ta = my_general.name_tickers[0]
 
     i = 0
     while i < len(my_general.indicators_market):
         name_ta += '_' + my_general.indicators_market[i]
         i += 1
 
-    print(list_indicators_target_ticker)
-    print(curr_path + file_name_ta + '_' + name_ta)
     my_general.write_data_json(list_indicators_target_ticker, curr_path, file_name_ta + '_' + name_ta)
 
     # _________________________________________________________________________________

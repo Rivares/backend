@@ -2098,5 +2098,194 @@
             "minute": "33",
             "second": "12"
         }
+    },
+    {
+        "id": 8807762885,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2097.8,
+        "count": 1,
+        "cost": 2097.8,
+        "commissions": 20.98,
+        "full_cost": 2118.78,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "22",
+            "minute": "00",
+            "second": "09"
+        }
+    },
+    {
+        "id": 8816980512,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2095.6,
+        "count": 1,
+        "cost": 2095.6,
+        "commissions": 20.96,
+        "full_cost": 2116.56,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "22",
+            "minute": "04",
+            "second": "09"
+        }
+    },
+    {
+        "id": 5195707791,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2097.6,
+        "count": 1,
+        "cost": 2097.6,
+        "commissions": 20.98,
+        "full_cost": 2118.58,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "22",
+            "minute": "46",
+            "second": "44"
+        }
+    },
+    {
+        "id": 7458224932,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2097.6,
+        "count": 1,
+        "cost": 2097.6,
+        "commissions": 20.98,
+        "full_cost": 2118.58,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "22",
+            "minute": "54",
+            "second": "24"
+        }
+    },
+    {
+        "id": 6681241890,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2095.8,
+        "count": 1,
+        "cost": 2095.8,
+        "commissions": 20.96,
+        "full_cost": 2116.76,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "23",
+            "minute": "12",
+            "second": "33"
+        }
+    },
+    {
+        "id": 2521168547,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2096.2,
+        "count": 1,
+        "cost": 2096.2,
+        "commissions": 20.96,
+        "full_cost": 2117.16,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "23",
+            "minute": "29",
+            "second": "38"
+        }
+    },
+    {
+        "id": 9669465601,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2094.8,
+        "count": 1,
+        "cost": 2094.8,
+        "commissions": 20.95,
+        "full_cost": 2115.75,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "23",
+            "minute": "45",
+            "second": "36"
+        }
+    },
+    {
+        "id": 2370290885,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2095.0,
+        "count": 1,
+        "cost": 2095.0,
+        "commissions": 20.95,
+        "full_cost": 2115.95,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "23",
+            "minute": "54",
+            "second": "07"
+        }
+    },
+    {
+        "id": 2702024985,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2095.0,
+        "count": 1,
+        "cost": 2095.0,
+        "commissions": 20.95,
+        "full_cost": 2115.95,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "10"
+        },
+        "time": {
+            "hour": "23",
+            "minute": "55",
+            "second": "03"
+        }
     }
 ]
