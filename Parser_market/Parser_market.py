@@ -3,7 +3,6 @@
 import lib_general as my_general
 
 root_path = my_general.root_path
-curr_ticker = my_general.name_ticker
 
 curr_path = root_path + 'backend\\Parser_market\\'
 
@@ -186,7 +185,6 @@ def main():
                                      "low_value": 0.0,
                                      "volume_value": 0.0})
                 print("Problem with – tickers(index) - " + index)
-
 
     elif my_general.depart_market == "INDXS_WU":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Indexes (World + USA)~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -372,7 +370,7 @@ def main():
                 'T'
             ]
         else:
-            list_name_stocks = [my_general.name_ticker]
+            list_name_stocks = my_general.name_ticker
 
         for stock in list_name_stocks:
             my_general.time.sleep(1)  # sec

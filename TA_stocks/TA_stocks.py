@@ -3,7 +3,6 @@
 import lib_general as my_general
 
 root_path = my_general.root_path
-curr_ticker = my_general.name_ticker
 
 curr_path = root_path + 'backend\\data\\'
 
@@ -21,38 +20,10 @@ def main():
 
     exporter = my_general.Exporter()
 
-    target_ticker = curr_ticker[0]
+    target_ticker = my_general.name_ticker[0]
     list_indicators_target_ticker = []
 
-    # Prepare TODO (1) Перенести загрузку и выгрузку даных
-
-    data = exporter.lookup(name=target_ticker, market=my_general.Market.ETF_MOEX)
-    # print(data.head())
-    ticker = exporter.download(data.index[0], market=my_general.Market.ETF_MOEX, start_date=start, end_date=curr_moment)
-    # print(stock.head())
-
-    open_value = ticker.get('<OPEN>')
-    close_value = ticker.get('<CLOSE>')
-    high_value = ticker.get('<HIGH>')
-    low_value = ticker.get('<LOW>')
-    volume_value = ticker.get('<VOL>')
-
-    # open_value.plot()
-    # close_value.plot()
-    # high_value.plot()
-    # low_value.plot()
-    # volume_value.plot()
-    # plt.show()
-
-    ticker.to_csv(curr_path + 'target_ticker_' + target_ticker + '.csv')
-
-    list_open_value = open_value.to_list()
-    list_close_value = close_value.to_list()
-    list_high_value = high_value.to_list()
-    list_low_value = low_value.to_list()
-    list_volume_value = volume_value.to_list()
-
-    # Load datas
+    # Load ticker of values
     df = my_general.pd.read_csv(curr_path + 'target_ticker_' + target_ticker + '.csv', sep=',')
 
     # Clean NaN values
@@ -973,6 +944,8 @@ def main():
         name_ta += '_' + my_general.indicators_market[i]
         i += 1
 
+    print(list_indicators_target_ticker)
+    print(curr_path + file_name_ta + '_' + name_ta)
     my_general.write_data_json(list_indicators_target_ticker, curr_path, file_name_ta + '_' + name_ta)
 
     # _________________________________________________________________________________

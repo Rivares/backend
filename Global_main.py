@@ -802,6 +802,10 @@ class Portfolio:
 
         print("\n______________ print_graph() ______________\n")
 
+        my_general.name_tickers = list_name_tickers
+        my_general.depart_market = depart_market
+        my_general.indicators_market = list_name_indicators
+
         # 1. Get historical data
 
         idx = 1
@@ -818,7 +822,7 @@ class Portfolio:
             print("Error : len(list_name_stocks) < 1")
             return -1
 
-        curr_path = root_path + 'backend\\'
+        curr_path = root_path + 'backend\\data\\'
         # i = 0
         # for ticker in list_name_tickers:
         #     my_general.time.sleep(1)  # sec
@@ -826,6 +830,7 @@ class Portfolio:
         #                                   name_comparator=my_general.LookupComparator.EQUALS)
         #     data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES,  # start_date=start_moment,
         #                              timeframe=time_frame[idx])
+        #     data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
         #
         #     # print(data)
         #     file_name_tickers = 'print_graph_'
@@ -916,6 +921,8 @@ class Portfolio:
         #
         #     # _________________________________________________________________________________
         #
+        #     list_tickers.append({"close_value": my_general.read_data_json(curr_path,
+        #                                                                  'print_graph_' + str(list_name_tickers[i]))})
         #     # Check on repeat
         #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
         #
@@ -932,44 +939,68 @@ class Portfolio:
         #
         #     i += 1
 
+        curr_path = root_path + 'backend\\'
+        # Launch of script which get indicators
+        my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
+
+        # Load result_ta
+        curr_path = root_path + 'backend\\data\\'
+        name_indicators = 'result_ta' + '_' + list_name_tickers[0]
+
+        for indicator in list_name_indicators:
+            name_indicators += '_' + indicator
+
+        result_ta = my_general.read_data_json(curr_path, name_indicators)
+
         # 2. Plot graph
 
-        file_name_tickers = 'print_graph_'
-        list_tickers.append({"close_value": my_general.read_data_json(curr_path + "data\\",
-                                                                      file_name_tickers + str(list_name_tickers[0]))})
-        list_tickers.append({"close_value": my_general.read_data_json(curr_path + "data\\",
-                                                                      file_name_tickers + str(list_name_tickers[1]))})
+        list_name_indicators.insert(0, list_name_tickers[0])
 
-        # Launch of script which get indicators
-        my_general.indicators_market = list_name_indicators
-        my_general.exec_full(curr_path + "\\TA_stocks\\TA_stocks.py")
-
-        my_general.gridsize = (2, 1)
+        my_general.gridsize = (len(list_name_indicators), 1)
         fig = my_general.plt.figure(figsize=(12, 8))
-        ax1 = my_general.plt.subplot2grid(my_general.gridsize, (0, 0))
-        ax2 = my_general.plt.subplot2grid(my_general.gridsize, (1, 0))
 
-        ax1.set_title("Price", fontsize=12)
+        i = 0
+        axes = []
+        for it in list_name_indicators:
 
-        ax1.set_xlabel("time", fontsize=12)
+            ax = my_general.plt.subplot2grid(my_general.gridsize, (i, 0))
+            axes.append(ax)
 
-        ax1.set_ylabel(list_name_tickers[0], fontsize=12)
-        ax2.set_ylabel(list_name_indicators[0], fontsize=12)
+            i += 1
 
-        ax1.grid(linestyle="--", color="gray", linewidth=0.5)
-        ax2.grid(linestyle="--", color="gray", linewidth=0.5)
+        axes[0].set_ylabel("Price", fontsize=9)
+        axes[0].set_xlabel("time", fontsize=9)
+        axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
-        if idx == 0:
-            ax1.plot(my_general.np.asarray(list_tickers[0]["last_value"]), c='red', linestyle='solid')   # ,
-            ax1.plot(my_general.np.asarray(list_tickers[1]["last_value"]), c='green', linestyle='solid')     # ,
+        i = 0
+        for it in list_name_indicators:
 
-        if idx == 1:
-            ax1.plot(my_general.np.asarray(list_tickers[0]["close_value"]), '-r',
-                     label=str(list_name_tickers[0]))
-            ax1.plot(my_general.np.asarray(list_tickers[1]["close_value"]), '-g',  # solid green
-                     label=str(list_name_tickers[1]))
-            ax2.plot(my_general.np.asarray(list_name_indicators[0]), '-b',
-                     label=str(list_name_indicators[0]))
+            coeff = i / len(list_name_indicators)
+            if idx == 0:
+                axes[0].plot(my_general.np.asarray(list_tickers[i]["last_value"]), c=str(coeff), linestyle='solid')
+
+            if idx == 1:
+                axes[0].plot(my_general.np.asarray(list_tickers[i]["close_value"]), c=str(coeff), linestyle='solid',
+                             label=str(list_name_tickers[i]))
+
+            i += 1
+
+        i = 1
+        for it in list_name_indicators:
+
+            coeff = i / len(list_name_indicators)
+            axes[i].set_ylabel(it[i], fontsize=9)
+            axes[i].grid(linestyle="--", color="gray", linewidth=0.5)
+
+            if idx == 0:
+                axes[i].plot(my_general.np.asarray(result_ta["atr_i"]), c=str(coeff), linestyle='solid',
+                             label=str(it))
+
+            if idx == 1:
+                axes[i].plot(my_general.np.asarray(result_ta["atr_i"]), c=str(coeff), linestyle='solid',
+                             label=str(it))
+
+            i += 1
 
         my_general.plt.legend()
         my_general.plt.show()
@@ -1022,13 +1053,13 @@ def main():
 
     print("\n____________________________________ BUY ____________________________________\n")
 
-    name_ticker = 'MAIL'
+    name_ticker = ['MAIL']
     depart_market = 'STCK'
     my_general.name_ticker = name_ticker
     my_general.depart_market = depart_market
 
     # Launch of script which parse MOEX
-    # my_general.exec_full(path_name_parser_stocks)
+    my_general.exec_full(path_name_parser_stocks)
 
     # Get info of ticker in the moment
     list_cur_val = my_general.read_data_json(root_path + 'backend\\data\\', 'market')
@@ -1045,7 +1076,7 @@ def main():
 
     count_actives = 1
 
-    bid = Bid('B', name_ticker, info_ticker["last_value"], count_actives, depart_market)
+    bid = Bid('B', 'MAIL', info_ticker["last_value"], count_actives, 'STCK')
     my_portfolio.buy(bid)
 
     # print("Current cost assets --------> ", my_portfolio.current_profit_ticker(name_ticker, depart_market))
