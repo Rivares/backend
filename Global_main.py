@@ -1005,12 +1005,32 @@ class Portfolio:
             list_keys_indicators += result_ta[i].keys()
             i += 1
 
-        print("----> ", list_keys_indicators)   # ['atr_i', 'ema_i', 'macd', 'macd_diff', 'macd_sig', 'rsi_i']
-        print("----> ", list_name_indicators)   # ['TATN', 'MACD', 'RSI', 'ATR', 'EMA']
-
+        list_name_indicators.pop(0)
         sublist_keys = [[]]
-        for it in list_keys_indicators:
 
+        for it in list_name_indicators:
+            sublist_keys[0].append(it)
+
+        i = 1
+        while i < len(list_name_indicators):
+
+            j = 0
+            while j < len(list_keys_indicators):
+
+                try:
+                    idx = list_keys_indicators[j].index('_')
+                    buffer_key = list_keys_indicators[j][:idx]
+                except ValueError:
+                    buffer_key = list_keys_indicators[j][:]
+
+                print("----> ", list_keys_indicators[j])
+                print("----> ", sublist_keys)
+                if list_name_indicators[i-1].lower() == buffer_key:
+                    sublist_keys[i].append(list_keys_indicators[j])
+
+                j += 1
+
+            i += 1
 
         i = 1
         while i < len(list_name_indicators):
@@ -1019,14 +1039,14 @@ class Portfolio:
             axes[i].grid(linestyle="--", color="gray", linewidth=0.5)
 
             j = 0
-            while j < len(sublist_keys):
+            while j < len(list_keys_indicators):
                 if idx == 0:
-                    axes[i].plot(my_general.np.asarray(result_ta[0][list_keys_indicators[i-1]]), c=palette(i), linestyle='solid',
-                                 label=str(list_name_indicators[i]))
+                    axes[i].plot(my_general.np.asarray(result_ta[0][sublist_keys[i][j]]), c=palette(i),
+                                 linestyle='solid', label=str(list_name_indicators[i]))
 
                 if idx == 1:
-                    axes[i].plot(my_general.np.asarray(result_ta[0][list_keys_indicators[i-1]]), c=palette(i), linestyle='solid',
-                                 label=str(list_name_indicators[i]))
+                    axes[i].plot(my_general.np.asarray(result_ta[0][sublist_keys[i][j]]), c=palette(i),
+                                 linestyle='solid', label=str(list_name_indicators[i]))
                 j += 1
 
             i += 1
