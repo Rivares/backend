@@ -993,9 +993,11 @@ class Portfolio:
 
             if idx == 1:
                 axes[0].plot(my_general.np.asarray(list_tickers[i]["close_value"]), c=palette(i), linestyle='solid',
-                             label=str(it))
+                             label=it)
 
             i += 1
+
+        axes[0].legend(loc='upper left', frameon=True)
 
         # Get name indicators from array
 
@@ -1006,49 +1008,73 @@ class Portfolio:
             i += 1
 
         list_name_indicators.pop(0)
-        sublist_keys = [[]]
+        sublist_keys = []
 
-        for it in list_name_indicators:
-            sublist_keys[0].append(it)
+        # print("----1> ", list_keys_indicators)
+        # print("----2> ", list_name_indicators)
 
-        i = 1
+        i = 0
+        cnt = 0
+        vector_sizes = []
         while i < len(list_name_indicators):
 
             j = 0
+            cnt = 0
+            sublist_keys.append([])
             while j < len(list_keys_indicators):
 
                 try:
-                    idx = list_keys_indicators[j].index('_')
-                    buffer_key = list_keys_indicators[j][:idx]
+                    index = list_keys_indicators[j].index('_')
+                    buffer_key = list_keys_indicators[j][:index]
                 except ValueError:
                     buffer_key = list_keys_indicators[j][:]
 
-                print("----> ", list_keys_indicators[j])
-                print("----> ", sublist_keys)
-                if list_name_indicators[i-1].lower() == buffer_key:
+                # print("----1> ", list_keys_indicators[j])
+                # print("----2> ", list_name_indicators[i].lower())
+                if list_name_indicators[i].lower() == buffer_key:
                     sublist_keys[i].append(list_keys_indicators[j])
+                    cnt += 1
+                    # print("----3> ")
 
                 j += 1
 
+            vector_sizes.append(cnt)
             i += 1
 
+        # print("----------> ", len(axes)) # 5
+        # print("----------> ", list_name_indicators) # ['MACD', 'RSI', 'ATR', 'EMA']
+        # print("----------> ", list_keys_indicators) # ['atr_i', 'ema_i', 'macd', 'macd_diff', 'macd_sig', 'rsi_i']
+        # print("----------> ", sublist_keys) # [['macd', 'macd_diff', 'macd_sig'], ['rsi_i'], ['atr_i'], ['ema_i']]
+        print("----------> ", vector_sizes)
         i = 1
-        while i < len(list_name_indicators):
+        while i <= len(list_name_indicators):
 
-            axes[i].set_ylabel(list_name_indicators[i], fontsize=9)
+            axes[i].set_ylabel(list_name_indicators[i-1], fontsize=9)
             axes[i].grid(linestyle="--", color="gray", linewidth=0.5)
 
             j = 0
-            while j < len(list_keys_indicators):
-                if idx == 0:
-                    axes[i].plot(my_general.np.asarray(result_ta[0][sublist_keys[i][j]]), c=palette(i),
-                                 linestyle='solid', label=str(list_name_indicators[i]))
+            while j < vector_sizes[i-1]:
 
-                if idx == 1:
-                    axes[i].plot(my_general.np.asarray(result_ta[0][sublist_keys[i][j]]), c=palette(i),
-                                 linestyle='solid', label=str(list_name_indicators[i]))
+                try:
+                    print("----------2> ", result_ta[i-1].keys())
+                    print("----------2> ", sublist_keys[i-1][j])
+                    print("----------2> ", j)
+
+                    buffer_values = result_ta[i-1].get(sublist_keys[i-1][j])
+
+                    if idx == 0:
+                        axes[i].plot(my_general.np.asarray(result_ta[i-1][sublist_keys[i-1][j]]), c=palette(j),
+                                     linestyle='solid')
+
+                    if idx == 1:
+                        axes[i].plot(my_general.np.asarray(buffer_values), c=palette(j),
+                                     linestyle='solid')
+
+                except IndexError:
+                    print("ValueError")
+                    continue
+
                 j += 1
-
             i += 1
 
         my_general.plt.legend()

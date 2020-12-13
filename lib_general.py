@@ -33,6 +33,8 @@ depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS
 indicators_market = []
 root_path = ''
 
+logging.getLogger('matplotlib.font_manager').disabled = True
+
 
 def exec_full(file_path, globals=None, locals=None):
     if globals is None:
