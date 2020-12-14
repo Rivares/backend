@@ -27,11 +27,17 @@ import ta
 
 path_1 = 'A:\\0_Py\\'
 path_2 = 'C:\\Users\\user\\0_Py\\'
+root_path = ''
 
 name_tickers = []
 depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
 indicators_market = []
-root_path = ''
+
+user_start_moment = datetime.date(datetime.datetime.now().year, 1, 1),
+user_end_moment = datetime.date(datetime.datetime.now().year,
+                                datetime.datetime.now().month,
+                                datetime.datetime.now().day),
+time_frame = 'HOURLY'
 
 logging.getLogger('matplotlib.font_manager').disabled = True
 
