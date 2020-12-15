@@ -834,6 +834,11 @@ class Portfolio:
         start_moment = user_start_moment
         end_moment = user_end_moment
         time_frame = const_time_frame.get(user_time_frame)
+        print("start_moment: ", start_moment)
+        print("end_moment: ", end_moment)
+        print("time_frame: ", time_frame)
+        # date = [0] * len(rsi_i)
+        # time = [0] * len(rsi_i)
 
         exporter = my_general.Exporter()
 
@@ -842,74 +847,74 @@ class Portfolio:
             return -1
 
         curr_path = root_path + 'backend\\data\\'
-        # i = 0
-        # for ticker in list_name_tickers:
-        #     my_general.time.sleep(1)  # sec
-        #     ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
-        #                                   name_comparator=my_general.LookupComparator.EQUALS)
-        #     data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
-        #                              timeframe=time_frame)
-        #     data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
-        #
-        #     # print(data)
-        #     file_name_tickers = 'print_graph_'
-        #
-        #     open_value = data.get('<OPEN>')
-        #     close_value = data.get('<CLOSE>')
-        #     high_value = data.get('<HIGH>')
-        #     low_value = data.get('<LOW>')
-        #     volume_value = data.get('<VOL>')
-        #
-        #     list_open_value = open_value.to_list()
-        #     list_close_value = close_value.to_list()
-        #     list_high_value = high_value.to_list()
-        #     list_low_value = low_value.to_list()
-        #     list_volume_value = volume_value.to_list()
-        #
-        #     # Convert price to %
-        #     max_val = max(list_close_value)
-        #
-        #     j = 0
-        #     while j < len(list_close_value):
-        #         list_close_value[j] = (list_close_value[j] * 100) / max_val
-        #         j += 1
-        #
-        #     list_tickers.append({"open_value": list_open_value,
-        #                          "close_value": list_close_value,
-        #                          "high_value": list_high_value,
-        #                          "low_value": list_low_value,
-        #                          "volume_value": list_volume_value})
-        #
-        #     if len(list_open_value) > 0:
-        #         list_tickers.append({"open_value": list_open_value[-1],
-        #                             "close_value": list_close_value[-1],
-        #                             "high_value": list_high_value[-1],
-        #                             "low_value": list_low_value[-1],
-        #                             "volume_value": list_volume_value[-1]})
-        #     else:
-        #         print("It's time little boy!")
-        #         return
-        #
-        #     my_general.write_data_json(list_tickers,
-        #                                curr_path, file_name_tickers + str(list_name_tickers[i]))
-        #
-        #     # _________________________________________________________________________________
-        #
-        #     # Check on repeat
-        #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
-        #
-        #     file_name = 'hash_print_graph'
-        #     new_hash = my_general.md5(curr_path + file_name + '.json')
-        #
-        #     if new_hash == hash_market[0]["hash"]:
-        #         print("___ No the new market values ___")
-        #         return
-        #
-        #     hash_market = [{"hash": new_hash}]
-        #     file_name = 'hash_print_graph'
-        #     my_general.write_data_json(hash_market, curr_path, file_name)
-        #
-        #     i += 1
+        i = 0
+        for ticker in list_name_tickers:
+            my_general.time.sleep(1)  # sec
+            ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
+                                          name_comparator=my_general.LookupComparator.EQUALS)
+            data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
+                                     timeframe=time_frame)
+            data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
+
+            print(data)
+            file_name_tickers = 'print_graph_'
+
+            open_value = data.get('<OPEN>')
+            close_value = data.get('<CLOSE>')
+            high_value = data.get('<HIGH>')
+            low_value = data.get('<LOW>')
+            volume_value = data.get('<VOL>')
+
+            list_open_value = open_value.to_list()
+            list_close_value = close_value.to_list()
+            list_high_value = high_value.to_list()
+            list_low_value = low_value.to_list()
+            list_volume_value = volume_value.to_list()
+
+            # Convert price to %
+            max_val = max(list_close_value)
+
+            j = 0
+            while j < len(list_close_value):
+                list_close_value[j] = (list_close_value[j] * 100) / max_val
+                j += 1
+
+            list_tickers.append({"open_value": list_open_value,
+                                 "close_value": list_close_value,
+                                 "high_value": list_high_value,
+                                 "low_value": list_low_value,
+                                 "volume_value": list_volume_value})
+
+            if len(list_open_value) > 0:
+                list_tickers.append({"open_value": list_open_value[-1],
+                                    "close_value": list_close_value[-1],
+                                    "high_value": list_high_value[-1],
+                                    "low_value": list_low_value[-1],
+                                    "volume_value": list_volume_value[-1]})
+            else:
+                print("It's time little boy!")
+                return
+
+            my_general.write_data_json(list_tickers,
+                                       curr_path, file_name_tickers + str(list_name_tickers[i]))
+
+            # _________________________________________________________________________________
+
+            # Check on repeat
+            hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
+
+            file_name = 'hash_print_graph'
+            new_hash = my_general.md5(curr_path + file_name + '.json')
+
+            if new_hash == hash_market[0]["hash"]:
+                print("___ No the new market values ___")
+                return
+
+            hash_market = [{"hash": new_hash}]
+            file_name = 'hash_print_graph'
+            my_general.write_data_json(hash_market, curr_path, file_name)
+
+            i += 1
 
         # __________________________________ Load data _____________________________________
 
@@ -935,7 +940,7 @@ class Portfolio:
         result_ta = my_general.read_data_json(curr_path, name_indicators)
 
         # 2. Plot graph
-
+        print("len(time): ", len(list_tickers[0]["close_value"]))
         list_name_indicators.insert(0, list_name_tickers[0])
 
         my_general.gridsize = (len(list_name_indicators), 1)
@@ -957,7 +962,7 @@ class Portfolio:
         # create a color palette
         palette = my_general.plt.get_cmap('Set1')
 
-        axes[0].set_ylabel("Price", fontsize=9)
+        axes[0].set_ylabel("Price, %", fontsize=9)
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
@@ -1017,7 +1022,7 @@ class Portfolio:
         # print("----------> ", list_name_indicators) # ['MACD', 'RSI', 'ATR', 'EMA']
         # print("----------> ", list_keys_indicators) # ['atr_i', 'ema_i', 'macd', 'macd_diff', 'macd_sig', 'rsi_i']
         # print("----------> ", sublist_keys) # [['macd', 'macd_diff', 'macd_sig'], ['rsi_i'], ['atr_i'], ['ema_i']]
-        print("----------> ", vector_sizes)
+        # print("----------> ", vector_sizes)
         i = 1
         while i <= len(list_name_indicators):
 
@@ -1035,7 +1040,7 @@ class Portfolio:
                     buffer_values = result_ta[i-1].get(sublist_keys[i-1][j])
 
                     axes[i].plot(my_general.np.asarray(buffer_values), c=palette(j),
-                                 linestyle='solid', label=list_name_indicators[i-1])
+                                 linestyle='solid', label=sublist_keys[i-1][j])
 
                 except IndexError:
                     print("ValueError")
@@ -1043,11 +1048,9 @@ class Portfolio:
 
                 j += 1
 
-                axes[i].legend(loc='upper left', frameon=True)
+            axes[i].legend(loc='upper left', frameon=True)
 
             i += 1
-
-
 
         my_general.plt.legend()
         my_general.plt.show()

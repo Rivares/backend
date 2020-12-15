@@ -17,7 +17,7 @@ curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
 
 def main():
 
-    print("\n__________________ TA __________________\n")
+    print("\n__________________ TA __________________ --->\n")
 
     target_ticker = my_general.name_tickers[0]
     list_indicators_target_ticker = []
@@ -360,7 +360,7 @@ def main():
 
         if 'MACD' == it_indicator:
 
-            # _____________________________ Moving Average Convergence Divergence (MACD) ________________________________
+            # ____________________________ Moving Average Convergence Divergence (MACD) _______________________________
 
             # Initialize MACD Indicator
             indicator_macd = my_general.ta.trend.MACD(close=df["<CLOSE>"], n_fast=26, n_slow=12, n_sign=9, fillna=True)
@@ -380,6 +380,14 @@ def main():
             macd = df['macd'].to_list()
             macd_diff = df['macd_diff'].to_list()
             macd_sig = df['macd_sig'].to_list()
+
+            i = 0
+            while i < len(macd):
+                macd[i] = macd[i] * (-1)
+                macd_diff[i] = macd_diff[i] * (-1)
+                macd_sig[i] = macd_sig[i] * (-1)
+
+                i += 1
 
             list_indicators_target_ticker.append({
                 "macd": macd,
@@ -829,9 +837,13 @@ def main():
             # plt.show()
 
             rsi_i = df['rsi_i'].to_list()
+            rsi_upper_limit = [70] * len(rsi_i)
+            rsi_down_limit = [30] * len(rsi_i)
 
             list_indicators_target_ticker.append({
-                "rsi_i": rsi_i
+                "rsi_i": rsi_i,
+                "rsi_upper_limit": rsi_upper_limit,
+                "rsi_down_limit": rsi_down_limit
             })
 
         if 'STOCH' == it_indicator:
@@ -947,7 +959,7 @@ def main():
 
     my_general.write_data_json(list_indicators_target_ticker, curr_path, file_name_ta + '_' + name_ta)
 
-    # _________________________________________________________________________________
+    print("\n__________________ TA __________________ <---\n")
 
 
 if __name__ == '__main__':
