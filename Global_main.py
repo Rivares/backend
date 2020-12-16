@@ -837,8 +837,6 @@ class Portfolio:
         print("start_moment: ", start_moment)
         print("end_moment: ", end_moment)
         print("time_frame: ", time_frame)
-        # date = [0] * len(rsi_i)
-        # time = [0] * len(rsi_i)
 
         exporter = my_general.Exporter()
 
@@ -939,8 +937,85 @@ class Portfolio:
 
         result_ta = my_general.read_data_json(curr_path, name_indicators)
 
-        # 2. Plot graph
+        # __________________________________ Create time data frame _____________________________________
+
+        t_i = []
+        YYYY = user_start_moment.year
+        MM = user_start_moment.month
+        DD = user_start_moment.day
+        hh = 10
+        mm = 0
+        dt_Y = 0
+        dt_M = 0
+        dt_D = 0
+        dt_h = 0
+        dt_m = 0
+
+        M_F = 28
+
+        i = 0
         print("len(time): ", len(list_tickers[0]["close_value"]))
+        while i < len(list_tickers[0]["close_value"]):
+
+            if (dt_M + MM) == 2:
+                if (dt_Y % 4) == 0:
+                    M_F = 28 + 1
+                else:
+                    M_F = 28
+
+            DAY_IN_MONTH = [31, M_F, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+            LIMITS_DT = {
+                "ss": 60,
+                "mm": 60,
+                "hh": 24,
+                "DD": DAY_IN_MONTH[(dt_M + MM)],
+                "MM": 12
+            }
+
+            if user_time_frame == 'MINUTES1':
+                dt_m += 1
+            elif user_time_frame == 'MINUTES5':
+                dt_m += 5
+            elif user_time_frame == 'MINUTES10':
+                dt_m += 10
+            elif user_time_frame == 'MINUTES15':
+                dt_m += 15
+            elif user_time_frame == 'MINUTES30':
+                dt_m += 30
+            elif user_time_frame == 'HOURLY':
+                dt_h += 1
+            elif user_time_frame == 'DAILY':
+                dt_D += 1
+            elif user_time_frame == 'WEEKLY':
+                dt_D += 7
+            elif user_time_frame == 'MONTHLY':
+                dt_M += 1
+
+            if (dt_m + mm) > LIMITS_DT["mm"]:
+                dt_h += 1
+                dt_m = (dt_m + mm) % LIMITS_DT["mm"]
+
+            elif (dt_h + hh) > LIMITS_DT["hh"]:
+                dt_D += 1
+                dt_h = (dt_h + hh) % LIMITS_DT["mm"]
+
+            elif (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM)]:
+                dt_M += 1
+                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM - 1)]
+
+            elif (dt_M + MM) > LIMITS_DT["MM"]:
+                dt_Y += 1
+                dt_M = (dt_M + MM) % LIMITS_DT["MM"]
+
+            date_time_start = str(YYYY + dt_Y) + '-' + str(MM + dt_M) + '-' + str(DD + dt_D) + ' ' + \
+                              str(hh + dt_h) + ':' + str(mm + dt_m)
+            t_i.append(date_time_start)
+
+            i += 1
+
+        # __________________________________ 2. Plot graph _____________________________________
+
         list_name_indicators.insert(0, list_name_tickers[0])
 
         my_general.gridsize = (len(list_name_indicators), 1)

@@ -2833,5 +2833,26 @@
             "minute": "05",
             "second": "14"
         }
+    },
+    {
+        "id": 1385520658,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 2061.4,
+        "count": 1,
+        "cost": 2061.4,
+        "commissions": 20.61,
+        "full_cost": 2082.01,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "16"
+        },
+        "time": {
+            "hour": "21",
+            "minute": "44",
+            "second": "48"
+        }
     }
 ]
