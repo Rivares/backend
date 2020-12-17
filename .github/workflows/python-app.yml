@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install tox flake8 pytest finam matplotlib bs4 openpyxl threading fuzzywuzzy pandas numpy pymorphy2 requests datetime logging hashlib random math time xlrd json csv sys os re ta
+        pip install tox flake8 pytest finam-export matplotlib bs4 openpyxl threading fuzzywuzzy pandas numpy pymorphy2 requests datetime logging hashlib random math time xlrd json csv sys os re ta
     - name: Test with pytest
       run: |
         python Global_main.py test
