@@ -967,7 +967,7 @@ class Portfolio:
                     M_F = 28
 
             DAY_IN_MONTH = [31, M_F, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
+            # print("(dt_M + MM) - 1", (dt_M + MM) - 1)
             LIMITS_DT = {
                 "ss": 60,
                 "mm": 60,
@@ -996,26 +996,31 @@ class Portfolio:
                 dt_M += 1
 
             if (dt_m + mm) > LIMITS_DT["mm"]:
-                dt_h += 1
                 dt_m = (dt_m + mm) % LIMITS_DT["mm"]
+                dt_h += 1
 
-            elif (dt_h + hh) > LIMITS_DT["hh"]:
+            if (dt_h + hh) > LIMITS_DT["hh"]:
+                dt_h = (dt_h + hh) % LIMITS_DT["hh"]
                 dt_D += 1
-                dt_h = (dt_h + hh) % LIMITS_DT["mm"]
 
-            elif (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM) - 1]:
+            if (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM) - 1]:
+                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM) - 1]
                 dt_M += 1
-                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM) - 2]
 
-            elif (dt_M + MM) > LIMITS_DT["MM"]:
-                dt_Y += 1
+            if (dt_M + MM) > LIMITS_DT["MM"]:
                 dt_M = (dt_M + MM) % LIMITS_DT["MM"]
+                dt_Y += 1
 
             date_time_start = str(YYYY + dt_Y) + '-' + str(MM + dt_M) + '-' + str(DD + dt_D) + ' ' + \
                               str(hh + dt_h) + ':' + str(mm + dt_m)
             t_i.append(date_time_start)
 
             i += 1
+
+        print("t_i[0]", t_i[0])
+        print("t_i[1]", t_i[0])
+        print("t_i[-1]", t_i[-1])
+        print("t_i[-2]", t_i[-2])
 
         # __________________________________ 2. Plot graph _____________________________________
 
