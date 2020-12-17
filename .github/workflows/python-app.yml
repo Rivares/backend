@@ -15,7 +15,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - before_script: python -V  # Print out python version for debugging
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
