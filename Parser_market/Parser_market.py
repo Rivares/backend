@@ -4,7 +4,7 @@ import lib_general as my_general
 
 root_path = my_general.root_path
 
-curr_path = root_path + 'backend\\data\\'
+curr_path = root_path + '\\data\\'
 
 curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
                                        my_general.datetime.datetime.now().month,

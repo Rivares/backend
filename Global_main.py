@@ -2,7 +2,6 @@
 
 import lib_general as my_general
 
-my_general.root_path = my_general.path_1 if (my_general.os.path.isdir(my_general.path_1)) else my_general.path_2
 root_path = my_general.root_path
 
 path_name_ta_stocks = 'TA_stocks\\TA_stocks.py'
@@ -81,7 +80,7 @@ class Money:
                     self.current_money["big_part"] += 1
                     self.current_money["low_part"] = self.in_money["low_part"]
 
-        path = 'backend\\data\\'
+        path = '\\data\\'
         filename = 'money_movement'
 
         new_data = my_general.read_data_json(root_path + path, filename)
@@ -161,7 +160,7 @@ class Money:
                     else:
                         self.result_act = -1
 
-        path = 'backend\\data\\'
+        path = '\\data\\'
         filename = 'money_movement'
 
         new_data = my_general.read_data_json(root_path + path, filename)
@@ -326,7 +325,7 @@ class Portfolio:
 
         print("\n______________ copy_current_data_of_assets() ______________\n")
 
-        path = 'backend\\data\\'
+        path = '\\data\\'
         filename = 'list_current_assets'
 
         curr_assets = my_general.read_data_json(root_path + path, filename)
@@ -406,7 +405,7 @@ class Portfolio:
                                          "date": curr_date,
                                          "time": curr_time})
 
-                path = 'backend\\data\\'
+                path = '\\data\\'
                 filename = 'list_current_assets'
 
                 print("__________ >>> Bid executed.")
@@ -489,7 +488,7 @@ class Portfolio:
                                  "date": curr_date,
                                  "time": curr_time})
 
-                path = 'backend\\data\\'
+                path = '\\data\\'
                 filename = 'list_current_assets'
 
                 print("__________ >>> Bid executed.")
@@ -682,7 +681,7 @@ class Portfolio:
             my_general.exec_full(path_name_parser_stocks)
 
             # Get info of ticker in the moment
-            list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
+            list_cur_val = my_general.read_data_json(root_path + '\\Parser_market\\', 'market')
 
             # Pseudo converting list to object
             info_ticker = {
@@ -791,7 +790,7 @@ class Portfolio:
         my_general.exec_full(path_name_parser_stocks)
 
         # Get info of ticker in the moment
-        list_cur_val = my_general.read_data_json(root_path + 'backend\\Parser_market\\', 'market')
+        list_cur_val = my_general.read_data_json(root_path + '\\Parser_market\\', 'market')
 
         for ticker in list_cur_val:
             print("Ticker : ", ticker["ticker_value"])
@@ -844,7 +843,7 @@ class Portfolio:
             print("Error : len(list_name_stocks) < 1")
             return -1
 
-        curr_path = root_path + 'backend\\data\\'
+        curr_path = root_path + '\\data\\'
         t_i = []
         i = 0
         for ticker in list_name_tickers:
@@ -930,16 +929,16 @@ class Portfolio:
 
         # __________________________________ Load data _____________________________________
 
-        curr_path = root_path + 'backend\\'
+        curr_path = root_path + '\\'
         # Launch of script which get indicators
         my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
 
         # Load result_ta
-        curr_path = root_path + 'backend\\data\\'
+        curr_path = root_path + '\\data\\'
         name_indicators = 'result_ta' + '_' + list_name_tickers[0]
 
         # Load tickers value
-        curr_path = root_path + 'backend\\data\\'
+        curr_path = root_path + '\\data\\'
         i = 0
         for ticker in list_name_tickers:
             list_tickers.append({"close_value": my_general.read_data_json(curr_path,
@@ -1083,7 +1082,7 @@ def main():
     print("____________________________________ PUT MONEY ____________________________________\n")
 
     # Download list of operations from backup file
-    list_money_movement = my_general.read_data_json(root_path + 'backend\\data\\', 'money_movement')
+    list_money_movement = my_general.read_data_json(root_path + '\\data\\', 'money_movement')
 
     # Update list of operations
     my_portfolio.copy_money_operations(Money(list_money_movement))
@@ -1129,7 +1128,7 @@ def main():
     my_general.exec_full(path_name_parser_stocks)
 
     # Get info of ticker in the moment
-    list_cur_val = my_general.read_data_json(root_path + 'backend\\data\\', 'market')
+    list_cur_val = my_general.read_data_json(root_path + '\\data\\', 'market')
 
     # Pseudo converting list to object
     info_ticker = {

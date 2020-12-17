@@ -25,9 +25,7 @@ import os
 import re
 import ta
 
-path_1 = 'A:\\0_Py\\'
-path_2 = 'C:\\Users\\user\\0_Py\\'
-root_path = ''
+root_path = os.path.dirname(os.path.abspath(__file__))
 
 name_tickers = []
 depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
