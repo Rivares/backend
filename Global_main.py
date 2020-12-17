@@ -954,7 +954,10 @@ class Portfolio:
         M_F = 28
 
         i = 0
-        print("len(time): ", len(list_tickers[0]["close_value"]))
+        print("YYYY: ", YYYY)
+        print("MM: ", MM)
+        print("DD: ", DD)
+
         while i < len(list_tickers[0]["close_value"]):
 
             if (dt_M + MM) == 2:
@@ -969,7 +972,7 @@ class Portfolio:
                 "ss": 60,
                 "mm": 60,
                 "hh": 24,
-                "DD": DAY_IN_MONTH[(dt_M + MM)],
+                "DD": DAY_IN_MONTH[(dt_M + MM) - 1],
                 "MM": 12
             }
 
@@ -1000,9 +1003,9 @@ class Portfolio:
                 dt_D += 1
                 dt_h = (dt_h + hh) % LIMITS_DT["mm"]
 
-            elif (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM)]:
+            elif (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM) - 1]:
                 dt_M += 1
-                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM - 1)]
+                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM) - 2]
 
             elif (dt_M + MM) > LIMITS_DT["MM"]:
                 dt_Y += 1
