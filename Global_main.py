@@ -845,6 +845,7 @@ class Portfolio:
             return -1
 
         curr_path = root_path + 'backend\\data\\'
+        t_i = []
         i = 0
         for ticker in list_name_tickers:
             my_general.time.sleep(1)  # sec
@@ -854,15 +855,19 @@ class Portfolio:
                                      timeframe=time_frame)
             data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
 
-            print(data)
+            # print(data)
             file_name_tickers = 'print_graph_'
 
+            date_value = data.get('<DATE>')
+            time_value = data.get('<TIME>')
             open_value = data.get('<OPEN>')
             close_value = data.get('<CLOSE>')
             high_value = data.get('<HIGH>')
             low_value = data.get('<LOW>')
             volume_value = data.get('<VOL>')
 
+            list_date_value = date_value.to_list()
+            list_time_value = time_value.to_list()
             list_open_value = open_value.to_list()
             list_close_value = close_value.to_list()
             list_high_value = high_value.to_list()
@@ -873,22 +878,31 @@ class Portfolio:
             max_val = max(list_close_value)
 
             j = 0
+            t_i.append([])
             while j < len(list_close_value):
                 list_close_value[j] = (list_close_value[j] * 100) / max_val
+
+                t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
+                # print(t_i[i][j])
+
                 j += 1
 
-            list_tickers.append({"open_value": list_open_value,
+            list_tickers.append({"date_value": list_date_value,
+                                 "time_value": list_time_value,
+                                 "open_value": list_open_value,
                                  "close_value": list_close_value,
                                  "high_value": list_high_value,
                                  "low_value": list_low_value,
                                  "volume_value": list_volume_value})
 
             if len(list_open_value) > 0:
-                list_tickers.append({"open_value": list_open_value[-1],
-                                    "close_value": list_close_value[-1],
-                                    "high_value": list_high_value[-1],
-                                    "low_value": list_low_value[-1],
-                                    "volume_value": list_volume_value[-1]})
+                list_tickers.append({"date_value": list_date_value[-1],
+                                     "time_value": list_time_value[-1],
+                                     "open_value": list_open_value[-1],
+                                     "close_value": list_close_value[-1],
+                                     "high_value": list_high_value[-1],
+                                     "low_value": list_low_value[-1],
+                                     "volume_value": list_volume_value[-1]})
             else:
                 print("It's time little boy!")
                 return
@@ -937,91 +951,6 @@ class Portfolio:
 
         result_ta = my_general.read_data_json(curr_path, name_indicators)
 
-        # __________________________________ Create time data frame _____________________________________
-
-        t_i = []
-        YYYY = user_start_moment.year
-        MM = user_start_moment.month
-        DD = user_start_moment.day
-        hh = 10
-        mm = 0
-        dt_Y = 0
-        dt_M = 0
-        dt_D = 0
-        dt_h = 0
-        dt_m = 0
-
-        M_F = 28
-
-        i = 0
-        print("YYYY: ", YYYY)
-        print("MM: ", MM)
-        print("DD: ", DD)
-
-        while i < len(list_tickers[0]["close_value"]):
-
-            if (dt_M + MM) == 2:
-                if (dt_Y % 4) == 0:
-                    M_F = 28 + 1
-                else:
-                    M_F = 28
-
-            DAY_IN_MONTH = [31, M_F, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-            # print("(dt_M + MM) - 1", (dt_M + MM) - 1)
-            LIMITS_DT = {
-                "ss": 60,
-                "mm": 60,
-                "hh": 24,
-                "DD": DAY_IN_MONTH[(dt_M + MM) - 1],
-                "MM": 12
-            }
-
-            if user_time_frame == 'MINUTES1':
-                dt_m += 1
-            elif user_time_frame == 'MINUTES5':
-                dt_m += 5
-            elif user_time_frame == 'MINUTES10':
-                dt_m += 10
-            elif user_time_frame == 'MINUTES15':
-                dt_m += 15
-            elif user_time_frame == 'MINUTES30':
-                dt_m += 30
-            elif user_time_frame == 'HOURLY':
-                dt_h += 1
-            elif user_time_frame == 'DAILY':
-                dt_D += 1
-            elif user_time_frame == 'WEEKLY':
-                dt_D += 7
-            elif user_time_frame == 'MONTHLY':
-                dt_M += 1
-
-            if (dt_m + mm) > LIMITS_DT["mm"]:
-                dt_m = (dt_m + mm) % LIMITS_DT["mm"]
-                dt_h += 1
-
-            if (dt_h + hh) > LIMITS_DT["hh"]:
-                dt_h = (dt_h + hh) % LIMITS_DT["hh"]
-                dt_D += 1
-
-            if (dt_D + DD) > DAY_IN_MONTH[(dt_M + MM) - 1]:
-                dt_D = (dt_D + DD) % DAY_IN_MONTH[(dt_M + MM) - 1]
-                dt_M += 1
-
-            if (dt_M + MM) > LIMITS_DT["MM"]:
-                dt_M = (dt_M + MM) % LIMITS_DT["MM"]
-                dt_Y += 1
-
-            date_time_start = str(YYYY + dt_Y) + '-' + str(MM + dt_M) + '-' + str(DD + dt_D) + ' ' + \
-                              str(hh + dt_h) + ':' + str(mm + dt_m)
-            t_i.append(date_time_start)
-
-            i += 1
-
-        print("t_i[0]", t_i[0])
-        print("t_i[1]", t_i[0])
-        print("t_i[-1]", t_i[-1])
-        print("t_i[-2]", t_i[-2])
-
         # __________________________________ 2. Plot graph _____________________________________
 
         list_name_indicators.insert(0, list_name_tickers[0])
@@ -1049,15 +978,20 @@ class Portfolio:
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
+        print("Time --> ", my_general.np.asarray(t_i[0]).shape)
+        print("Time --> ", my_general.np.asarray(list_tickers[0]["close_value"]).shape)
+        x = [my_general.datetime.datetime.now() + my_general.datetime.timedelta(hours=i) for i in range(len(list_tickers[i]["close_value"]))]
         i = 0
         for it in list_name_tickers:
-
-            axes[0].plot(my_general.np.asarray(list_tickers[i]["close_value"]),
+            axes[0].plot(my_general.np.asarray(x),
+                         my_general.np.asarray(list_tickers[i]["close_value"]),
                          c=palette(i), linestyle='solid',
                          label=it)
 
             i += 1
 
+        # beautify the x-labels
+        axes[0].plt.gcf().autofmt_xdate()
         axes[0].legend(loc='upper left', frameon=True)
 
         # Get name indicators from array
