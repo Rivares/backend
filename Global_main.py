@@ -894,15 +894,7 @@ class Portfolio:
                                  "low_value": list_low_value,
                                  "volume_value": list_volume_value})
 
-            if len(list_open_value) > 0:
-                list_tickers.append({"date_value": list_date_value[-1],
-                                     "time_value": list_time_value[-1],
-                                     "open_value": list_open_value[-1],
-                                     "close_value": list_close_value[-1],
-                                     "high_value": list_high_value[-1],
-                                     "low_value": list_low_value[-1],
-                                     "volume_value": list_volume_value[-1]})
-            else:
+            if len(list_open_value) < 1:
                 print("It's time little boy!")
                 return
 
@@ -937,18 +929,19 @@ class Portfolio:
         curr_path = root_path + '\\data\\'
         name_indicators = 'result_ta' + '_' + list_name_tickers[0]
 
+        for indicator in list_name_indicators:
+            name_indicators += '_' + indicator
+
+        result_ta = my_general.read_data_json(curr_path, name_indicators)
+
         # Load tickers value
         curr_path = root_path + '\\data\\'
+
         i = 0
         for ticker in list_name_tickers:
             list_tickers.append({"close_value": my_general.read_data_json(curr_path,
                                                                           'print_graph_' + str(ticker))})
             i += 1
-
-        for indicator in list_name_indicators:
-            name_indicators += '_' + indicator
-
-        result_ta = my_general.read_data_json(curr_path, name_indicators)
 
         # __________________________________ 2. Plot graph _____________________________________
 
@@ -959,8 +952,7 @@ class Portfolio:
 
         i = 0
         axes = []
-
-        for it in list_name_indicators:
+        while i < len(list_name_indicators):
 
             ax = my_general.plt.subplot2grid(my_general.gridsize, (i, 0))
             axes.append(ax)
@@ -970,6 +962,9 @@ class Portfolio:
         # style
         my_general.plt.style.use('seaborn-darkgrid')
 
+        # Add labels to the plot
+        style = dict(size=12, color='blue')
+
         # create a color palette
         palette = my_general.plt.get_cmap('Set1')
 
@@ -977,21 +972,29 @@ class Portfolio:
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
-        print("Time --> ", my_general.np.asarray(t_i[0]).shape)
-        print("Time --> ", my_general.np.asarray(list_tickers[0]["close_value"]).shape)
-        x = [my_general.datetime.datetime.now() + my_general.datetime.timedelta(hours=i) for i in range(len(list_tickers[i]["close_value"]))]
+        # births['day'] = births['day'].astype(int)
+        #
+        # births.index = pd.to_datetime(10000 * births.year +
+        #                               100 * births.month +
+        #                               births.day, format='%Y%m%d')
+        # births_by_date = births.pivot_table('births',
+        #                                     [births.index.month, births.index.day])
+        # births_by_date.index = [pd.datetime(2012, month, day)
+        #                         for (month, day) in births_by_date.index]
+
         i = 0
         for it in list_name_tickers:
-            axes[0].plot(my_general.np.asarray(x),
-                         my_general.np.asarray(list_tickers[i]["close_value"]),
+            axes[0].plot(my_general.np.array(t_i[0]),
+                         my_general.np.array(list_tickers[i]["close_value"]),
                          c=palette(i), linestyle='solid',
                          label=it)
 
             i += 1
 
-        # beautify the x-labels
-        axes[0].plt.gcf().autofmt_xdate()
+        axes[0].set(title="Analyze tickers")
         axes[0].legend(loc='upper left', frameon=True)
+        axes[0].text('20190121', 60, "New Year's Day", **style)
+        axes[0].text('20200902', 70, "Independence Day", ha='center', **style)
 
         # Get name indicators from array
 
