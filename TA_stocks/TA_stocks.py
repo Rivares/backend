@@ -40,7 +40,7 @@ def main():
             # __________________________________________ Bollinger Bands __________________________________________
 
             # Initialize Bollinger Bands Indicator
-            indicator_bb = my_general.ta.volatility.BollingerBands(close=df["<CLOSE>"], n=20, ndev=2, fillna=True)
+            indicator_bb = my_general.ta.volatility.BollingerBands(close=df["<CLOSE>"], window=20, ndev=2, fillna=True)
 
             # Add Bollinger Bands features
             df['bb_bbm'] = indicator_bb.bollinger_mavg()
@@ -82,7 +82,7 @@ def main():
 
             # Initialize Keltner Channel Indicator
             indicator_kc = my_general.ta.volatility.KeltnerChannel(high=df["<HIGH>"],
-                                                                   low=df["<LOW>"], close=df["<CLOSE>"], n=20, fillna=True)
+                                                                   low=df["<LOW>"], close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add Keltner Channel features
             df['kc_kcc'] = indicator_kc.keltner_channel_central()
@@ -120,7 +120,7 @@ def main():
             # Initialize Average true range Indicator
             indicator_atr = my_general.ta.volatility.AverageTrueRange(high=df["<HIGH>"],
                                                                       low=df["<LOW>"],
-                                                                      close=df["<CLOSE>"], n=20, fillna=True)
+                                                                      close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add ATR indicator
             df['atr_i'] = indicator_atr.average_true_range()
@@ -142,7 +142,7 @@ def main():
             # __________________________________________ Donchian Channel __________________________________________
 
             # Initialize Donchian Channel Indicator
-            indicator_dc = my_general.ta.volatility.DonchianChannel(close=df["<CLOSE>"], n=20, fillna=True)
+            indicator_dc = my_general.ta.volatility.DonchianChannel(close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add Donchian Channel features
             df['dc_dch'] = indicator_dc.donchian_channel_hband()
@@ -179,7 +179,7 @@ def main():
             # Initialize ADX Indicator
             indicator_adx = my_general.ta.trend.ADXIndicator(high=df["<HIGH>"],
                                                              low=df["<LOW>"],
-                                                             close=df["<CLOSE>"], n=20, fillna=True)
+                                                             close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add ADX features
             df['adx_aver'] = indicator_adx.adx()
@@ -209,7 +209,7 @@ def main():
             # _____________________________ Aroon Indicator ________________________________
 
             # Initialize ADX Indicator
-            indicator_ai = my_general.ta.trend.AroonIndicator(close=df["<CLOSE>"], n=20, fillna=True)
+            indicator_ai = my_general.ta.trend.AroonIndicator(close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add ADX features
             df['ai_i'] = indicator_ai.aroon_indicator()
@@ -241,7 +241,7 @@ def main():
             # Initialize ADX Indicator
             indicator_ccl = my_general.ta.trend.CCIIndicator(high=df["<HIGH>"],
                                                              low=df["<LOW>"],
-                                                             close=df["<CLOSE>"], n=20, c=5, fillna=True)
+                                                             close=df["<CLOSE>"], window=20, c=5, fillna=True)
 
             # Add ADX features
             df['ccl_i'] = indicator_ccl.cci()
@@ -263,7 +263,7 @@ def main():
             # _____________________________ Detrended Price Oscillator (DPO) ________________________________
 
             # Initialize DPO Indicator
-            indicator_dpo = my_general.ta.trend.DPOIndicator(close=df["<CLOSE>"], n=20, fillna=True)
+            indicator_dpo = my_general.ta.trend.DPOIndicator(close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add DPO features
             df['dpo_i'] = indicator_dpo.dpo()
@@ -284,7 +284,7 @@ def main():
             # _____________________________ Exponential Moving Average (EMA) ________________________________
 
             # Initialize EMA Indicator
-            indicator_ema = my_general.ta.trend.EMAIndicator(close=df["<CLOSE>"], n=20, fillna=True)
+            indicator_ema = my_general.ta.trend.EMAIndicator(close=df["<CLOSE>"], window=20, fillna=True)
 
             # Add EMA features
             df['ema_i'] = indicator_ema.ema_indicator()
@@ -363,7 +363,7 @@ def main():
             # ____________________________ Moving Average Convergence Divergence (MACD) _______________________________
 
             # Initialize MACD Indicator
-            indicator_macd = my_general.ta.trend.MACD(close=df["<CLOSE>"], n_fast=26, n_slow=12, n_sign=9, fillna=True)
+            indicator_macd = my_general.ta.trend.MACD(close=df["<CLOSE>"], window_fast=26, window_slow=12, window_sign=9, fillna=True)
             # Add MACD features
             df['macd'] = indicator_macd.macd()
             df['macd_diff'] = indicator_macd.macd_diff()
@@ -400,7 +400,7 @@ def main():
             # _____________________________ Mass Index (MI) ________________________________
 
             # Initialize MI Indicator
-            indicator_mi = my_general.ta.trend.MassIndex(high=df["<HIGH>"], low=df["<LOW>"], n=10, n2=20, fillna=True)
+            indicator_mi = my_general.ta.trend.MassIndex(high=df["<HIGH>"], low=df["<LOW>"], window=10, n2=20, fillna=True)
             # Add MI features
             df['mi'] = indicator_mi.mass_index()
 
@@ -456,7 +456,7 @@ def main():
             # _____________________________ Trix (TRIX) ________________________________
 
             # Initialize TRIX Indicator
-            indicator_trix = my_general.ta.trend.TRIXIndicator(close=df["<CLOSE>"], n=15, fillna=True)
+            indicator_trix = my_general.ta.trend.TRIXIndicator(close=df["<CLOSE>"], window=15, fillna=True)
 
             # Add TRIX features
             df['trix_i'] = indicator_trix.trix()
@@ -480,7 +480,7 @@ def main():
             # Initialize VI Indicator
             indicator_vi = my_general.ta.trend.VortexIndicator(high=df["<HIGH>"],
                                                                low=df["<LOW>"],
-                                                               close=df["<CLOSE>"], n=15, fillna=True)
+                                                               close=df["<CLOSE>"], window=15, fillna=True)
 
             # Add VI features
             df['vi_diff'] = indicator_vi.vortex_indicator_diff()
@@ -584,7 +584,7 @@ def main():
             indicator_cmf = my_general.ta.volume.ChaikinMoneyFlowIndicator(high=df["<HIGH>"],
                                                                            low=df["<LOW>"],
                                                                            close=df["<CLOSE>"],
-                                                                           volume=df["<VOL>"], n=20, fillna=True)
+                                                                           volume=df["<VOL>"], window=20, fillna=True)
 
             # Add CMF features
             df['cmf_i'] = indicator_cmf.chaikin_money_flow()
@@ -607,7 +607,7 @@ def main():
             # Initialize (EoM, EMV) Indicator
             indicator_eom = my_general.ta.volume.EaseOfMovementIndicator(high=df["<HIGH>"],
                                                                          low=df["<LOW>"],
-                                                                         volume=df["<VOL>"], n=20, fillna=True)
+                                                                         volume=df["<VOL>"], window=20, fillna=True)
 
             # Add (EoM, EMV) features
             df['eom_i'] = indicator_eom.ease_of_movement()
@@ -634,7 +634,7 @@ def main():
             #
             # Initialize FI Indicator
             indicator_fi = my_general.ta.volume.ForceIndexIndicator(close=df["<CLOSE>"],
-                                                                    volume=df["<VOL>"], n=20, fillna=True)
+                                                                    volume=df["<VOL>"], window=20, fillna=True)
 
             # Add FI features
             df['fi_i'] = indicator_fi.force_index()
@@ -752,7 +752,7 @@ def main():
             #
             # Initialize KAMA Indicator
             indicator_kama = my_general.ta.momentum.KAMAIndicator(close=df["<CLOSE>"],
-                                                                  n=10,
+                                                                  window=10,
                                                                   pow1=2, pow2=30, fillna=True)
 
             # Add KAMA features
@@ -779,7 +779,7 @@ def main():
                                                                 low=df["<LOW>"],
                                                                 close=df["<CLOSE>"],
                                                                 volume=df["<VOL>"],
-                                                                n=14, fillna=True)
+                                                                window=14, fillna=True)
 
             # Add MFI features
             df['mfi_i'] = indicator_mfi.money_flow_index()
@@ -802,7 +802,7 @@ def main():
             #
             # Initialize ROC Indicator
             indicator_roc = my_general.ta.momentum.ROCIndicator(close=df["<CLOSE>"],
-                                                                n=12, fillna=True)
+                                                                window=12, fillna=True)
 
             # Add ROC features
             df['roc_i'] = indicator_roc.roc()
@@ -825,7 +825,7 @@ def main():
             #
             # Initialize RSI Indicator
             indicator_rsi = my_general.ta.momentum.RSIIndicator(close=df["<CLOSE>"],
-                                                                n=12, fillna=True)
+                                                                window=12, fillna=True)
 
             # Add RSI features
             df['rsi_i'] = indicator_rsi.rsi()
@@ -853,7 +853,7 @@ def main():
             indicator_stoch = my_general.ta.momentum.StochasticOscillator(high=df["<HIGH>"],
                                                                           low=df["<LOW>"],
                                                                           close=df["<CLOSE>"],
-                                                                          n=14, fillna=True)
+                                                                          window=14, fillna=True)
 
             # Add RSI features
             df['stoch_i'] = indicator_stoch.stoch()

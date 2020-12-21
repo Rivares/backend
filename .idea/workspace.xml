@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/print_graph_NVTK.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_TATN.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_NVTK.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_TATN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-app.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-app.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Global_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Global_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser_market/hash_market.json" beforeDir="false" afterPath="$PROJECT_DIR$/Parser_market/hash_market.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser_market/market.json" beforeDir="false" afterPath="$PROJECT_DIR$/Parser_market/market.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money.json" beforeDir="false" afterPath="$PROJECT_DIR$/money.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_stocks/TA_stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/TA_stocks/TA_stocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_print_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_print_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/list_current_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_current_assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/list_operations_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_operations_assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/money_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/money_movement.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +50,14 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Global_main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -40,7 +68,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\serditov\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="SDK_HOME" value="F:\Anaconda\envs\ManimTest\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -76,6 +104,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -89,42 +118,61 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="197" width="1092" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602662383919">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608376908407">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1608376908407" />
     <state x="414" y="178" width="1092" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602610482935" />
     <state x="414" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602662383919" />
-    <state x="740" y="287" key="FileChooserDialogImpl" timestamp="1602610464554">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="740" y="193" key="FileChooserDialogImpl" timestamp="1608407402508">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="740" y="193" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1608407402508" />
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602610464554" />
-    <state width="1898" height="374" key="GridCell.Tab.0.bottom" timestamp="1602852197771">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1881" height="303" key="GridCell.Tab.0.bottom" timestamp="1608546930437">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state width="1881" height="303" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1608546930437" />
     <state width="1898" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1898" height="374" key="GridCell.Tab.0.center" timestamp="1602852197771">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1881" height="303" key="GridCell.Tab.0.center" timestamp="1608546930437">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state width="1881" height="303" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1608546930437" />
     <state width="1898" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.center/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1898" height="374" key="GridCell.Tab.0.left" timestamp="1602852197771">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1881" height="303" key="GridCell.Tab.0.left" timestamp="1608546930437">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state width="1881" height="303" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1608546930437" />
     <state width="1898" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945433" />
     <state width="1898" height="374" key="GridCell.Tab.0.left/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1898" height="374" key="GridCell.Tab.0.right" timestamp="1602852197771">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1881" height="303" key="GridCell.Tab.0.right" timestamp="1608546930437">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state width="1881" height="303" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1608546930437" />
     <state width="1898" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.right/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state x="461" y="171" key="SettingsEditor" timestamp="1602663560840">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="218" y="0" key="SettingsEditor" timestamp="1608407431305">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="218" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1608407431305" />
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602613454806" />
     <state x="461" y="171" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602663560840" />
   </component>
