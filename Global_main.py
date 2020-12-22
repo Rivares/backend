@@ -880,7 +880,18 @@ class Portfolio:
             t_i.append([])
             while j < len(list_close_value):
                 list_close_value[j] = (list_close_value[j] * 100) / max_val
-
+                # print("Before: ", list_date_value[j])
+                buf_Y = str(list_date_value[j])
+                buf_M = str(list_date_value[j])
+                buf_D = str(list_date_value[j])
+                buf_h = str(list_date_value[j])
+                buf_m = str(list_date_value[j])
+                list_date_value[j] = ""
+                buf_Y = buf_Y[:4] + "-"
+                buf_M = buf_M[4:6] + "-"
+                buf_D = buf_D[-2:]
+                list_date_value[j] = buf_Y + buf_M + buf_D
+                # print("After: ", list_date_value[j])
                 t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
                 # print(t_i[i][j])
 
@@ -982,14 +993,17 @@ class Portfolio:
         # births_by_date.index = [pd.datetime(2012, month, day)
         #                         for (month, day) in births_by_date.index]
 
-        # my_general.plt.gcf().autofmt_xdate()
-        m_time_format = my_general.mdates.DateFormatter('%Y-%b-%d')
-        axes[0].xaxis.set_major_formatter(m_time_format)
+        my_general.plt.gcf().autofmt_xdate()
 
+        m_time_format = []
+        for it in t_i:
+            m_time_format.append(my_general.mdates.date2num(it))
+
+        print("Time ---> ", m_time_format[0])
         i = 0
         for it in list_name_tickers:
 
-            axes[0].plot(my_general.np.array(t_i[0]),
+            axes[0].plot_date(m_time_format[0], #my_general.np.array(t_i[0]),
                          my_general.np.array(list_tickers[i]["close_value"]),
                          c=palette(i), linestyle='solid',
                          label=it)
