@@ -982,8 +982,13 @@ class Portfolio:
         # births_by_date.index = [pd.datetime(2012, month, day)
         #                         for (month, day) in births_by_date.index]
 
+        # my_general.plt.gcf().autofmt_xdate()
+        m_time_format = my_general.mdates.DateFormatter('%Y-%b-%d')
+        axes[0].xaxis.set_major_formatter(m_time_format)
+
         i = 0
         for it in list_name_tickers:
+
             axes[0].plot(my_general.np.array(t_i[0]),
                          my_general.np.array(list_tickers[i]["close_value"]),
                          c=palette(i), linestyle='solid',
@@ -993,8 +998,8 @@ class Portfolio:
 
         axes[0].set(title="Analyze tickers")
         axes[0].legend(loc='upper left', frameon=True)
-        axes[0].text('20190121', 60, "New Year's Day", **style)
-        axes[0].text('20200902', 70, "Independence Day", ha='center', **style)
+        axes[0].text('20190103 00:00:00', 60, "New Year's Day", **style)
+        axes[0].text('20200902 00:00:00', 70, "Independence Day", ha='center', **style)
 
         # Get name indicators from array
 

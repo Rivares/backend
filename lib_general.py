@@ -3,6 +3,7 @@
 from finam import Exporter, Market, LookupComparator, Timeframe
 
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 from threading import Thread
