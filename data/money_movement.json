@@ -144438,5 +144438,6445 @@
         },
         "profit_percent": 0.0,
         "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.30000000000000004
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282889,
+            "low_part": 0.31000000000000005
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282890,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282891,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282891,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282891,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5282891,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11644646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11664646,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11664646,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664646,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664647,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11664648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11664648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298889,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11664648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 18019,
+            "low_part": 0.17
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.13
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298890,
+            "low_part": 0.14
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298891,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298892,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298892,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298892,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5298892,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11680648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11700648,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11700648,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700648,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700649,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11700650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11700650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5314890,
+            "low_part": 0.03
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11700650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 18015,
+            "low_part": 0.94
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.19
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316876,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316877,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316878,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316878,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316878,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5316878,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11716650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11736650,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11736650,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736650,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736651,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11736652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11736652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5332876,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11736652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 18014,
+            "low_part": 0.72
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.47
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334863,
+            "low_part": 0.48
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334864,
+            "low_part": 0.38
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334865,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334865,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334865,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5334865,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11752652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11772652,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11772652,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772652,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772653,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11772654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11772654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350863,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11772654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 18015,
+            "low_part": 0.33
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.14
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350864,
+            "low_part": 0.15000000000000002
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350865,
+            "low_part": 0.05
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350866,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350866,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350866,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5350866,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11788654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11808654,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11808654,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808654,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808655,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11808656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11808656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5366864,
+            "low_part": 0.04
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11808656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 18014,
+            "low_part": 0.32
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.7200000000000001
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.8200000000000001
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368851,
+            "low_part": 0.8300000000000001
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368852,
+            "low_part": 0.73
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368853,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368853,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368853,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5368853,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11824656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11844656,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11844656,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844656,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844657,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11844658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11844658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384851,
+            "low_part": 0.72
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11844658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 18015,
+            "low_part": 0.33
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.49
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384852,
+            "low_part": 0.5
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384853,
+            "low_part": 0.4
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384854,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384854,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384854,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5384854,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11860658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11880658,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11880658,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880658,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880659,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11880660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11880660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400852,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11880660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 18014,
+            "low_part": 0.12
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.37
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400853,
+            "low_part": 0.38
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400854,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400855,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400855,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400855,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5400855,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11896660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11916660,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11916660,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916660,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916661,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11916662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11916662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5416853,
+            "low_part": 0.27
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11916662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 18015,
+            "low_part": 0.53
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.84
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418839,
+            "low_part": 0.85
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418840,
+            "low_part": 0.75
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418841,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418841,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418841,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5418841,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11932662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11952662,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11952662,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952662,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952663,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11952664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11952664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434839,
+            "low_part": 0.74
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11952664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 18015,
+            "low_part": 0.53
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.31
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434840,
+            "low_part": 0.32
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434841,
+            "low_part": 0.22
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434842,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434842,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434842,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5434842,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11968664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11988664,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11988664,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988664,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988665,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 11988666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11988666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450840,
+            "low_part": 0.21
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 11988666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 18013,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.2
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450841,
+            "low_part": 0.21000000000000002
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450842,
+            "low_part": 0.11
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450843,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450843,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450843,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5450843,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12004666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12024666,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12024666,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024666,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024667,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12024668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12024668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5466841,
+            "low_part": 0.1
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12024668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 18013,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468830,
+            "low_part": 0.09
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468830,
+            "low_part": 0.09999999999999999
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468831,
+            "low_part": 0.0
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468831,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468831,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468831,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5468831,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12040668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12060668,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12060668,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060668,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060669,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12060670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12060670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484829,
+            "low_part": 0.99
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12060670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 18013,
+            "low_part": 0.71
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.38
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484830,
+            "low_part": 0.39
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484831,
+            "low_part": 0.29
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484832,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484832,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484832,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5484832,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12076670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12096670,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12096670,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096670,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096671,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12096672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12096672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5500830,
+            "low_part": 0.28
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12096672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 18014,
+            "low_part": 0.52
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 16000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.86
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.9
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502817,
+            "low_part": 0.87
+        },
+        "current_money": {
+            "big_part": 15999,
+            "low_part": 0.89
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502818,
+            "low_part": 0.77
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.99
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502819,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502819,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502819,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5502819,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 15998,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12112672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12132672,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12132672,
+            "low_part": 0.1
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.1
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132672,
+            "low_part": 0.11
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20000,
+            "low_part": 0.11
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132673,
+            "low_part": 0.01
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20001,
+            "low_part": 0.01
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132674,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
+    },
+    {
+        "in_money": {
+            "big_part": 12132674,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12132674,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518817,
+            "low_part": 0.76
+        },
+        "current_money": {
+            "big_part": 20002,
+            "low_part": 0.0
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": -1
+    },
+    {
+        "in_money": {
+            "big_part": 12132674,
+            "low_part": 0.0
+        },
+        "out_money": {
+            "big_part": 5518818,
+            "low_part": 0.44
+        },
+        "current_money": {
+            "big_part": 18014,
+            "low_part": 0.32
+        },
+        "profit_money": {
+            "big_part": 0,
+            "low_part": 0.0
+        },
+        "profit_percent": 0.0,
+        "result_act": 1
     }
 ]

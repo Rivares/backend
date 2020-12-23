@@ -885,13 +885,16 @@ class Portfolio:
                 buf_Y = str(list_date_value[j])
                 buf_M = str(list_date_value[j])
                 buf_D = str(list_date_value[j])
-                buf_h = str(list_date_value[j])
-                buf_m = str(list_date_value[j])
+                buf_h = str(list_time_value[j])
+                buf_m = str(list_time_value[j])
                 list_date_value[j] = ""
                 buf_Y = buf_Y[:4] + "-"
                 buf_M = buf_M[4:6] + "-"
                 buf_D = buf_D[-2:]
                 list_date_value[j] = buf_Y + buf_M + buf_D
+                buf_h = buf_h[:2] + ":"
+                buf_m = buf_m[3:5]
+                list_time_value[j] = buf_h + buf_m
                 # print("After: ", list_date_value[j])
                 t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
                 # print(t_i[i][j])
@@ -992,41 +995,33 @@ class Portfolio:
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
-        # births['day'] = births['day'].astype(int)
-        #
-        # births.index = pd.to_datetime(10000 * births.year +
-        #                               100 * births.month +
-        #                               births.day, format='%Y%m%d')
-        # births_by_date = births.pivot_table('births',
-        #                                     [births.index.month, births.index.day])
-        # births_by_date.index = [pd.datetime(2012, month, day)
-        #                         for (month, day) in births_by_date.index]
-
-        my_general.plt.gcf().autofmt_xdate()
-        # left = 0.125  # the left side of the subplots of the figure
-        # right = 0.9  # the right side of the subplots of the figure
-        # bottom = 0.1  # the bottom of the subplots of the figure
-        # top = 0.9  # the top of the subplots of the figure
-        # wspace = 0.2  # the amount of width reserved for blank space between subplots
-        # hspace = 0.2  # the amount of height reserved for white space between subplots
+        # my_general.plt.gcf().autofmt_xdate()
         my_general.plt.tight_layout() # subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
         m_time_format = my_general.mdates.date2num(t_i[0])
 
-        axes[0].set_xticks(m_time_format[::100])  # для X оси берем в качестве тиков 1/10 часть дат из нашего фрейма
+        axes[0].set_xticks(m_time_format[::10])  # для X оси берем в качестве тиков 1/10 часть дат из нашего фрейма
 
         #  делаем тики на оси X вертикальными
         xlabels = axes[0].xaxis.get_ticklabels()
         for label in xlabels:
             # цвет подписи делений оси OX
-            label.set_color('blue')
+            label.set_color('black')
             # поворот подписей делений оси OX
-            label.set_rotation('vertical')
+            label.set_rotation(45)
             # размер шрифта подписей делений оси OX
-            label.set_fontsize(10)
+            label.set_fontsize(8)
+
+        # Изменим локатор, используемый по умолчанию
+        locator = my_general.mdates.AutoDateLocator()
+        # Если локатор привяжет риски к месяцам, то риски должны идти с указанным нами интервалом
+        locator.intervald[my_general.mdates.MONTHLY] = [1]
+        # Если локатор привяжет риски к дням, то риски должны идти с указанным нами интервалом
+        locator.intervald[my_general.mdates.DAILY] = [5]
+        axes[0].xaxis.set_major_locator(locator)
 
         # форматирование дат для оси X  -
         # иначе вместо дат увидим просто чиселки (дни) григорианского календаря  с которыми matplotlib и работает внутри
-        axes[0].xaxis.set_major_formatter(my_general.mdates.DateFormatter('%Y-%m-%d'))
+        axes[0].xaxis.set_major_formatter(my_general.mdates.DateFormatter('%Y-%b-%d %H:%M'))
 
         print("Time --> ", m_time_format)
         i = 0
@@ -1204,7 +1199,7 @@ def main():
     # print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
     # print("Print market --------> ", my_portfolio.print_market(depart_market))
 
-    start_moment = my_general.datetime.date(2019,
+    start_moment = my_general.datetime.date(2020,
                                             1,
                                             1)
     end_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
