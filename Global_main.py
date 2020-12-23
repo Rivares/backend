@@ -833,9 +833,13 @@ class Portfolio:
         start_moment = user_start_moment
         end_moment = user_end_moment
         time_frame = const_time_frame.get(user_time_frame)
+        delta = my_general.datetime.timedelta(days=2)
+        dates = my_general.mdates.drange(start_moment, end_moment, delta)
         print("start_moment: ", start_moment)
         print("end_moment: ", end_moment)
         print("time_frame: ", time_frame)
+        print("delta: ", delta)
+        # print("dates: ", dates)
 
         exporter = my_general.Exporter()
 
@@ -979,6 +983,14 @@ class Portfolio:
         # create a color palette
         palette = my_general.plt.get_cmap('Set1')
 
+        font = {'family': 'serif',
+                'color': 'darkred',
+                'weight': 'normal',
+                'size': 16,
+                }
+
+        axes[0].set_title("Analyze tickers", fontdict=font)
+
         axes[0].set_ylabel("Price, %", fontsize=9)
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
@@ -994,26 +1006,43 @@ class Portfolio:
         #                         for (month, day) in births_by_date.index]
 
         my_general.plt.gcf().autofmt_xdate()
+        # left = 0.125  # the left side of the subplots of the figure
+        # right = 0.9  # the right side of the subplots of the figure
+        # bottom = 0.1  # the bottom of the subplots of the figure
+        # top = 0.9  # the top of the subplots of the figure
+        # wspace = 0.2  # the amount of width reserved for blank space between subplots
+        # hspace = 0.2  # the amount of height reserved for white space between subplots
+        my_general.plt.tight_layout() # subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
+        m_time_format = my_general.mdates.date2num(t_i[0])
 
-        m_time_format = []
-        for it in t_i:
-            m_time_format.append(my_general.mdates.date2num(it))
+        # this is superfluous, since the autoscaler should get it right, but
+        # use date2num and num2date to convert between dates and floats if
+        # you want; both date2num and num2date convert an instance or sequence
+        axes[0].set_xlim(dates[0], dates[-1])
 
-        print("Time ---> ", m_time_format[0])
+        # The hour locator takes the hour or sequence of hours you want to
+        # tick, not the base multiple
+
+        axes[0].xaxis.set_major_locator(my_general.mdates.DayLocator())
+        axes[0].xaxis.set_minor_locator(my_general.mdates.HourLocator(range(0, 25, 6)))
+        axes[0].xaxis.set_major_formatter(my_general.mdates.DateFormatter('%Y-%m-%d'))
+
+        axes[0].fmt_xdata = my_general.mdates.DateFormatter('%Y-%m-%d %H:%M:%S')
+
+        print("Time --> ", dates)
         i = 0
         for it in list_name_tickers:
-
-            axes[0].plot_date(m_time_format[0], #my_general.np.array(t_i[0]),
+            # m_time_format
+            axes[0].plot_date(dates, #my_general.np.array(t_i[0]),
                          my_general.np.array(list_tickers[i]["close_value"]),
-                         c=palette(i), linestyle='solid',
+                         c=palette(i), linestyle='-',
                          label=it)
 
             i += 1
 
-        axes[0].set(title="Analyze tickers")
         axes[0].legend(loc='upper left', frameon=True)
-        axes[0].text('20190103 00:00:00', 60, "New Year's Day", **style)
-        axes[0].text('20200902 00:00:00', 70, "Independence Day", ha='center', **style)
+        axes[0].text('2019-01-03 00:00:00', 60, "Bought", **style)
+        axes[0].text('2020-09-02 00:00:00', 70, "Sold", ha='center', **style)
 
         # Get name indicators from array
 

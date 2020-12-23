@@ -4114,5 +4114,341 @@
             "minute": "34",
             "second": "54"
         }
+    },
+    {
+        "id": 4820979063,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1984.0,
+        "count": 1,
+        "cost": 1984.0,
+        "commissions": 19.84,
+        "full_cost": 2003.84,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "03",
+            "second": "49"
+        }
+    },
+    {
+        "id": 4218768174,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1984.0,
+        "count": 1,
+        "cost": 1984.0,
+        "commissions": 19.84,
+        "full_cost": 2003.84,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "08",
+            "second": "34"
+        }
+    },
+    {
+        "id": 7180369953,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1982.0,
+        "count": 1,
+        "cost": 1982.0,
+        "commissions": 19.82,
+        "full_cost": 2001.82,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "10",
+            "second": "40"
+        }
+    },
+    {
+        "id": 4833712562,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1982.2,
+        "count": 1,
+        "cost": 1982.2,
+        "commissions": 19.82,
+        "full_cost": 2002.02,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "11",
+            "second": "53"
+        }
+    },
+    {
+        "id": 3216368400,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1982.4,
+        "count": 1,
+        "cost": 1982.4,
+        "commissions": 19.82,
+        "full_cost": 2002.22,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "13",
+            "second": "14"
+        }
+    },
+    {
+        "id": 5116599518,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1986.0,
+        "count": 1,
+        "cost": 1986.0,
+        "commissions": 19.86,
+        "full_cost": 2005.86,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "17",
+            "second": "08"
+        }
+    },
+    {
+        "id": 7591388804,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1987.8,
+        "count": 1,
+        "cost": 1987.8,
+        "commissions": 19.88,
+        "full_cost": 2007.68,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "19",
+            "second": "43"
+        }
+    },
+    {
+        "id": 1540110659,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1988.0,
+        "count": 1,
+        "cost": 1988.0,
+        "commissions": 19.88,
+        "full_cost": 2007.88,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "20",
+            "second": "26"
+        }
+    },
+    {
+        "id": 6671194144,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1989.6,
+        "count": 1,
+        "cost": 1989.6,
+        "commissions": 19.9,
+        "full_cost": 2009.5,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "24",
+            "second": "08"
+        }
+    },
+    {
+        "id": 4294283746,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1985.2,
+        "count": 1,
+        "cost": 1985.2,
+        "commissions": 19.85,
+        "full_cost": 2005.05,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "36",
+            "second": "46"
+        }
+    },
+    {
+        "id": 5293453619,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1985.2,
+        "count": 1,
+        "cost": 1985.2,
+        "commissions": 19.85,
+        "full_cost": 2005.05,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "38",
+            "second": "40"
+        }
+    },
+    {
+        "id": 7416775671,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1987.0,
+        "count": 1,
+        "cost": 1987.0,
+        "commissions": 19.87,
+        "full_cost": 2006.87,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "42",
+            "second": "51"
+        }
+    },
+    {
+        "id": 1670864897,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1988.2,
+        "count": 1,
+        "cost": 1988.2,
+        "commissions": 19.88,
+        "full_cost": 2008.08,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "44",
+            "second": "20"
+        }
+    },
+    {
+        "id": 2554791593,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1987.6,
+        "count": 1,
+        "cost": 1987.6,
+        "commissions": 19.88,
+        "full_cost": 2007.48,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "45",
+            "second": "05"
+        }
+    },
+    {
+        "id": 8877557789,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1987.4,
+        "count": 1,
+        "cost": 1987.4,
+        "commissions": 19.87,
+        "full_cost": 2007.27,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "45",
+            "second": "44"
+        }
+    },
+    {
+        "id": 4687172892,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1987.6,
+        "count": 1,
+        "cost": 1987.6,
+        "commissions": 19.88,
+        "full_cost": 2007.48,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "23"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "46",
+            "second": "20"
+        }
     }
 ]
