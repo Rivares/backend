@@ -42,6 +42,7 @@ jobs:
         pip install time
         pip install xlrd
         pip install json
+        pip install kivy
         pip install csv
         pip install sys
         pip install os

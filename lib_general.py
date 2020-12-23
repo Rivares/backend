@@ -2,8 +2,11 @@
 
 from finam import Exporter, Market, LookupComparator, Timeframe
 
-import matplotlib.pyplot as plt
+from kivy.app import App
+from kivy.uix.label import Label
+
 import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 from threading import Thread
