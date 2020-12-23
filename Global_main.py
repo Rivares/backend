@@ -977,9 +977,6 @@ class Portfolio:
         # style
         my_general.plt.style.use('seaborn-darkgrid')
 
-        # Add labels to the plot
-        style = dict(size=12, color='blue')
-
         # create a color palette
         palette = my_general.plt.get_cmap('Set1')
 
@@ -995,7 +992,6 @@ class Portfolio:
         axes[0].set_xlabel("time", fontsize=9)
         axes[0].grid(linestyle="--", color="gray", linewidth=0.5)
 
-        # my_general.plt.gcf().autofmt_xdate()
         my_general.plt.tight_layout() # subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
         m_time_format = my_general.mdates.date2num(t_i[0])
 
@@ -1027,16 +1023,23 @@ class Portfolio:
         i = 0
         for it in list_name_tickers:
             # m_time_format
-            axes[0].plot_date(m_time_format, #my_general.np.array(t_i[0]),
-                         my_general.np.array(list_tickers[i]["close_value"]),
-                         c=palette(i), linestyle='-',
-                         label=it)
+            axes[0].plot_date(m_time_format,
+                              my_general.np.array(list_tickers[i]["close_value"]),
+                              c=palette(i), linestyle='-',
+                              label=it)
 
             i += 1
 
+        price_buy = 60
+        price_sell = 70
         axes[0].legend(loc='upper left', frameon=True)
-        axes[0].text('2019-01-03 00:00:00', 60, "Bought", **style)
-        axes[0].text('2020-09-02 00:00:00', 70, "Sold", ha='center', **style)
+        axes[0].text('2019-01-03 00:00', price_buy, "Bought", size=12, color='blue')
+        axes[0].text('2020-09-02 00:00', price_sell, "Sold", ha='center', size=12, color='blue')
+
+        if price_buy < price_sell:
+            axes[0].text('2020-09-02 00:00', price_sell + 10, "Profit", ha='center', size=14, color='green')
+        else:
+            axes[0].text('2020-09-02 00:00', price_sell - 10, "Profit", ha='center', size=14, color='red')
 
         # Get name indicators from array
 
@@ -1199,7 +1202,7 @@ def main():
     # print("Print list current assets --------> ", my_portfolio.print_list_current_assets())
     # print("Print market --------> ", my_portfolio.print_market(depart_market))
 
-    start_moment = my_general.datetime.date(2020,
+    start_moment = my_general.datetime.date(2019,
                                             1,
                                             1)
     end_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
