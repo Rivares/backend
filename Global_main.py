@@ -833,13 +833,10 @@ class Portfolio:
         start_moment = user_start_moment
         end_moment = user_end_moment
         time_frame = const_time_frame.get(user_time_frame)
-        delta = my_general.datetime.timedelta(days=2)
-        dates = my_general.mdates.drange(start_moment, end_moment, delta)
+
         print("start_moment: ", start_moment)
         print("end_moment: ", end_moment)
         print("time_frame: ", time_frame)
-        print("delta: ", delta)
-        # print("dates: ", dates)
 
         exporter = my_general.Exporter()
 
@@ -1015,25 +1012,27 @@ class Portfolio:
         my_general.plt.tight_layout() # subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
         m_time_format = my_general.mdates.date2num(t_i[0])
 
-        # this is superfluous, since the autoscaler should get it right, but
-        # use date2num and num2date to convert between dates and floats if
-        # you want; both date2num and num2date convert an instance or sequence
-        axes[0].set_xlim(dates[0], dates[-1])
+        axes[0].set_xticks(m_time_format[::100])  # для X оси берем в качестве тиков 1/10 часть дат из нашего фрейма
 
-        # The hour locator takes the hour or sequence of hours you want to
-        # tick, not the base multiple
+        #  делаем тики на оси X вертикальными
+        xlabels = axes[0].xaxis.get_ticklabels()
+        for label in xlabels:
+            # цвет подписи делений оси OX
+            label.set_color('blue')
+            # поворот подписей делений оси OX
+            label.set_rotation('vertical')
+            # размер шрифта подписей делений оси OX
+            label.set_fontsize(10)
 
-        axes[0].xaxis.set_major_locator(my_general.mdates.DayLocator())
-        axes[0].xaxis.set_minor_locator(my_general.mdates.HourLocator(range(0, 25, 6)))
+        # форматирование дат для оси X  -
+        # иначе вместо дат увидим просто чиселки (дни) григорианского календаря  с которыми matplotlib и работает внутри
         axes[0].xaxis.set_major_formatter(my_general.mdates.DateFormatter('%Y-%m-%d'))
 
-        axes[0].fmt_xdata = my_general.mdates.DateFormatter('%Y-%m-%d %H:%M:%S')
-
-        print("Time --> ", dates)
+        print("Time --> ", m_time_format)
         i = 0
         for it in list_name_tickers:
             # m_time_format
-            axes[0].plot_date(dates, #my_general.np.array(t_i[0]),
+            axes[0].plot_date(m_time_format, #my_general.np.array(t_i[0]),
                          my_general.np.array(list_tickers[i]["close_value"]),
                          c=palette(i), linestyle='-',
                          label=it)
