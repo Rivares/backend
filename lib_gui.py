@@ -24,9 +24,6 @@ green = [0, 1, 0, 1]
 blue = [0, 0, 1, 1]
 purple = [1, 0, 1, 1]
 
-my_general.plt.plot([1, 23, 2, 4])
-my_general.plt.ylabel('some numbers')
-
 class LoginScreen(GridLayout):
 
     def __init__(self, **kwargs):
@@ -39,7 +36,9 @@ class LoginScreen(GridLayout):
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
 
+
 class MainApp(App):
+
     def build(self):
         # label = Label(text='Hello from Kivy',
         #               size_hint=(.5, .5),
@@ -125,6 +124,8 @@ class MainApp(App):
         #     self.last_was_operator = self.last_button in self.operators
 
         box = BoxLayout()
+        my_general.plt.plot([1, 23, 2, 4])
+        my_general.plt.ylabel('some numbers')
         box.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
         return box

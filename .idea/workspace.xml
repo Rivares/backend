@@ -19,21 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Apk_1">
-      <change afterPath="$PROJECT_DIR$/backend_kivy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend_kivyagg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Kivy_4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Global_main.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hash_market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_market.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hash_print_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_print_graph.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/list_current_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_current_assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/list_operations_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_operations_assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/market.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/money_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/money_movement.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garden.matplotlib" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib_gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/win.spec" beforeDir="false" afterPath="$PROJECT_DIR$/win.spec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608836874178</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Kivy_4">
+      <created>1608843081791</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608843081791</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +223,8 @@
     <MESSAGE value="Kivy_3" />
     <MESSAGE value="Apk_0" />
     <MESSAGE value="Apk_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apk_1" />
+    <MESSAGE value="Kivy_4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kivy_4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="573" y="149" key="#Inspections" timestamp="1608842022054">
@@ -276,10 +272,10 @@
     <state x="218" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1608834902522" />
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602613454806" />
     <state x="461" y="171" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602663560840" />
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608836883676">
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608843106672">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608836883676" />
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608843106672" />
     <state x="650" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608760196884">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
