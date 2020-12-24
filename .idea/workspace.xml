@@ -19,9 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Kivy_0">
-      <change afterPath="$PROJECT_DIR$/lib_gui.py" afterDir="false" />
+    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Kivy_1">
+      <change afterPath="$PROJECT_DIR$/gui/button.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Global_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Global_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_print_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_print_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/money_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/money_movement.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/print_graph_NVTK.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/print_graph_NVTK.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/print_graph_TATN.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/print_graph_TATN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/result_ta_TATN_MACD_RSI_ATR_EMA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/result_ta_TATN_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/target_ticker_NVTK.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/target_ticker_NVTK.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/target_ticker_TATN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/target_ticker_TATN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608759977416</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Kivy_1">
+      <created>1608760706460</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608760706460</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +194,8 @@
     <MESSAGE value="Attempt_3" />
     <MESSAGE value="Attempt_4" />
     <MESSAGE value="Kivy_0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kivy_0" />
+    <MESSAGE value="Kivy_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kivy_1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608376908407">
@@ -220,10 +239,10 @@
     <state x="218" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1608750359143" />
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602613454806" />
     <state x="461" y="171" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602663560840" />
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608760130882">
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608760751591">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608760130882" />
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608760751591" />
     <state x="650" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608760196884">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

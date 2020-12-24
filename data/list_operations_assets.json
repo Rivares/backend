@@ -4891,5 +4891,26 @@
             "minute": "24",
             "second": "08"
         }
+    },
+    {
+        "id": 6067669207,
+        "act": "B",
+        "ticker": "MAIL",
+        "price": 1971.0,
+        "count": 1,
+        "cost": 1971.0,
+        "commissions": 19.71,
+        "full_cost": 1990.71,
+        "market": "STCK",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "24"
+        },
+        "time": {
+            "hour": "11",
+            "minute": "58",
+            "second": "03"
+        }
     }
 ]

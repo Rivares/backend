@@ -1,6 +1,7 @@
 # coding: UTF-8
 
 import lib_general as my_general
+import lib_gui as my_gui
 
 root_path = my_general.root_path
 
@@ -1215,6 +1216,9 @@ def main():
                                                              user_start_moment=start_moment,
                                                              user_end_moment=end_moment,
                                                              user_time_frame='DAILY'))
+
+    mainForm = my_gui.MainApp()
+    mainForm.run()
 
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
