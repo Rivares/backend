@@ -1,8 +1,7 @@
 # coding: UTF-8
 
 import lib_general as my_general
-
-from kivy.garden.matplotlib.backend_kivyagg import FigureCanvasKivyAgg
+from backend_kivyagg import FigureCanvasKivyAgg
 
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout

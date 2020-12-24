@@ -19,51 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Apk_0">
-      <change afterPath="$PROJECT_DIR$/Global_main.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/Global_main/Global_main.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/Global_main/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/.idea/Parser_stoks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/Parser_market/Parser_market.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/.idea/Parser_stoks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/TA_stocks/TA_stocks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/buildozer.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/command.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/hash_market.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/hash_print_graph.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/list_current_assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/list_operations_assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/market.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/money_movement.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/print_graph_NVTK.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/print_graph_TATN.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/result_ta_TATN_MACD_RSI_ATR_EMA.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/target_ticker_NVTK.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/data/target_ticker_TATN.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/gui/button.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/lib_general.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/lib_gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/android/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/garden.matplotlib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/win.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python-app.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-app.yml" afterDir="false" />
+    <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Apk_1">
+      <change afterPath="$PROJECT_DIR$/backend_kivy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend_kivyagg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apk/buildozer.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Global_main.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_print_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_print_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/list_current_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_current_assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/list_operations_assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_operations_assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/market.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/market.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/money_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/money_movement.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garden.matplotlib" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win.spec" beforeDir="false" afterPath="$PROJECT_DIR$/win.spec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608828527156</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Apk_1">
+      <created>1608836874178</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608836874178</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,9 +227,14 @@
     <MESSAGE value="Kivy_2" />
     <MESSAGE value="Kivy_3" />
     <MESSAGE value="Apk_0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apk_0" />
+    <MESSAGE value="Apk_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apk_1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="573" y="149" key="#Inspections" timestamp="1608842022054">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="573" y="149" key="#Inspections/0.0.1920.1032@0.0.1920.1032" timestamp="1608842022054" />
     <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608376908407">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -264,28 +246,28 @@
     </state>
     <state x="740" y="193" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1608407402508" />
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602610464554" />
-    <state width="1881" height="222" key="GridCell.Tab.0.bottom" timestamp="1608836676425">
+    <state width="1881" height="222" key="GridCell.Tab.0.bottom" timestamp="1608842186973">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1881" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1608836676425" />
+    <state width="1881" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1608842186973" />
     <state width="1898" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1881" height="222" key="GridCell.Tab.0.center" timestamp="1608836676425">
+    <state width="1881" height="222" key="GridCell.Tab.0.center" timestamp="1608842186973">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1881" height="222" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1608836676425" />
+    <state width="1881" height="222" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1608842186973" />
     <state width="1898" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.center/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1881" height="222" key="GridCell.Tab.0.left" timestamp="1608836676425">
+    <state width="1881" height="222" key="GridCell.Tab.0.left" timestamp="1608842186973">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1881" height="222" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1608836676425" />
+    <state width="1881" height="222" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1608842186973" />
     <state width="1898" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945433" />
     <state width="1898" height="374" key="GridCell.Tab.0.left/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1881" height="222" key="GridCell.Tab.0.right" timestamp="1608836676425">
+    <state width="1881" height="222" key="GridCell.Tab.0.right" timestamp="1608842186973">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1881" height="222" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1608836676425" />
+    <state width="1881" height="222" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1608842186973" />
     <state width="1898" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
     <state width="1898" height="374" key="GridCell.Tab.0.right/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
     <state x="218" y="0" key="SettingsEditor" timestamp="1608834902522">
@@ -294,10 +276,10 @@
     <state x="218" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1608834902522" />
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602613454806" />
     <state x="461" y="171" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602663560840" />
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608828534737">
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1608836883676">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608828534737" />
+    <state x="251" y="57" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608836883676" />
     <state x="650" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608760196884">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
