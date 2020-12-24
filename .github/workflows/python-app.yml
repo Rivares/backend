@@ -32,6 +32,7 @@ jobs:
         pip install fuzzywuzzy
         pip install pandas
         pip install numpy
+        pip install buildozer
         pip install pymorphy2
         pip install requests
         pip install datetime
