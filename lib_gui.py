@@ -194,31 +194,59 @@ class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        gridlayout = FloatLayout(size=(300, 300))
+        boxlayout_gen_col = BoxLayout(orientation='vertical', spacing=10)
+
+        boxlayout_col_0 = BoxLayout(orientation='vertical', spacing=10)
+        boxlayout_col_1 = BoxLayout(orientation='vertical', spacing=10)
+        boxlayout_row_0 = BoxLayout(orientation='horizontal', spacing=10)
+        boxlayout_row_1 = BoxLayout(orientation='horizontal', spacing=10)
 
         print("MainScreen")
 
-        my_general.plt.plot([1, 23, 2, 4])
-        my_general.plt.ylabel('some numbers')
-        gridlayout.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
-
-        button_new_password = Button(
-            text="Return",
-            background_color=[2, 1.5, 3, 1],
-            size_hint=[1, 0.05],
-            on_press=self._on_press_button_new_password,
+        glass = Button(
+            text="Glass",
+            background_color=[0, 0, 0, 1],
+            size_hint=[1, 0.1]
         )
 
-        gridlayout.add_widget(button_new_password)
+        list_operations = Button(
+            text="List operations",
+            background_color=[0, 0, 0, 1],
+            size_hint=[1, 0.1]
+        )
+        boxlayout_col_0.add_widget(glass)
+        boxlayout_col_0.add_widget(list_operations)
+        boxlayout_row_0.add_widget(boxlayout_col_0)
 
-        self.add_widget(gridlayout)
+        my_general.plt.plot([1, 23, 2, 4])
+        my_general.plt.ylabel('some numbers')
+        boxlayout_row_0.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
-    def _on_press_button_new_password(self, *args):
+        deferred_orders = Button(
+            text="Deferred orders",
+            background_color=[0, 0, 0, 1],
+            size_hint=[1, 0.1]
+        )
 
-        Window.fullscreen = False
-        Window.size = (400, 200)
-        self.manager.transition.direction = 'right'
-        self.manager.current = 'PasswordScreen'
+        active_orders = Button(
+            text="Active orders",
+            background_color=[0, 0, 0, 1],
+            size_hint=[1, 0.1]
+        )
+
+        explanations_notes = Button(
+            text="Explanations for notes",
+            background_color=[0, 0, 0, 1],
+            size_hint=[1, 0.1]
+        )
+        boxlayout_row_1.add_widget(deferred_orders)
+        boxlayout_row_1.add_widget(active_orders)
+        boxlayout_row_1.add_widget(explanations_notes)
+
+        boxlayout_gen_col.add_widget(boxlayout_row_0)
+        boxlayout_gen_col.add_widget(boxlayout_row_1)
+
+        self.add_widget(boxlayout_gen_col)
 
 
 class Investment_analysis(App):
