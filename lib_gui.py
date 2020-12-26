@@ -230,7 +230,7 @@ class MainScreen(Screen):
         switch_panel_to_screen_3 = Button(
             text="Explanations for notes",
             background_color=[0, 1, 0, 1],
-            size_hint=[1, .2],
+            size_hint=[1, 0.15]
             # width=200,
             # height=10,
         )
@@ -238,34 +238,33 @@ class MainScreen(Screen):
         btn_sign_out = Button(
             text="Sign out",
             background_color=[1, 0, 0, 1],
-            size_hint=[1, .2],
+            size_hint=[1, 0.15],
             # width=70,
             # height=10,
             # pos=(400, 40),
-            on_press=self._on_press_button_sign_out,
+            on_press=self._on_press_button_sign_out
         )
 
         boxlayout_row_0.add_widget(switch_panel_to_screen_3)
         boxlayout_row_0.add_widget(btn_sign_out)
-        boxlayout_row_0.size_hint = [1, 1]
-        boxlayout_col_1.add_widget(boxlayout_row_2)
+        boxlayout_col_1.add_widget(boxlayout_row_0)
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
         boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
         boxlayout_col_1.background_color = [.50, 0, 0, 1]
-        boxlayout_col_1.size_hint = [5, 1]
+        boxlayout_col_1.size_hint = [5, 1.4]
 
         active_orders = Button(
             text="Active orders",
             background_color=[0, .50, 0, 1],
-            size_hint=[1, 0.1]
+            size_hint=[1, 0.5]
         )
 
         explanations_notes = Button(
             text="Explanations for notes",
             background_color=[0, 0, .50, 1],
-            size_hint=[1, 0.1]
+            size_hint=[1, 0.5]
         )
         boxlayout_row_1.add_widget(active_orders)
         boxlayout_row_1.add_widget(explanations_notes)
