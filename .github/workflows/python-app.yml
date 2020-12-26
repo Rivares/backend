@@ -33,6 +33,7 @@ jobs:
         pip install pandas
         pip install numpy
         pip uninstall -y enum34
+        pip uninstall pyinstaller
         pip install pyinstaller
         pip install buildozer
         pip install pymorphy2
@@ -57,7 +58,7 @@ jobs:
         python Global_main.py test
     - name: Build exe
       run: |
-        pyinstaller Global_main.py -w --onefile
+        pyinstaller win.spec -w --onefile -D
     - name: Build apk
       run: |
         sudo mkdir apk

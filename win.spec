@@ -1,12 +1,28 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import sys ; sys.setrecursionlimit(sys.getrecursionlimit() * 5)
+
 block_cipher = None
 
 
 a = Analysis(['Global_main.py', 'win.spec'],
              pathex=['E:\\Python\\Proj\\backend'],
              binaries=[],
-             datas=[],
+             datas=[ ('data\\hash_market.json', '.'),
+             		 ('data\\hash_print_graph.json', '.'),
+             		 ('data\\list_current_assets.json', '.'),
+             		 ('data\\list_operations_assets.json', '.'),
+             		 ('data\\market.json', '.'),
+             		 ('data\\money_movement.json', '.'),
+             		 ('data\\print_graph_NVTK.json', '.'),
+             		 ('data\\print_graph_TATN.json', '.'),
+             		 ('data\\result_ta_TATN_MACD_RSI_ATR_EMA.json', '.'),
+             		 ('data\\target_ticker_NVTK.csv', '.'),
+             		 ('data\\target_ticker_TATN.csv', '.'),
+             		 
+             		 ('gui\\button.kv', '.'),
+             		 ('command.bat', '.'),
+             		],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -23,7 +39,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Global_main',
+          name='Investment analysis',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,

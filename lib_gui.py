@@ -3,7 +3,11 @@
 import lib_general as my_general
 from backend_kivyagg import FigureCanvasKivyAgg
 
+from kivy.core.window import Window
+
+from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
@@ -24,15 +28,16 @@ green = [0, 1, 0, 1]
 blue = [0, 0, 1, 1]
 purple = [1, 0, 1, 1]
 
+
 class LoginScreen(GridLayout):
 
     def __init__(self, **kwargs):
         super(LoginScreen, self).__init__(**kwargs)
         self.cols = 2
-        self.add_widget(Label(text='User Name'))
+        self.add_widget(Label(text='Login'))
         self.username = TextInput(multiline=False)
         self.add_widget(self.username)
-        self.add_widget(Label(text='password'))
+        self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
 
@@ -123,12 +128,25 @@ class MainApp(App):
         #     self.last_button = button_text
         #     self.last_was_operator = self.last_button in self.operators
 
-        box = BoxLayout()
+        layout = GridLayout(cols=2)
+
+        label_1 = Label(text='Hello investor!',
+                        size_hint=(.5, .5),
+                        pos_hint={'center_x': .5, 'center_y': .5})
+        label_2 = Label(text='Do you want to play?',
+                        size_hint=(.5, .5),
+                        pos_hint={'center_x': .5, 'center_y': .5})
+        layout.add_widget(label_1)
+        layout.add_widget(label_2)
+
+        auth = LoginScreen()
+        layout.add_widget(auth)
+
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
-        box.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        layout.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
-        return box
+        return layout
 
     def on_solution(self, instance):
         text = self.solution.text
@@ -138,3 +156,75 @@ class MainApp(App):
 
     def on_press_button(self, instance):
         print('Вы нажали на кнопку!')
+
+
+class PasswordScreen(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        Window.size = (400, 200)
+
+        boxlayout = BoxLayout(orientation="vertical", spacing=1, padding=[5])
+        print("PasswordScreen")
+
+        auth = LoginScreen()
+
+        btn_sign_in = Button(
+            text="Sign In",
+            background_color=[255, 255, 255, 1],
+            color=[0, 0, 0, 1],
+            size_hint=[1, 0.3],
+            on_press=self._on_press_button_sign_in,
+        )
+
+        boxlayout.add_widget(auth)
+        boxlayout.add_widget(btn_sign_in)
+
+        self.add_widget(boxlayout)
+
+    def _on_press_button_sign_in(self, *args):
+
+        # Checking ... TODO (1)
+        Window.fullscreen = 'auto'
+        self.manager.transition.direction = 'left'
+        self.manager.current = 'MainScreen'
+
+
+class MainScreen(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        gridlayout = FloatLayout(size=(300, 300))
+
+        print("MainScreen")
+
+        my_general.plt.plot([1, 23, 2, 4])
+        my_general.plt.ylabel('some numbers')
+        gridlayout.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+
+        button_new_password = Button(
+            text="Return",
+            background_color=[2, 1.5, 3, 1],
+            size_hint=[1, 0.05],
+            on_press=self._on_press_button_new_password,
+        )
+
+        gridlayout.add_widget(button_new_password)
+
+        self.add_widget(gridlayout)
+
+    def _on_press_button_new_password(self, *args):
+
+        Window.fullscreen = False
+        Window.size = (400, 200)
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'PasswordScreen'
+
+
+class Investment_analysis(App):
+    def build(self):
+        sm = ScreenManager()
+        sm.add_widget(PasswordScreen(name='PasswordScreen'))
+        sm.add_widget(MainScreen(name='MainScreen'))
+
+        return sm
