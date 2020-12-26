@@ -195,7 +195,7 @@ class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        boxlayout_gen_col = BoxLayout(orientation='vertical', spacing=10)
+        boxlayout_gen = BoxLayout(orientation='horizontal', spacing=10)
 
         boxlayout_col_0 = BoxLayout(orientation='vertical', spacing=10)
         boxlayout_col_1 = BoxLayout(orientation='vertical', spacing=10)
@@ -207,73 +207,75 @@ class MainScreen(Screen):
 
         glass = Button(
             text="Glass",
-            background_color=[0, 0, 0, 1],
-            size_hint=[.1, 0.1],
+            background_color=[.50, 0, 0, 1],
+            size_hint=[.9, 0.1],
         )
 
         list_operations = Button(
             text="List operations",
-            background_color=[0, 0, 0, 1],
-            size_hint=[.1, 0.1]
+            background_color=[0, .50, 0, 1],
+            size_hint=[.9, 0.1]
         )
+
+        deferred_orders = Button(
+            text="Deferred orders",
+            background_color=[0, 0, .50, 1],
+            size_hint=[.9, 0.1]
+        )
+
         boxlayout_col_0.add_widget(glass)
         boxlayout_col_0.add_widget(list_operations)
-        boxlayout_row_0.add_widget(boxlayout_col_0)
+        boxlayout_col_0.add_widget(deferred_orders)
 
         switch_panel_to_screen_3 = Button(
             text="Explanations for notes",
             background_color=[0, 1, 0, 1],
             size_hint=[1, .2],
-            width=200,
-            height=10,
+            # width=200,
+            # height=10,
         )
 
         btn_sign_out = Button(
             text="Sign out",
             background_color=[1, 0, 0, 1],
             size_hint=[1, .2],
-            width=70,
-            height=10,
-            pos=(400, 400),
+            # width=70,
+            # height=10,
+            # pos=(400, 40),
             on_press=self._on_press_button_sign_out,
         )
 
-        boxlayout_row_2.add_widget(switch_panel_to_screen_3)
-        boxlayout_row_2.add_widget(btn_sign_out)
+        boxlayout_row_0.add_widget(switch_panel_to_screen_3)
+        boxlayout_row_0.add_widget(btn_sign_out)
+        boxlayout_row_0.size_hint = [1, 1]
         boxlayout_col_1.add_widget(boxlayout_row_2)
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
         boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
-
-        boxlayout_row_0.add_widget(boxlayout_col_1)
-        boxlayout_row_0.size_hint = [1, 1]
-
-        deferred_orders = Button(
-            text="Deferred orders",
-            background_color=[0, 0, 0, 1],
-            size_hint=[1, 0.1]
-        )
+        boxlayout_col_1.background_color = [.50, 0, 0, 1]
+        boxlayout_col_1.size_hint = [5, 1]
 
         active_orders = Button(
             text="Active orders",
-            background_color=[0, 0, 0, 1],
+            background_color=[0, .50, 0, 1],
             size_hint=[1, 0.1]
         )
 
         explanations_notes = Button(
             text="Explanations for notes",
-            background_color=[0, 0, 0, 1],
+            background_color=[0, 0, .50, 1],
             size_hint=[1, 0.1]
         )
-        boxlayout_row_1.add_widget(deferred_orders)
         boxlayout_row_1.add_widget(active_orders)
         boxlayout_row_1.add_widget(explanations_notes)
 
-        boxlayout_gen_col.add_widget(boxlayout_row_0)
-        boxlayout_gen_col.add_widget(boxlayout_row_1)
+        boxlayout_col_1.add_widget(boxlayout_row_1)
 
-        self.add_widget(boxlayout_gen_col)
+        boxlayout_gen.add_widget(boxlayout_col_0)
+        boxlayout_gen.add_widget(boxlayout_col_1)
+
+        self.add_widget(boxlayout_gen)
 
     def _on_press_button_sign_out(self, *args):
 
