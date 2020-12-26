@@ -4,6 +4,7 @@ import lib_general as my_general
 from backend_kivyagg import FigureCanvasKivyAgg
 
 from kivy.core.window import Window
+from kivy.properties import OptionProperty
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.gridlayout import GridLayout
@@ -23,10 +24,9 @@ path_name_ta_stocks = 'TA_stocks\\TA_stocks.py'
 path_name_parser_stocks = 'Parser_market\\Parser_market.py'
 market = []
 
-red = [1, 0, 0, 1]
-green = [0, 1, 0, 1]
-blue = [0, 0, 1, 1]
-purple = [1, 0, 1, 1]
+m_size_window_pass = (400, 200)
+m_size_window_main = Window.system_size
+m_size_window_3 = Window.system_size
 
 
 class LoginScreen(GridLayout):
@@ -162,7 +162,7 @@ class PasswordScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        Window.size = (400, 200)
+        Window.size = m_size_window_pass
 
         boxlayout = BoxLayout(orientation="vertical", spacing=1, padding=[5])
         print("PasswordScreen")
@@ -185,6 +185,7 @@ class PasswordScreen(Screen):
     def _on_press_button_sign_in(self, *args):
 
         # Checking ... TODO (1)
+        # Window.toggle_fullscreen()
         Window.fullscreen = 'auto'
         self.manager.transition.direction = 'left'
         self.manager.current = 'MainScreen'
@@ -200,27 +201,53 @@ class MainScreen(Screen):
         boxlayout_col_1 = BoxLayout(orientation='vertical', spacing=10)
         boxlayout_row_0 = BoxLayout(orientation='horizontal', spacing=10)
         boxlayout_row_1 = BoxLayout(orientation='horizontal', spacing=10)
+        boxlayout_row_2 = BoxLayout(orientation='horizontal', spacing=10)
 
         print("MainScreen")
 
         glass = Button(
             text="Glass",
             background_color=[0, 0, 0, 1],
-            size_hint=[1, 0.1]
+            size_hint=[.1, 0.1],
         )
 
         list_operations = Button(
             text="List operations",
             background_color=[0, 0, 0, 1],
-            size_hint=[1, 0.1]
+            size_hint=[.1, 0.1]
         )
         boxlayout_col_0.add_widget(glass)
         boxlayout_col_0.add_widget(list_operations)
         boxlayout_row_0.add_widget(boxlayout_col_0)
 
+        switch_panel_to_screen_3 = Button(
+            text="Explanations for notes",
+            background_color=[0, 1, 0, 1],
+            size_hint=[1, .2],
+            width=200,
+            height=10,
+        )
+
+        btn_sign_out = Button(
+            text="Sign out",
+            background_color=[1, 0, 0, 1],
+            size_hint=[1, .2],
+            width=70,
+            height=10,
+            pos=(400, 400),
+            on_press=self._on_press_button_sign_out,
+        )
+
+        boxlayout_row_2.add_widget(switch_panel_to_screen_3)
+        boxlayout_row_2.add_widget(btn_sign_out)
+        boxlayout_col_1.add_widget(boxlayout_row_2)
+
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
-        boxlayout_row_0.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+
+        boxlayout_row_0.add_widget(boxlayout_col_1)
+        boxlayout_row_0.size_hint = [1, 1]
 
         deferred_orders = Button(
             text="Deferred orders",
@@ -247,6 +274,14 @@ class MainScreen(Screen):
         boxlayout_gen_col.add_widget(boxlayout_row_1)
 
         self.add_widget(boxlayout_gen_col)
+
+    def _on_press_button_sign_out(self, *args):
+
+        Window.fullscreen = False
+        # Window.toggle_fullscreen()  # Deprecated
+        Window.size = m_size_window_pass
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'PasswordScreen'
 
 
 class Investment_analysis(App):
