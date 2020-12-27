@@ -211,8 +211,8 @@ class MainScreen(Screen):
             size_hint=[.9, 0.1],
         )
 
-        list_operations = Button(
-            text="List operations",
+        list_assets = Button(
+            text="List assets",
             background_color=[0, .50, 0, 1],
             size_hint=[.9, 0.1]
         )
@@ -224,7 +224,7 @@ class MainScreen(Screen):
         )
 
         boxlayout_col_0.add_widget(glass)
-        boxlayout_col_0.add_widget(list_operations)
+        boxlayout_col_0.add_widget(list_assets)
         boxlayout_col_0.add_widget(deferred_orders)
 
         switch_panel_to_screen_3 = Button(
@@ -388,6 +388,9 @@ class DoublerScreen(Screen):
 
     def _on_press_button_sign_out(self, *args):
 
+        Window.fullscreen = False
+        # Window.toggle_fullscreen()  # Deprecated
+        Window.size = m_size_window_pass
         self.manager.transition.direction = 'right'
         self.manager.current = 'PasswordScreen'
 
