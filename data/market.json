@@ -1,12 +1,724 @@
 [
     [
-        {
-            "ticker_value": "MAIL",
-            "per_value": 0,
-            "date_value": 20201225,
-            "time_value": "11:52:00",
-            "last_value": 2008.0,
-            "volume_value": 149
-        }
+        [
+            {
+                "ticker_value": "ETLN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "QIWI",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "TCSG",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "FIVE",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "AKRN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "ALRS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "AFLT",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "BANE",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "BSPB",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "VSMO",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "VTBR",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "GAZP",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "SIBN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "PIKK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "DSKY",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "IRAO",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "KBTK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "LNTA",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "LSNG",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "LSRG",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "LKOH",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MVID",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MGNT",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MGTS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MTLR",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "CBOM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MAGN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MOEX",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MSTT",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MSNG",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MSRS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MRKV",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MRKU",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MRKC",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MRKP",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MTSS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "NKNC",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "NLMK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "NMTP",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "NVTK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "GMKN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "OGKB",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "POLY",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "PLZL",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "PRTK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "RASP",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "ROSN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "RSTI",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "RTKM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "AGRO",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "RUAL",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "HYDR",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "RNFT",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "SFIN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "SBER",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "CHMF",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "AFKS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "SNGS",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "TATN",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "TRMK",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "TRNFP",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "PHOR",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "FEES",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "GCHE",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "ENRU",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "UPRO",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "MAIL",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "YNDX",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "INTC-RM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "CSCO-RM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "HPQ-RM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ],
+        [
+            {
+                "ticker_value": "T-RM",
+                "per_value": -1,
+                "date_value": -1,
+                "time_value": -1,
+                "last_value": -1,
+                "volume_value": -1
+            }
+        ]
     ]
 ]

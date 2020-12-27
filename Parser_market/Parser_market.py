@@ -12,7 +12,7 @@ curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
 
 
 def main():
-    print("\n__________________ Parsing markets __________________\n")
+    print("\n______________ Parsing markets --->\n")
 
     exporter = my_general.Exporter()
 
@@ -24,7 +24,7 @@ def main():
     list_stocks = []
 
     # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Goods ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
-    # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
+    # GDS: Goods; CRNCY: Currency; INDEX_WR: Indexes(W+R); INDEX_WU: Indexes(W+U); STCK: Stock
 
     if my_general.depart_market == "GDS":
         list_name_goods = [
@@ -106,8 +106,9 @@ def main():
                                   "volume_value": list_volume_value[-1]})
             # print(data.tail(1))
 
+        market.append(list_goods)
 
-    elif my_general.depart_market == "INDXS_WR":
+    elif my_general.depart_market == "INDEX_WR":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Indexes (World + Russia)~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
         list_name_indexes_WR = [
@@ -178,7 +179,7 @@ def main():
                                      "high_value": list_high_value[-1],
                                      "low_value": list_low_value[-1],
                                      "volume_value": list_volume_value[-1]})
-            except:
+            finally:
                 list_indexes.append({"open_value": 0.0,
                                      "close_value": 0.0,
                                      "high_value": 0.0,
@@ -186,7 +187,9 @@ def main():
                                      "volume_value": 0.0})
                 print("Problem with – tickers(index) - " + index)
 
-    elif my_general.depart_market == "INDXS_WU":
+        market.append(list_currency)
+
+    elif my_general.depart_market == "INDEX_WU":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Indexes (World + USA)~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
         list_name_indexes_W_U = [
@@ -226,12 +229,14 @@ def main():
                                      "low_value": list_low_value[-1],
                                      "volume_value": list_volume_value[-1]})
             # else:
-            except:
+            finally:
                 list_indexes.append({"open_value": 0.0,
                                      "close_value": 0.0,
                                      "high_value": 0.0,
                                      "low_value": 0.0,
                                      "volume_value": 0.0})
+
+        market.append(list_indexes)
 
     elif my_general.depart_market == "ETF":  # Implementation -> my_general.name_ticker == '' TODO (3)
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ ETF ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -289,10 +294,12 @@ def main():
                              "low_value": list_low_value[-1],
                              "volume_value": list_volume_value[-1]})
 
+        market.append(list_etf)
+
     elif my_general.depart_market == "STCK":
         # print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~ Stock ~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
 
-        if len(my_general.name_tickers) < 1:
+        if (len(my_general.name_tickers) < 2) and (my_general.name_tickers[0] == ''):
             list_name_stocks = [
                 'ETLN',
                 'QIWI',
@@ -312,13 +319,13 @@ def main():
                 'IRAO',
                 'KBTK',
                 'LNTA',
-                'LSNG', 'LSNGР',
+                'LSNG',
                 'LSRG',
                 'LKOH',
                 'MVID',
                 'MGNT',
-                'MGTS', 'MGTSР',
-                'MTLR', 'MTLRР',
+                'MGTS',
+                'MTLR',
                 'CBOM',
                 'MAGN',
                 'MOEX',
@@ -330,7 +337,7 @@ def main():
                 'MRKC',
                 'MRKP',
                 'MTSS',
-                'NKNC', 'NKNCР',
+                'NKNC',
                 'NLMK',
                 'NMTP',
                 'NVTK',
@@ -341,19 +348,18 @@ def main():
                 'PRTK',
                 'RASP',
                 'ROSN',
-                'RSTI', 'RSTIР',
-                'RTKM', 'RTKMР',
+                'RSTI',
+                'RTKM',
                 'AGRO',
                 'RUAL',
                 'HYDR',
                 'RNFT',
                 'SFIN',
-                'SBER', 'SBERP',
+                'SBER',
                 'CHMF',
                 'AFKS',
-                'SNGS', 'SNGSР',
-                'TATN', 'TATNР',
-                'TGKA',
+                'SNGS',
+                'TATN',
                 'TRMK',
                 'TRNFP',
                 'PHOR',
@@ -363,11 +369,10 @@ def main():
                 'UPRO',
                 'MAIL',
                 'YNDX',
-                'INTC',
-                'CSCO',
-                'HPQ',
-                'HPE',
-                'T'
+                'INTC-RM',
+                'CSCO-RM',
+                'HPQ-RM',
+                'T-RM'
             ]
         else:
             list_name_stocks = my_general.name_tickers
@@ -414,53 +419,50 @@ def main():
             #                     "volume_value": list_volume_value[-1]})
 
             if len(list_ticker_value) > 0:
-                list_stocks.append({"ticker_value": list_ticker_value[-1],
-                                    "per_value": list_per_value[-1],
-                                    "date_value": list_date_value[-1],
-                                    "time_value": list_time_value[-1],
-                                    "last_value": list_last_value[-1],
-                                    "volume_value": list_volume_value[-1]})
+                buf = [[]]
+                buf[0] = {"ticker_value": list_ticker_value[-1],
+                          "per_value": list_per_value[-1],
+                          "date_value": list_date_value[-1],
+                          "time_value": list_time_value[-1],
+                          "last_value": list_last_value[-1],
+                          "volume_value": list_volume_value[-1]}
+                list_stocks.append(buf)
             else:
-                print("It's time little boy!")
-                return
+                # print("It's time little boy!")
+                buf = [[]]
+                buf[0] = {"ticker_value": stock,
+                          "per_value": -1,
+                          "date_value": -1,
+                          "time_value": -1,
+                          "last_value": -1,
+                          "volume_value": -1}
+                list_stocks.append(buf)
+
+            my_general.time.sleep(0.1)
+
+        market.append(list_stocks)
 
     # _________________________________________________________________________________
 
-    if len(list_goods) > 0:
-        market.append(list_goods);
-
-    if len(list_currency) > 0:
-        market.append(list_currency);
-
-    if len(list_indexes) > 0:
-        market.append(list_indexes)
-
-    if len(list_etf) > 0:
-        market.append(list_etf)
-
-    if len(list_stocks) > 0:
-        market.append(list_stocks)
-
     # print(market)
     file_name_market = 'market'
-
     my_general.write_data_json(market, curr_path, file_name_market)
+
     # _________________________________________________________________________________
 
     # Check on repeat
     hash_market = my_general.read_data_json(curr_path, 'hash_market')
-
-    file_name = 'market'
     new_hash = my_general.md5(curr_path + 'market' + '.json')
 
     if new_hash == hash_market[0]["hash"]:
-        print("___ No the new market values ___")
+        # print("___ No the new market values ___")
         return
 
     hash_market = [{"hash": new_hash}]
     file_name = 'hash_market'
     my_general.write_data_json(hash_market, curr_path, file_name)
 
+    print("______________ Parsing markets <---")
     # _________________________________________________________________________________
 
 

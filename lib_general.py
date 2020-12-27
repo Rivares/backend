@@ -31,8 +31,8 @@ import ta
 
 root_path = os.path.dirname(os.path.abspath(__file__))
 
-name_tickers = []
-depart_market = ''  # GDS: Goods; CRNCY: Currency; INDXS_WR: Indexes(W+R); INDXS_WU: Indexes(W+U); STCK: Stock
+name_tickers = ['']
+depart_market = ''  # GDS: Goods; CRNCY: Currency; INDEX_WR: Indexes(W+R); INDEX_WU: Indexes(W+U); STCK: Stock
 indicators_market = []
 
 user_start_moment = datetime.date(datetime.datetime.now().year, 1, 1),
@@ -93,7 +93,9 @@ def convert_json_to_xlsx(path_with_name):
     from_extension = '.json'
     to_extension = '.xlsx'
 
-    pd.read_json(path_with_name + from_extension, encoding="utf-8").to_excel(path_with_name + to_extension, encoding="utf-8")
+    pd.read_json(path_with_name + from_extension,
+                 encoding="utf-8").to_excel(path_with_name + to_extension,
+                                            encoding="utf-8")
 
 
 # ______________________________ NN ______________________________
@@ -103,10 +105,10 @@ def list_true_value(list_values_to_nn):
     list_diff_values = []
     prev_value = list_values_to_nn[0]
     for idx in range(1, len(list_values_to_nn)):
-        if list_values_to_nn[idx] > prev_value: # prev_value + 3%
+        if list_values_to_nn[idx] > prev_value:     # prev_value + 3%
             list_diff_values.append(1)
 
-        if list_values_to_nn[idx] < prev_value: # prev_value + 3%
+        if list_values_to_nn[idx] < prev_value:     # prev_value + 3%
             list_diff_values.append(-1)
 
         if list_values_to_nn[idx] == prev_value:
@@ -115,5 +117,3 @@ def list_true_value(list_values_to_nn):
         prev_value = list_values_to_nn[idx]
 
     return list_diff_values
-
-

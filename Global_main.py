@@ -33,7 +33,7 @@ class Money:
             list_params = []
         if len(list_params) > 0:
             for param in list_params:
-                print("param : ", param)
+                # print("param : ", param)
                 self.in_money = param["in_money"]
                 self.out_money = param["out_money"]
                 self.profit_money = param["profit_money"]
@@ -779,24 +779,29 @@ class Portfolio:
                 print("Count : ", count)
                 print("Sum of commission : ", sum_commissions)
 
-    def print_market(self, depart_market):
+    def print_market(self, depart_market='STCK'):
 
-        print("\n______________ print_market() ______________\n")
+        print("\n________ print_market() --->\n")
 
-        name_ticker = ''    # All ticker
-        my_general.name_ticker = name_ticker
+        my_general.name_ticker = ['']    # All ticker
         my_general.depart_market = depart_market
 
         # Launch of script which parse MOEX
-        my_general.exec_full(path_name_parser_stocks)
+        # my_general.exec_full(path_name_parser_stocks)
 
         # Get info of ticker in the moment
-        list_cur_val = my_general.read_data_json(root_path + '\\Parser_market\\', 'market')
+        list_cur_val = my_general.read_data_json(root_path + '\\data\\', 'market')
 
-        for ticker in list_cur_val:
-            print("Ticker : ", ticker["ticker_value"])
-            print("Price : ", ticker["last_value"])
-            print("Volume : ", ticker["volume_value"])
+        i = 0
+        print("Len: ", list_cur_val[0][0])
+        while i < len(list_cur_val[0][0]):
+            print("Ticker : ", list_cur_val[0][0][i]["ticker_value"])
+            print("Price : ", list_cur_val[0][0][i]["last_value"])
+            print("Volume : ", list_cur_val[0][0][i]["volume_value"])
+
+            i += 1
+
+        print("\n________ print_market() <---\n")
 
     def print_graph(self, list_name_tickers, depart_market, list_name_indicators,
                     user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
@@ -1125,19 +1130,22 @@ class Portfolio:
 
 def main():
 
-    my_gui.Investment_analysis().run()
+    # Empty portfolio
+    my_portfolio = Portfolio()
 
-    # # Empty portfolio
-    # my_portfolio = Portfolio()
+    print("GET DATA ____________________________________\n")
+    print("________ PUT MONEY __________________________\n")
+
+    # Download list of operations from backup file
+    list_money_movement = my_general.read_data_json(root_path + '\\data\\', 'money_movement')
+
+    # Update list of operations
+    my_portfolio.copy_money_operations(Money(list_money_movement))
+
+    # my_gui.Investment_analysis().run()
     #
-    # print("____________________________________ PUT MONEY ____________________________________\n")
-    #
-    # # Download list of operations from backup file
-    # list_money_movement = my_general.read_data_json(root_path + '\\data\\', 'money_movement')
-    #
-    # # Update list of operations
-    # my_portfolio.copy_money_operations(Money(list_money_movement))
-    #
+    my_portfolio.print_market()
+
     # my_portfolio.curr_money.deposit_funds(16000.0)  # set money to portfolio : TRUE
     # my_portfolio.curr_money.withdraw_funds(16000.5)  # get money from portfolio : TRUE
     #
