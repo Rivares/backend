@@ -45,9 +45,9 @@ class LoginScreen(GridLayout):
 class MainApp(App):
 
     def build(self):
-        # label = Label(text='Hello from Kivy',
-        #               size_hint=(.5, .5),
-        #               pos_hint={'center_x': .5, 'center_y': .5})
+        label = Label(text='Hello from Kivy',
+                      size_hint=(.5, .5),
+                      pos_hint={'center_x': .5, 'center_y': .5})
         #
         # img = Image(source='/path/to/real_python.png',
         #             size_hint=(1, .5),
@@ -128,84 +128,7 @@ class MainApp(App):
         #     self.last_button = button_text
         #     self.last_was_operator = self.last_button in self.operators
 
-        print("MainScreen")
-        Window.fullscreen = 'auto'
-
-        gridlayout = GridLayout(cols=2, spacing=10)
-        boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
-        boxlayout_row_0 = BoxLayout(orientation="horizontal", spacing=10)
-        boxlayout_col_1 = BoxLayout(orientation="vertical", spacing=10)
-        boxlayout_row_1 = BoxLayout(orientation="horizontal", spacing=10)
-
-        # label_1 = Label(text='Hello investor!',
-        #                 size_hint=(.5, .5),
-        #                 pos_hint={'center_x': .5, 'center_y': .5})
-        # label_2 = Label(text='Do you want to play?',
-        #                 size_hint=(.5, .5),
-        #                 pos_hint={'center_x': .5, 'center_y': .5})
-        # layout.add_widget(label_1)
-        # layout.add_widget(label_2)
-
-        boxlayout_col_0.add_widget(Button(
-            text="Glass",
-            background_color=[.50, 0, 0, 1],
-            size_hint_x=None,
-            width=250,
-        ))
-
-        boxlayout_col_0.add_widget(Button(
-            text="List assets",
-            background_color=[0, .50, 0, 1],
-            size_hint_x=None,
-            width=250,
-        ))
-        gridlayout.add_widget(boxlayout_col_0)
-
-        boxlayout_row_0.add_widget(Button(
-            text="Doubler Screen -->",
-            background_color=[0, 1, 0, 1],
-            width=250,
-        ))
-
-        boxlayout_row_0.add_widget(Button(
-            text="Sign out",
-            background_color=[1, 0, 0, 1],
-            width=250,
-        ))
-        boxlayout_row_0.height = 50
-        boxlayout_row_0.size_hint = [1, 0.1]
-        boxlayout_col_1.add_widget(boxlayout_row_0)
-
-        my_general.plt.plot([1, 23, 2, 4])
-        my_general.plt.ylabel('some numbers')
-
-        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
-        boxlayout_col_1.size_hint_x = None
-        boxlayout_col_1.size_hint_y = 200
-        boxlayout_col_1.width = 1750
-        boxlayout_col_1.height = 700
-        gridlayout.add_widget(boxlayout_col_1)
-
-        gridlayout.add_widget(Button(
-            text="Deferred orders",
-            background_color=[0, 0, .50, 1],
-            size_hint_x=None,
-            width=250,
-        ))
-
-        boxlayout_row_1.add_widget(Button(
-            text="Active orders",
-            background_color=[0, .50, 0, 1],
-        ))
-
-        boxlayout_row_1.add_widget(Button(
-            text="Explanations for notes",
-            background_color=[0, 0, .50, 1],
-        ))
-        boxlayout_row_1.size_hint = [1, None]
-        gridlayout.add_widget(boxlayout_row_1)
-
-        return gridlayout
+        return label
 
 
 class PasswordScreen(Screen):
@@ -245,89 +168,74 @@ class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        boxlayout_gen = BoxLayout(orientation='horizontal', spacing=10)
+        gridlayout = GridLayout(cols=2, spacing=10)
+        boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_0 = BoxLayout(orientation="horizontal", spacing=10)
+        boxlayout_col_1 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_1 = BoxLayout(orientation="horizontal", spacing=10)
 
-        boxlayout_col_0 = BoxLayout(orientation='vertical', spacing=10)
-        boxlayout_col_1 = BoxLayout(orientation='vertical', spacing=10)
-        boxlayout_row_0 = BoxLayout(orientation='horizontal', spacing=10)
-        boxlayout_row_1 = BoxLayout(orientation='horizontal', spacing=10)
-        boxlayout_grph = BoxLayout(orientation='horizontal', spacing=10)
-
-        print("MainScreen")
-
-        glass = Button(
+        boxlayout_col_0.add_widget(Button(
             text="Glass",
             background_color=[.50, 0, 0, 1],
-            size_hint=[.9, 0.1],
-        )
+            size_hint_x=None,
+            width=250,
+        ))
 
-        list_assets = Button(
+        boxlayout_col_0.add_widget(Button(
             text="List assets",
             background_color=[0, .50, 0, 1],
-            size_hint=[.9, 0.1]
-        )
+            size_hint_x=None,
+            width=250,
+        ))
+        gridlayout.add_widget(boxlayout_col_0)
 
-        deferred_orders = Button(
-            text="Deferred orders",
-            background_color=[0, 0, .50, 1],
-            size_hint=[.9, 0.1]
-        )
-
-        boxlayout_col_0.add_widget(glass)
-        boxlayout_col_0.add_widget(list_assets)
-        boxlayout_col_0.add_widget(deferred_orders)
-
-        switch_panel_to_screen_3 = Button(
+        boxlayout_row_0.add_widget(Button(
             text="Doubler Screen -->",
             background_color=[0, 1, 0, 1],
-            size_hint=[1, 0.15],
-            # width=200,
-            # height=10,
-            on_press=self._on_press_button_to_doubler_screen
-        )
+            on_press=self._on_press_button_to_doubler_screen,
+            width=250,
+        ))
 
-        btn_sign_out = Button(
+        boxlayout_row_0.add_widget(Button(
             text="Sign out",
             background_color=[1, 0, 0, 1],
-            size_hint=[1, 0.15],
-            # width=70,
-            # height=10,
-            # pos=(400, 40),
-            on_press=self._on_press_button_sign_out
-        )
-
-        boxlayout_row_0.add_widget(switch_panel_to_screen_3)
-        boxlayout_row_0.add_widget(btn_sign_out)
+            on_press=self._on_press_button_sign_out,
+            width=250,
+        ))
+        boxlayout_row_0.height = 50
+        boxlayout_row_0.size_hint = [1, 0.1]
         boxlayout_col_1.add_widget(boxlayout_row_0)
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
-        boxlayout_grph.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
-        boxlayout_grph.size = (500, 500)
+        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        boxlayout_col_1.size_hint_x = None
+        boxlayout_col_1.size_hint_y = 200
+        boxlayout_col_1.width = 1750
+        boxlayout_col_1.height = 700
+        gridlayout.add_widget(boxlayout_col_1)
 
-        boxlayout_col_1.add_widget(boxlayout_grph)
-        active_orders = Button(
+        gridlayout.add_widget(Button(
+            text="Deferred orders",
+            background_color=[0, 0, .50, 1],
+            size_hint_x=None,
+            width=250,
+        ))
+
+        boxlayout_row_1.add_widget(Button(
             text="Active orders",
             background_color=[0, .50, 0, 1],
-            size_hint=[1, 0.5]
-        )
+        ))
 
-        explanations_notes = Button(
+        boxlayout_row_1.add_widget(Button(
             text="Explanations for notes",
             background_color=[0, 0, .50, 1],
-            size_hint=[1, 0.5]
-        )
-        boxlayout_row_1.add_widget(active_orders)
-        boxlayout_row_1.add_widget(explanations_notes)
+        ))
+        boxlayout_row_1.size_hint = [1, None]
+        gridlayout.add_widget(boxlayout_row_1)
 
-        boxlayout_col_1.add_widget(boxlayout_row_1)
-        boxlayout_col_1.size_hint = [5, 1.4]
-
-        boxlayout_gen.add_widget(boxlayout_col_0)
-        boxlayout_gen.add_widget(boxlayout_col_1)
-
-        self.add_widget(boxlayout_gen)
+        self.add_widget(gridlayout)
 
     def _on_press_button_to_doubler_screen(self, *args):
 
@@ -347,89 +255,74 @@ class DoublerScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        boxlayout_gen = BoxLayout(orientation='horizontal', spacing=10)
+        gridlayout = GridLayout(cols=2, spacing=10)
+        boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_0 = BoxLayout(orientation="horizontal", spacing=10)
+        boxlayout_col_1 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_1 = BoxLayout(orientation="horizontal", spacing=10)
 
-        boxlayout_col_0 = BoxLayout(orientation='vertical', spacing=10)
-        boxlayout_col_1 = BoxLayout(orientation='vertical', spacing=10)
-        boxlayout_row_0 = BoxLayout(orientation='horizontal', spacing=10)
-        boxlayout_row_1 = BoxLayout(orientation='horizontal', spacing=10)
-        boxlayout_grph = BoxLayout(orientation='horizontal', spacing=10)
-
-        print("DoublerScreen")
-
-        glass = Button(
+        boxlayout_col_0.add_widget(Button(
             text="Glass",
             background_color=[.50, 0, 0, 1],
-            size_hint=[.9, 0.1],
-        )
+            size_hint_x=None,
+            width=250,
+        ))
 
-        list_operations = Button(
-            text="List operations",
+        boxlayout_col_0.add_widget(Button(
+            text="List assets",
             background_color=[0, .50, 0, 1],
-            size_hint=[.9, 0.1]
-        )
+            size_hint_x=None,
+            width=250,
+        ))
+        gridlayout.add_widget(boxlayout_col_0)
 
-        deferred_orders = Button(
-            text="Deferred orders",
-            background_color=[0, 0, .50, 1],
-            size_hint=[.9, 0.1]
-        )
-
-        boxlayout_col_0.add_widget(glass)
-        boxlayout_col_0.add_widget(list_operations)
-        boxlayout_col_0.add_widget(deferred_orders)
-
-        switch_panel_to_screen_3 = Button(
+        boxlayout_row_0.add_widget(Button(
             text="<-- Main Screen",
             background_color=[0, 1, 0, 1],
-            size_hint=[1, 0.15],
-            # width=200,
-            # height=10,
-            on_press=self._on_press_button_to_main_screen
-        )
+            on_press=self._on_press_button_to_main_screen,
+            width=250,
+        ))
 
-        btn_sign_out = Button(
+        boxlayout_row_0.add_widget(Button(
             text="Sign out",
             background_color=[1, 0, 0, 1],
-            size_hint=[1, 0.15],
-            # width=70,
-            # height=10,
-            # pos=(400, 40),
-            on_press=self._on_press_button_sign_out
-        )
-
-        boxlayout_row_0.add_widget(switch_panel_to_screen_3)
-        boxlayout_row_0.add_widget(btn_sign_out)
+            on_press=self._on_press_button_sign_out,
+            width=250,
+        ))
+        boxlayout_row_0.height = 50
+        boxlayout_row_0.size_hint = [1, 0.1]
         boxlayout_col_1.add_widget(boxlayout_row_0)
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
-        boxlayout_grph.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
-        boxlayout_grph.size = (500, 500)
+        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        boxlayout_col_1.size_hint_x = None
+        boxlayout_col_1.size_hint_y = 200
+        boxlayout_col_1.width = 1750
+        boxlayout_col_1.height = 700
+        gridlayout.add_widget(boxlayout_col_1)
 
-        boxlayout_col_1.add_widget(boxlayout_grph)
-        active_orders = Button(
+        gridlayout.add_widget(Button(
+            text="Deferred orders",
+            background_color=[0, 0, .50, 1],
+            size_hint_x=None,
+            width=250,
+        ))
+
+        boxlayout_row_1.add_widget(Button(
             text="Active orders",
             background_color=[0, .50, 0, 1],
-            size_hint=[1, 0.5]
-        )
+        ))
 
-        explanations_notes = Button(
+        boxlayout_row_1.add_widget(Button(
             text="Explanations for notes",
             background_color=[0, 0, .50, 1],
-            size_hint=[1, 0.5]
-        )
-        boxlayout_row_1.add_widget(active_orders)
-        boxlayout_row_1.add_widget(explanations_notes)
+        ))
+        boxlayout_row_1.size_hint = [1, None]
+        gridlayout.add_widget(boxlayout_row_1)
 
-        boxlayout_col_1.add_widget(boxlayout_row_1)
-        boxlayout_col_1.size_hint = [5, 1.4]
-
-        boxlayout_gen.add_widget(boxlayout_col_0)
-        boxlayout_gen.add_widget(boxlayout_col_1)
-
-        self.add_widget(boxlayout_gen)
+        self.add_widget(gridlayout)
 
     def _on_press_button_to_main_screen(self, *args):
 

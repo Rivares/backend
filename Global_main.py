@@ -1125,7 +1125,7 @@ class Portfolio:
 
 def main():
 
-    my_gui.MainApp().run()#Investment_analysis().run()
+    my_gui.Investment_analysis().run()
 
     # # Empty portfolio
     # my_portfolio = Portfolio()
