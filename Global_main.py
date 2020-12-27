@@ -1125,6 +1125,8 @@ class Portfolio:
 
 def main():
 
+    my_gui.MainApp().run()#Investment_analysis().run()
+
     # # Empty portfolio
     # my_portfolio = Portfolio()
     #
@@ -1217,10 +1219,7 @@ def main():
     #                                                          user_end_moment=end_moment,
     #                                                          user_time_frame='DAILY'))
 
-    my_gui.Investment_analysis().run()
 
-    # mainForm = my_gui.MainApp()
-    # mainForm.run()
 
     # bid = Bid('S', name_ticker, info_ticker["last_value"], count_actives, depart_market)
     # my_portfolio.sell(bid)
@@ -1241,109 +1240,6 @@ def main():
     #
     #
     #
-
-    # while (my_general.datetime.datetime.now().hour > 9) and (my_general.datetime.datetime.now().hour < 23):
-    #
-    #     path = 'Helper\\TA_stocks\\'
-    #     filename = 'result_ta'
-    #     result_ta = my_general.read_data_json(root_path + path, filename)
-    #
-    #     path = 'Helper\\Parser_market\\'
-    #     filename = 'market'
-    #     market = my_general.read_data_json(root_path + path, filename)
-    #
-    #     # print(prediction_e_n)
-    #     # print(prediction_p_n)
-    #     # print(market)
-    #     # print(result_ta)
-    #
-    #     print("__________________ Global training __________________")
-    #
-    #     my_general.np.random.seed(2)
-    #     path = 'Helper\\'
-    #     model_name = root_path + path + 'NN_Main_model.h5'
-    #
-    #     X = []
-    #     Y = []
-    #
-    #     Y.append(result_ta[0]['diff_value'])
-    #
-    #     X.append(prediction_e_n['score'])
-    #
-    #     X.append(prediction_p_n['score'])
-    #
-    #     for ticker in market:
-    #         for input in ticker:
-    #             X.append(input['open_value'])
-    #             X.append(input['close_value'])
-    #             X.append(input['high_value'])
-    #             X.append(input['low_value'])
-    #             X.append(input['volume_value'])
-    #
-    #     X.append(result_ta[0]['open_value'])
-    #     X.append(result_ta[0]['close_value'])
-    #     X.append(result_ta[0]['high_value'])
-    #     X.append(result_ta[0]['low_value'])
-    #     X.append(result_ta[0]['volume_value'])
-    #     X.append(result_ta[0]['adi_i'])
-    #     X.append(result_ta[0]['adx_aver'])
-    #     X.append(result_ta[0]['adx_DI_pos'])
-    #     X.append(result_ta[0]['adx_DI_neg'])
-    #     X.append(result_ta[0]['ai_i'])
-    #     X.append(result_ta[0]['ai_up'])
-    #     X.append(result_ta[0]['ai_down'])
-    #     X.append(result_ta[0]['ao_i'])
-    #     X.append(result_ta[0]['atr_i'])
-    #     X.append(result_ta[0]['bb_bbh'])
-    #     X.append(result_ta[0]['bb_bbl'])
-    #     X.append(result_ta[0]['bb_bbm'])
-    #     X.append(result_ta[0]['ccl_i'])
-    #     X.append(result_ta[0]['cmf_i'])
-    #     X.append(result_ta[0]['cmf_signal'])
-    #     X.append(result_ta[0]['cr_i'])
-    #
-    #     X.append(result_ta[0]['dc_dch'])
-    #     X.append(result_ta[0]['dc_dcl'])
-    #     X.append(result_ta[0]['dlr_i'])
-    #     X.append(result_ta[0]['dpo_i'])
-    #     X.append(result_ta[0]['ema_i'])
-    #     X.append(result_ta[0]['fi_i'])
-    #     X.append(result_ta[0]['ichimoku_a'])
-    #     X.append(result_ta[0]['ichimoku_b'])
-    #     X.append(result_ta[0]['kama_i'])
-    #     X.append(result_ta[0]['kc_kcc'])
-    #     X.append(result_ta[0]['kc_kch'])
-    #     X.append(result_ta[0]['kc_kcl'])
-    #     X.append(result_ta[0]['kst'])
-    #     X.append(result_ta[0]['kst_diff'])
-    #     X.append(result_ta[0]['kst_sig'])
-    #     X.append(result_ta[0]['vi_diff'])
-    #     X.append(result_ta[0]['vi_neg'])
-    #     X.append(result_ta[0]['vi_pos'])
-    #
-    #     X.append(result_ta[0]['mfi_i'])
-    #     X.append(result_ta[0]['mi'])
-    #     X.append(result_ta[0]['nvi_i'])
-    #     X.append(result_ta[0]['obv_i'])
-    #     X.append(result_ta[0]['psar_i'])
-    #     X.append(result_ta[0]['psar_up'])
-    #     X.append(result_ta[0]['psar_down'])
-    #     X.append(result_ta[0]['roc_i'])
-    #     X.append(result_ta[0]['rsi_i'])
-    #     X.append(result_ta[0]['stoch_i'])
-    #     X.append(result_ta[0]['stoch_signal'])
-    #     X.append(result_ta[0]['trix_i'])
-    #     X.append(result_ta[0]['tsi_i'])
-    #     X.append(result_ta[0]['uo_i'])
-    #     X.append(result_ta[0]['vpt_i'])
-    #
-    #     count_inputs = len(X)
-    #     print("Len NN: " + str(count_inputs))
-    #     print("X: "); print(X)
-    #     print("Y: "); print(Y)
-    #
-    # else:
-    #     print("Sleep...")
 
 
 if __name__ == '__main__':

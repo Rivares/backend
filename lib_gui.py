@@ -62,7 +62,7 @@ class MainApp(App):
         # # Список из двух аргументов: [padding_horizontal, padding_vertical]
         # # Один аргумент:
         # # padding = 10 spacing: При помощи данного аргумента добавляется расстояние между дочерними виджетами.
-        # # orientation: Позволяет изменить значение orientation для BoxLayout по умолчанию — с горизонтального на вертикальное.
+        # # orientation: Позволяет изменить значение orientation для BoxLayout
         #
         # for i in range(5):
         #     btn = Button(text="Button #%s" % (i + 1),
@@ -128,34 +128,84 @@ class MainApp(App):
         #     self.last_button = button_text
         #     self.last_was_operator = self.last_button in self.operators
 
-        layout = GridLayout(cols=2)
+        print("MainScreen")
+        Window.fullscreen = 'auto'
 
-        label_1 = Label(text='Hello investor!',
-                        size_hint=(.5, .5),
-                        pos_hint={'center_x': .5, 'center_y': .5})
-        label_2 = Label(text='Do you want to play?',
-                        size_hint=(.5, .5),
-                        pos_hint={'center_x': .5, 'center_y': .5})
-        layout.add_widget(label_1)
-        layout.add_widget(label_2)
+        gridlayout = GridLayout(cols=2, spacing=10)
+        boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_0 = BoxLayout(orientation="horizontal", spacing=10)
+        boxlayout_col_1 = BoxLayout(orientation="vertical", spacing=10)
+        boxlayout_row_1 = BoxLayout(orientation="horizontal", spacing=10)
 
-        auth = LoginScreen()
-        layout.add_widget(auth)
+        # label_1 = Label(text='Hello investor!',
+        #                 size_hint=(.5, .5),
+        #                 pos_hint={'center_x': .5, 'center_y': .5})
+        # label_2 = Label(text='Do you want to play?',
+        #                 size_hint=(.5, .5),
+        #                 pos_hint={'center_x': .5, 'center_y': .5})
+        # layout.add_widget(label_1)
+        # layout.add_widget(label_2)
+
+        boxlayout_col_0.add_widget(Button(
+            text="Glass",
+            background_color=[.50, 0, 0, 1],
+            size_hint_x=None,
+            width=250,
+        ))
+
+        boxlayout_col_0.add_widget(Button(
+            text="List assets",
+            background_color=[0, .50, 0, 1],
+            size_hint_x=None,
+            width=250,
+        ))
+        gridlayout.add_widget(boxlayout_col_0)
+
+        boxlayout_row_0.add_widget(Button(
+            text="Doubler Screen -->",
+            background_color=[0, 1, 0, 1],
+            width=250,
+        ))
+
+        boxlayout_row_0.add_widget(Button(
+            text="Sign out",
+            background_color=[1, 0, 0, 1],
+            width=250,
+        ))
+        boxlayout_row_0.height = 50
+        boxlayout_row_0.size_hint = [1, 0.1]
+        boxlayout_col_1.add_widget(boxlayout_row_0)
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
-        layout.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
 
-        return layout
+        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        boxlayout_col_1.size_hint_x = None
+        boxlayout_col_1.size_hint_y = 200
+        boxlayout_col_1.width = 1750
+        boxlayout_col_1.height = 700
+        gridlayout.add_widget(boxlayout_col_1)
 
-    def on_solution(self, instance):
-        text = self.solution.text
-        if text:
-            solution = str(eval(self.solution.text))
-            self.solution.text = solution
+        gridlayout.add_widget(Button(
+            text="Deferred orders",
+            background_color=[0, 0, .50, 1],
+            size_hint_x=None,
+            width=250,
+        ))
 
-    def on_press_button(self, instance):
-        print('Вы нажали на кнопку!')
+        boxlayout_row_1.add_widget(Button(
+            text="Active orders",
+            background_color=[0, .50, 0, 1],
+        ))
+
+        boxlayout_row_1.add_widget(Button(
+            text="Explanations for notes",
+            background_color=[0, 0, .50, 1],
+        ))
+        boxlayout_row_1.size_hint = [1, None]
+        gridlayout.add_widget(boxlayout_row_1)
+
+        return gridlayout
 
 
 class PasswordScreen(Screen):
