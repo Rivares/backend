@@ -1,6 +1,8 @@
 # coding: UTF-8
 
 import lib_general as my_general
+import lib_core as my_core
+
 from backend_kivyagg import FigureCanvasKivyAgg
 
 from kivy.core.window import Window
@@ -132,6 +134,7 @@ class MainApp(App):
 
 
 class PasswordScreen(Screen):
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -156,7 +159,6 @@ class PasswordScreen(Screen):
         self.add_widget(boxlayout)
 
     def _on_press_button_sign_in(self, *args):
-
         # Checking ... TODO (1)
         # Window.toggle_fullscreen()
         Window.fullscreen = 'auto'
@@ -167,6 +169,8 @@ class PasswordScreen(Screen):
 class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        print("MainScreen")
 
         gridlayout = GridLayout(cols=2, spacing=10)
         boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
@@ -181,12 +185,18 @@ class MainScreen(Screen):
             width=250,
         ))
 
-        boxlayout_col_0.add_widget(Button(
-            text="List assets",
-            background_color=[0, .50, 0, 1],
-            size_hint_x=None,
-            width=250,
-        ))
+        i = 0
+        while i < len(my_core.result_str_ticker):
+            boxlayout_col_0.add_widget(Label(
+                text=my_core.result_str_ticker[i],
+                font_size='12',
+                text_size=(None, None),
+                # background_color=[0, .50, 0, 1],
+                # size_hint_x=None,
+                # width=250,
+            ))
+            i += 1
+
         gridlayout.add_widget(boxlayout_col_0)
 
         boxlayout_row_0.add_widget(Button(
@@ -238,12 +248,10 @@ class MainScreen(Screen):
         self.add_widget(gridlayout)
 
     def _on_press_button_to_doubler_screen(self, *args):
-
         self.manager.transition.direction = 'left'
         self.manager.current = 'DoublerScreen'
 
     def _on_press_button_sign_out(self, *args):
-
         Window.fullscreen = False
         # Window.toggle_fullscreen()  # Deprecated
         Window.size = m_size_window_pass
@@ -254,6 +262,8 @@ class MainScreen(Screen):
 class DoublerScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        print("DoublerScreen")
 
         gridlayout = GridLayout(cols=2, spacing=10)
         boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
@@ -325,12 +335,10 @@ class DoublerScreen(Screen):
         self.add_widget(gridlayout)
 
     def _on_press_button_to_main_screen(self, *args):
-
         self.manager.transition.direction = 'right'
         self.manager.current = 'MainScreen'
 
     def _on_press_button_sign_out(self, *args):
-
         Window.fullscreen = False
         # Window.toggle_fullscreen()  # Deprecated
         Window.size = m_size_window_pass
@@ -339,8 +347,10 @@ class DoublerScreen(Screen):
 
 
 class Investment_analysis(App):
+
     def build(self):
         sm = ScreenManager()
+
         sm.add_widget(PasswordScreen(name='PasswordScreen'))
         sm.add_widget(MainScreen(name='MainScreen'))
         sm.add_widget(DoublerScreen(name='DoublerScreen'))

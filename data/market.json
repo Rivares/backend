@@ -3,441 +3,441 @@
         [
             {
                 "ticker_value": "ETLN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:21",
+                "last_value": 126.5,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "QIWI",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:50",
+                "last_value": 782.0,
+                "volume_value": 3
             }
         ],
         [
             {
                 "ticker_value": "TCSG",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:47",
+                "last_value": 2347.8,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "FIVE",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:36",
+                "last_value": 2738.5,
+                "volume_value": 19
             }
         ],
         [
             {
                 "ticker_value": "AKRN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:14",
+                "last_value": 5948.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "ALRS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:02",
+                "last_value": 97.6,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "AFLT",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:10",
+                "last_value": 69.44,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "BANE",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:15:04",
+                "last_value": 1636.5,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "BSPB",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:13",
+                "last_value": 51.4,
+                "volume_value": 500
             }
         ],
         [
             {
                 "ticker_value": "VSMO",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:11:09",
+                "last_value": 20340.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "VTBR",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:28",
+                "last_value": 0.037995,
+                "volume_value": 530000
             }
         ],
         [
             {
                 "ticker_value": "GAZP",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:35",
+                "last_value": 205.85,
+                "volume_value": 30
             }
         ],
         [
             {
                 "ticker_value": "SIBN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:54",
+                "last_value": 315.6,
+                "volume_value": 230
             }
         ],
         [
             {
                 "ticker_value": "PIKK",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:44",
+                "last_value": 589.5,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "DSKY",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:49",
+                "last_value": 139.96,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "IRAO",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:04",
+                "last_value": 5.307,
+                "volume_value": 20000
             }
         ],
         [
             {
                 "ticker_value": "KBTK",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "15:23:45",
+                "last_value": 152.6,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "LNTA",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:09",
+                "last_value": 259.0,
+                "volume_value": 40
             }
         ],
         [
             {
                 "ticker_value": "LSNG",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:48",
+                "last_value": 5.25,
+                "volume_value": 100
             }
         ],
         [
             {
                 "ticker_value": "LSRG",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:19:12",
+                "last_value": 861.4,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "LKOH",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:12",
+                "last_value": 5117.5,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "MVID",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:20",
+                "last_value": 715.6,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "MGNT",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:31",
+                "last_value": 5578.0,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "MGTS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "15:24:05",
+                "last_value": 2190.0,
+                "volume_value": 5
             }
         ],
         [
             {
                 "ticker_value": "MTLR",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:44",
+                "last_value": 81.46,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "CBOM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:22",
+                "last_value": 6.142,
+                "volume_value": 5200
             }
         ],
         [
             {
                 "ticker_value": "MAGN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:23",
+                "last_value": 57.755,
+                "volume_value": 2050
             }
         ],
         [
             {
                 "ticker_value": "MOEX",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:35",
+                "last_value": 158.24,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "MSTT",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:19",
+                "last_value": 105.05,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "MSNG",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:32",
+                "last_value": 2.051,
+                "volume_value": 10000
             }
         ],
         [
             {
                 "ticker_value": "MSRS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:46",
+                "last_value": 1.344,
+                "volume_value": 1000
             }
         ],
         [
             {
                 "ticker_value": "MRKV",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:56",
+                "last_value": 0.0663,
+                "volume_value": 50000
             }
         ],
         [
             {
                 "ticker_value": "MRKU",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:57",
+                "last_value": 0.18,
+                "volume_value": 250000
             }
         ],
         [
             {
                 "ticker_value": "MRKC",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:14",
+                "last_value": 0.3904,
+                "volume_value": 50000
             }
         ],
         [
             {
                 "ticker_value": "MRKP",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:20:30",
+                "last_value": 0.244,
+                "volume_value": 10000
             }
         ],
         [
             {
                 "ticker_value": "MTSS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:22:58",
+                "last_value": 328.85,
+                "volume_value": 530
             }
         ],
         [
             {
                 "ticker_value": "NKNC",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:21:10",
+                "last_value": 92.6,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "NLMK",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:20",
+                "last_value": 219.82,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "NMTP",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:13",
+                "last_value": 8.04,
+                "volume_value": 2500
             }
         ],
         [
             {
                 "ticker_value": "NVTK",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:20",
+                "last_value": 1232.6,
+                "volume_value": 12
             }
         ],
         [
             {
                 "ticker_value": "GMKN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:39",
+                "last_value": 23618.0,
+                "volume_value": 18
             }
         ],
         [
             {
                 "ticker_value": "OGKB",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:14",
+                "last_value": 0.7248,
+                "volume_value": 2000
             }
         ],
         [
             {
                 "ticker_value": "POLY",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:50",
+                "last_value": 1695.7,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "PLZL",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:15",
+                "last_value": 15214.0,
+                "volume_value": 3
             }
         ],
         [
@@ -453,271 +453,271 @@
         [
             {
                 "ticker_value": "RASP",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:27",
+                "last_value": 153.56,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "ROSN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:01",
+                "last_value": 435.65,
+                "volume_value": 250
             }
         ],
         [
             {
                 "ticker_value": "RSTI",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:14",
+                "last_value": 1.7893,
+                "volume_value": 220000
             }
         ],
         [
             {
                 "ticker_value": "RTKM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:52",
+                "last_value": 95.17,
+                "volume_value": 100
             }
         ],
         [
             {
                 "ticker_value": "AGRO",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:21",
+                "last_value": 839.0,
+                "volume_value": 95
             }
         ],
         [
             {
                 "ticker_value": "RUAL",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:22",
+                "last_value": 35.265,
+                "volume_value": 20
             }
         ],
         [
             {
                 "ticker_value": "HYDR",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:28",
+                "last_value": 0.7876,
+                "volume_value": 2000
             }
         ],
         [
             {
                 "ticker_value": "RNFT",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:23:59",
+                "last_value": 236.6,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "SFIN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:18:49",
+                "last_value": 499.8,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "SBER",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:45",
+                "last_value": 272.25,
+                "volume_value": 10
             }
         ],
         [
             {
                 "ticker_value": "CHMF",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:02",
+                "last_value": 1368.4,
+                "volume_value": 81
             }
         ],
         [
             {
                 "ticker_value": "AFKS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:08",
+                "last_value": 28.857,
+                "volume_value": 700
             }
         ],
         [
             {
                 "ticker_value": "SNGS",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:00",
+                "last_value": 35.375,
+                "volume_value": 300
             }
         ],
         [
             {
                 "ticker_value": "TATN",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:23",
+                "last_value": 506.8,
+                "volume_value": 4
             }
         ],
         [
             {
                 "ticker_value": "TRMK",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:48",
+                "last_value": 62.04,
+                "volume_value": 190
             }
         ],
         [
             {
                 "ticker_value": "TRNFP",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:37",
+                "last_value": 140750.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "PHOR",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:39",
+                "last_value": 3092.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "FEES",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:48",
+                "last_value": 0.22204,
+                "volume_value": 250000
             }
         ],
         [
             {
                 "ticker_value": "GCHE",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:30",
+                "last_value": 1963.0,
+                "volume_value": 2
             }
         ],
         [
             {
                 "ticker_value": "ENRU",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:37",
+                "last_value": 0.9015,
+                "volume_value": 1000
             }
         ],
         [
             {
                 "ticker_value": "UPRO",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:58",
+                "last_value": 2.775,
+                "volume_value": 50000
             }
         ],
         [
             {
                 "ticker_value": "MAIL",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:26:07",
+                "last_value": 2001.2,
+                "volume_value": 2
             }
         ],
         [
             {
                 "ticker_value": "YNDX",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:26:05",
+                "last_value": 5037.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "INTC-RM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:25:08",
+                "last_value": 3493.0,
+                "volume_value": 2
             }
         ],
         [
             {
                 "ticker_value": "CSCO-RM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:15:25",
+                "last_value": 3316.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "HPQ-RM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:12:09",
+                "last_value": 1793.0,
+                "volume_value": 1
             }
         ],
         [
             {
                 "ticker_value": "T-RM",
-                "per_value": -1,
-                "date_value": -1,
-                "time_value": -1,
-                "last_value": -1,
-                "volume_value": -1
+                "per_value": 0,
+                "date_value": 20201228,
+                "time_value": "17:24:20",
+                "last_value": 2140.0,
+                "volume_value": 10
             }
         ]
     ]
