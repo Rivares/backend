@@ -9,10 +9,13 @@ from kivy.core.window import Window
 from kivy.properties import OptionProperty
 
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.gridlayout import GridLayout
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.stacklayout import StackLayout
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.scrollview import ScrollView
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.slider import Slider
 from kivy.uix.button import Button
 from kivy.uix.image import Image
 from kivy.uix.label import Label
@@ -186,16 +189,34 @@ class MainScreen(Screen):
         ))
 
         i = 0
-        while i < len(my_core.result_str_ticker):
-            boxlayout_col_0.add_widget(Label(
+        boxlayout_col_0_0 = StackLayout(orientation="tb-lr", height=20, size_hint=(1, None))
+        boxlayout_col_0_1 = BoxLayout(orientation="vertical", spacing=2)
+        boxlayout_row_0_0 = BoxLayout(orientation="horizontal", spacing=2)
+        # slider = Slider(orientation='vertical', min=0, max=len(my_core.result_str_ticker),
+        #                 value=len(my_core.result_str_ticker), step=1,
+        #                 value_track=True, value_track_color=[1, 0, 0, 1])
+        # slider.bind(value=_on_ticker_change)
+        while i < len(my_core.result_str_ticker)-60:
+            boxlayout_col_0_0.add_widget(Button(
                 text=my_core.result_str_ticker[i],
-                font_size='12',
-                text_size=(None, None),
-                # background_color=[0, .50, 0, 1],
-                # size_hint_x=None,
-                # width=250,
+                font_size='14',
+                # text_size=(None, None),
+                background_color=[0, .50, 0, 1],
+                size_hint_x=None,
+                height=100,
+                width=250,
             ))
+
+            # FanSpeedLabel = Label(text=str(slider.value))
             i += 1
+
+        scrollview = ScrollView()
+        scrollview.add_widget(boxlayout_col_0_0)
+        boxlayout_col_0_1.add_widget(scrollview)
+
+        # boxlayout_row_0_0.add_widget(boxlayout_col_0_0)
+        boxlayout_row_0_0.add_widget(boxlayout_col_0_1)
+        boxlayout_col_0.add_widget(boxlayout_row_0_0)
 
         gridlayout.add_widget(boxlayout_col_0)
 
