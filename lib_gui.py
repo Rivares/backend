@@ -45,24 +45,6 @@ m_size_window_main = Window.system_size
 m_size_window_3 = Window.system_size
 
 Builder.load_string('''
-<SelectableLabel>:
-    # Draw a background to indicate selection
-    canvas.before:
-        Color:
-            rgba: (.0, 0.9, .1, .3) if self.selected else (0, 0, 0, 1)
-        Rectangle:
-            pos: self.pos
-            size: self.size
-<RV>:
-    viewclass: 'SelectableLabel'
-    SelectableRecycleBoxLayout:
-        default_size: None, dp(56)
-        default_size_hint: 1, None
-        size_hint_y: None
-        height: self.minimum_height
-        orientation: 'vertical'
-        multiselect: False
-        touch_multiselect: True
 <ExampleViewer>: 
     viewclass: 'Button'  # defines the viewtype for the data items. 
     orientation: "vertical"
@@ -80,38 +62,6 @@ Builder.load_string('''
         height: self.minimum_height 
         orientation: 'vertical' # defines the orientation of data items
 ''')
-
-
-class SelectableRecycleBoxLayout(FocusBehavior, LayoutSelectionBehavior, RecycleBoxLayout):
-    ''' Adds selection and focus behaviour to the view. '''
-
-
-class SelectableLabel(RecycleDataViewBehavior, Label):
-    ''' Add selection support to the Label '''
-    index = None
-    selected = BooleanProperty(False)
-    selectable = BooleanProperty(True)
-
-    def refresh_view_attrs(self, rv, index, data):
-        ''' Catch and handle the view changes '''
-        self.index = index
-        return super(SelectableLabel, self).refresh_view_attrs(
-            rv, index, data)
-
-    def on_touch_down(self, touch):
-        ''' Add selection on touch down '''
-        if super(SelectableLabel, self).on_touch_down(touch):
-            return True
-        if self.collide_point(*touch.pos) and self.selectable:
-            return self.parent.select_with_touch(self.index, touch)
-
-    def apply_selection(self, rv, index, is_selected):
-        ''' Respond to the selection of items in the view. '''
-        self.selected = is_selected
-        if is_selected:
-            print("selection changed to {0}".format(rv.data[index]))
-        else:
-            print("selection removed for {0}".format(rv.data[index]))
 
 
 class LoginScreen(GridLayout):
@@ -445,99 +395,11 @@ class DoublerScreen(Screen):
         self.manager.current = 'PasswordScreen'
 
 
-class RV(RecycleView):
-    def __init__(self, **kwargs):
-        super(RV, self).__init__(**kwargs)
-        self.data = [{'text': my_core.result_str_ticker[i]} for i in range(len(my_core.result_str_ticker))]
-
-
-class TestApp(App):
-    def build(self):
-        return RV()
-
-
-# import kivy module
-import kivy
-
-# this restrict the kivy version i.e
-# below this kivy version you cannot
-# use the app or software
-kivy.require("1.9.1")
-
-# Kivy Example App for the slider widget
-from kivy.app import App
-
-# The GridLayout arranges children in a matrix.
-from kivy.uix.gridlayout import GridLayout
-
-# If we will not import this module
-# It will through the error
-from kivy.uix.slider import Slider
-
-# The Label widget is for rendering text.
-from kivy.uix.label import Label
-
-# Property that represents a numeric value
-# within a minimum bound and / or maximum
-# bound – within a numeric range.
-from kivy.properties import NumericProperty
-
-
-# class in which we are defining the
-# sliders and its effects
-class WidgetContainer(GridLayout):
-
-    def __init__(self, **kwargs):
-        # super function can be used to gain access
-        # to inherited methods from a parent or sibling
-        # class that has been overwritten in a class object.
-        super(WidgetContainer, self).__init__(**kwargs)
-
-        # 4 columns in grid layout
-        self.cols = 4
-
-        # declaring the slider and adding some effects to it
-        self.brightnessControl = Slider(min=0, max=100)
-
-        # 1st row - one label, one slider
-        self.add_widget(Label(text='brightness'))
-        self.add_widget(self.brightnessControl)
-
-        # 2nd row - one label for caption,
-        # one label for slider value
-        self.add_widget(Label(text='Slider Value'))
-        self.brightnessValue = Label(text='0')
-        self.add_widget(self.brightnessValue)
-
-        # On the slider object Attach a callback
-        # for the attribute named value
-        self.brightnessControl.bind(value=self.on_value)
-
-        # Adding functionality behind the slider
-
-    # i.e when pressed increase the value
-    def on_value(self, instance, brightness):
-        self.brightnessValue.text = "% d" % brightness
-
-    # The app class
-
-
-class SliderExample(App):
-    def build(self):
-        widgetContainer = WidgetContainer()
-        return widgetContainer
-
-    # creating the object root for ButtonApp() class
-
-
-
 # Define the Recycleview class which is created in .kv file
 class ExampleViewer(RecycleView):
     def __init__(self, **kwargs):
         super(ExampleViewer, self).__init__(**kwargs)
-        self.data = [{'text': str(x)} for x in range(20)]
-
-    # Create the App class with name of your app.
+        self.data = [{'text': my_core.result_str_ticker[i]} for i in range(len(my_core.result_str_ticker))]
 
 
 class SampleApp(App):
@@ -550,10 +412,9 @@ class Investment_analysis(App):
     def build(self):
         # sm = ScreenManager()
 
-        # root = SliderExample()
-        # root.run()
-
-        SampleApp().run()
+        # SampleApp().run()
+        obj = ExampleViewer()
+        return obj
 
         # sm.add_widget(PasswordScreen(name='PasswordScreen'))
         # sm.add_widget(MainScreen(name='MainScreen'))
