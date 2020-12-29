@@ -252,7 +252,7 @@ class MainScreen(Screen):
         ))
 
         i = 0
-        boxlayout_col_0_0 = StackLayout(orientation="tb-lr", height=20, size_hint=(1, None))
+        boxlayout_col_0_0 = BoxLayout(orientation="vertical", spacing=2)
         boxlayout_col_0_1 = BoxLayout(orientation="vertical", spacing=2)
         boxlayout_row_0_0 = BoxLayout(orientation="horizontal", spacing=2)
         slider = Slider(orientation='vertical', min=0, max=len(my_core.result_str_ticker),
@@ -273,7 +273,7 @@ class MainScreen(Screen):
             i += 1
 
         boxlayout_col_0_1.add_widget(slider)
-        boxlayout_col_0_1.size_hint_x = 0.1
+        boxlayout_col_0_1.size_hint_x = 0.05
 
         boxlayout_row_0_0.add_widget(boxlayout_col_0_0)
         boxlayout_row_0_0.add_widget(boxlayout_col_0_1)
