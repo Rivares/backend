@@ -44,24 +44,14 @@ m_size_window_pass = (400, 200)
 m_size_window_main = Window.system_size
 m_size_window_3 = Window.system_size
 
-Builder.load_string('''
-<ExampleViewer>: 
-    viewclass: 'Button'  # defines the viewtype for the data items. 
-    orientation: "vertical"
-    spacing: 40
-    padding:10, 10
-    space_x: self.size[0]/3
-  
-    RecycleBoxLayout: 
-        color:(0, 0.7, 0.4, 0.8) 
-        default_size: None, dp(56) 
-  
-        # defines the size of the widget in reference to width and height 
-        default_size_hint: 0.4, None 
-        size_hint_y: None
-        height: self.minimum_height 
-        orientation: 'vertical' # defines the orientation of data items
-''')
+Builder.load_file('.\\gui\\ExampleViewer.kv')
+
+
+# Define the Recycleview class which is created in .kv file
+class ExampleViewer(RecycleView):
+    def __init__(self, **kwargs):
+        super(ExampleViewer, self).__init__(**kwargs)
+        self.data = [{'text': my_core.result_str_ticker[i]} for i in range(len(my_core.result_str_ticker))]
 
 
 class LoginScreen(GridLayout):
@@ -75,95 +65,6 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-
-
-class MainApp(App):
-
-    def build(self):
-        label = Label(text='Hello from Kivy',
-                      size_hint=(.5, .5),
-                      pos_hint={'center_x': .5, 'center_y': .5})
-        #
-        # img = Image(source='/path/to/real_python.png',
-        #             size_hint=(1, .5),
-        #             pos_hint={'center_x': .5, 'center_y': .5})
-        #
-        # layout = BoxLayout(padding=10)
-        # colors = [red, green, blue, purple]
-        #
-        # # padding: Отступ padding между лейаутом и его дочерними элементами уточняется в пикселях.\
-        # # Для этого можно выбрать один из трех способов:
-        # # Список из четырех аргументов: [padding_left, padding_top, padding_right, padding_bottom]
-        # # Список из двух аргументов: [padding_horizontal, padding_vertical]
-        # # Один аргумент:
-        # # padding = 10 spacing: При помощи данного аргумента добавляется расстояние между дочерними виджетами.
-        # # orientation: Позволяет изменить значение orientation для BoxLayout
-        #
-        # for i in range(5):
-        #     btn = Button(text="Button #%s" % (i + 1),
-        #                  background_color=my_general.random.choice(colors),
-        #                  size_hint=(.5, .5),
-        #                  pos_hint={'center_x': .5, 'center_y': .5})
-        #
-        #     btn.bind(on_press=self.on_press_button)
-        #
-        #     layout.add_widget(btn)
-        #
-        #     self.operators = ["/", "*", "+", "-"]
-        #     self.last_was_operator = None
-        #     self.last_button = None
-        #     main_layout = BoxLayout(orientation="vertical")
-        #     self.solution = TextInput(
-        #         multiline=False, readonly=True, halign="right", font_size=55
-        #     )
-        #     main_layout.add_widget(self.solution)
-        #     buttons = [
-        #         ["7", "8", "9", "/"],
-        #         ["4", "5", "6", "*"],
-        #         ["1", "2", "3", "-"],
-        #         [".", "0", "C", "+"],
-        #     ]
-        #     for row in buttons:
-        #         h_layout = BoxLayout()
-        #         for label in row:
-        #             button = Button(
-        #                 text=label,
-        #                 pos_hint={"center_x": 0.5, "center_y": 0.5},
-        #             )
-        #             button.bind(on_press=self.on_button_press)
-        #             h_layout.add_widget(button)
-        #         main_layout.add_widget(h_layout)
-        #
-        #     equals_button = Button(
-        #         text="=", pos_hint={"center_x": 0.5, "center_y": 0.5}
-        #     )
-        #     equals_button.bind(on_press=self.on_solution)
-        #     main_layout.add_widget(equals_button)
-        #
-        #     return main_layout
-        #
-        # def on_button_press(self, instance):
-        #     current = self.solution.text
-        #     button_text = instance.text
-        #
-        #     if button_text == "C":
-        #         # Очистка виджета с решением
-        #         self.solution.text = ""
-        #     else:
-        #         if current and (
-        #             self.last_was_operator and button_text in self.operators):
-        #             # Не добавляйте два оператора подряд, рядом друг с другом
-        #             return
-        #         elif current == "" and button_text in self.operators:
-        #             # Первый символ не может быть оператором
-        #             return
-        #         else:
-        #             new_text = current + button_text
-        #             self.solution.text = new_text
-        #     self.last_button = button_text
-        #     self.last_was_operator = self.last_button in self.operators
-
-        return label
 
 
 class PasswordScreen(Screen):
@@ -296,6 +197,7 @@ class MainScreen(Screen):
 
         self.add_widget(gridlayout)
 
+
     def _on_press_button_to_doubler_screen(self, *args):
         self.manager.transition.direction = 'left'
         self.manager.current = 'DoublerScreen'
@@ -395,29 +297,13 @@ class DoublerScreen(Screen):
         self.manager.current = 'PasswordScreen'
 
 
-# Define the Recycleview class which is created in .kv file
-class ExampleViewer(RecycleView):
-    def __init__(self, **kwargs):
-        super(ExampleViewer, self).__init__(**kwargs)
-        self.data = [{'text': my_core.result_str_ticker[i]} for i in range(len(my_core.result_str_ticker))]
-
-
-class SampleApp(App):
-    def build(self):
-        return ExampleViewer()
-
-
 class Investment_analysis(App):
 
     def build(self):
-        # sm = ScreenManager()
+        sm = ScreenManager()
+        return ExampleViewer()
+        sm.add_widget(PasswordScreen(name='PasswordScreen'))
+        sm.add_widget(MainScreen(name='MainScreen'))
+        sm.add_widget(DoublerScreen(name='DoublerScreen'))
 
-        # SampleApp().run()
-        obj = ExampleViewer()
-        return obj
-
-        # sm.add_widget(PasswordScreen(name='PasswordScreen'))
-        # sm.add_widget(MainScreen(name='MainScreen'))
-        # sm.add_widget(DoublerScreen(name='DoublerScreen'))
-        #
-        # return sm
+        return sm
