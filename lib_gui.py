@@ -196,6 +196,9 @@ class MainScreen(Screen):
         #                 value=len(my_core.result_str_ticker), step=1,
         #                 value_track=True, value_track_color=[1, 0, 0, 1])
         # slider.bind(value=_on_ticker_change)
+
+        boxlayout_col_0_0.bind(minimum_height=boxlayout_col_0_0.setter('height'))
+
         while i < len(my_core.result_str_ticker)-60:
             boxlayout_col_0_0.add_widget(Button(
                 text=my_core.result_str_ticker[i],
@@ -207,12 +210,10 @@ class MainScreen(Screen):
                 width=250,
             ))
 
-            # FanSpeedLabel = Label(text=str(slider.value))
             i += 1
 
-        scrollview = ScrollView()
+        scrollview = ScrollView(size_hint=(None, None), size=(400, 400), pos_hint={'center_x': .5, 'center_y': .5})
         scrollview.add_widget(boxlayout_col_0_0)
-        boxlayout_col_0_1.add_widget(scrollview)
 
         # boxlayout_row_0_0.add_widget(boxlayout_col_0_0)
         boxlayout_row_0_0.add_widget(boxlayout_col_0_1)
