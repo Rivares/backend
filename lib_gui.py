@@ -120,18 +120,18 @@ class MainScreen(Screen):
                         value=len(my_core.result_str_ticker), step=1,
                         value_track=True, value_track_color=[1, 0, 0, 1])
 
-        boxlayout_col_0_0 = GridLayout(cols=1, spacing=2, size_hint_y=10)
+        boxlayout_col_0_0 = GridLayout(cols=1, spacing=2, size_hint_y=5)
         boxlayout_col_0_0.bind(minimum_height=boxlayout_col_0_0.setter('height'))
         i = 0
         while i < len(my_core.result_str_ticker):
             boxlayout_col_0_0.add_widget(Button(
                 text=my_core.result_str_ticker[i],
                 font_size='14',
-                # text_size=(None, None),
                 background_color=[0, .50, 0, 1],
                 size_hint_x=None,
-                height=20,
+                height=10,
                 width=250,
+                on_press=self._on_press_change_ticker(my_core.result_str_ticker[i]),
             ))
 
             i += 1
@@ -139,8 +139,7 @@ class MainScreen(Screen):
         boxlayout_col_0_1.add_widget(slider)
         boxlayout_col_0_1.size_hint_x = 0.05
 
-
-        scroll_view = ScrollView()#size_hint=(1, None), size=(boxlayout_col_0_0.width, 450))
+        scroll_view = ScrollView()
         scroll_view.add_widget(boxlayout_col_0_0)
 
         boxlayout_row_0_0.add_widget(scroll_view)
@@ -197,6 +196,9 @@ class MainScreen(Screen):
 
         self.add_widget(gridlayout)
 
+
+    def _on_press_change_ticker(self, l_result_str_ticker):
+        print(l_result_str_ticker)
 
     def _on_press_button_to_doubler_screen(self, *args):
         self.manager.transition.direction = 'left'
