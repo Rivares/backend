@@ -112,7 +112,7 @@ class MainScreen(Screen):
             width=250,
         ))
 
-        i = 0
+
         boxlayout_col_0_0 = BoxLayout(orientation="vertical", spacing=2)
         boxlayout_col_0_1 = BoxLayout(orientation="vertical", spacing=2)
         boxlayout_row_0_0 = BoxLayout(orientation="horizontal", spacing=2)
@@ -120,25 +120,17 @@ class MainScreen(Screen):
                         value=len(my_core.result_str_ticker), step=1,
                         value_track=True, value_track_color=[1, 0, 0, 1])
 
-        layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
-        # Make sure the height is such that there is something to scroll.
-        layout.bind(minimum_height=layout.setter('height'))
-        for i in range(100):
-            btn = Button(text=str(i), size_hint_y=None, height=40)
-            layout.add_widget(btn)
-        root = ScrollView(size_hint=(1, None), size=(Window.width, Window.height))
-        root.add_widget(layout)
-
-        # runTouchApp(root)
-
-        while i < len(my_core.result_str_ticker)-60:
+        boxlayout_col_0_0 = GridLayout(cols=1, spacing=2, size_hint_y=10)
+        boxlayout_col_0_0.bind(minimum_height=boxlayout_col_0_0.setter('height'))
+        i = 0
+        while i < len(my_core.result_str_ticker):
             boxlayout_col_0_0.add_widget(Button(
                 text=my_core.result_str_ticker[i],
                 font_size='14',
                 # text_size=(None, None),
                 background_color=[0, .50, 0, 1],
                 size_hint_x=None,
-                height=100,
+                height=20,
                 width=250,
             ))
 
@@ -147,7 +139,11 @@ class MainScreen(Screen):
         boxlayout_col_0_1.add_widget(slider)
         boxlayout_col_0_1.size_hint_x = 0.05
 
-        boxlayout_row_0_0.add_widget(root)
+
+        scroll_view = ScrollView()#size_hint=(1, None), size=(boxlayout_col_0_0.width, 450))
+        scroll_view.add_widget(boxlayout_col_0_0)
+
+        boxlayout_row_0_0.add_widget(scroll_view)
         boxlayout_row_0_0.add_widget(boxlayout_col_0_1)
         boxlayout_col_0.add_widget(boxlayout_row_0_0)
 
