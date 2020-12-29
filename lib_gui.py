@@ -47,13 +47,6 @@ m_size_window_3 = Window.system_size
 Builder.load_file('.\\gui\\ExampleViewer.kv')
 
 
-# Define the Recycleview class which is created in .kv file
-class ExampleViewer(RecycleView):
-    def __init__(self, **kwargs):
-        super(ExampleViewer, self).__init__(**kwargs)
-        self.data = [{'text': my_core.result_str_ticker[i]} for i in range(len(my_core.result_str_ticker))]
-
-
 class LoginScreen(GridLayout):
 
     def __init__(self, **kwargs):
@@ -127,6 +120,17 @@ class MainScreen(Screen):
                         value=len(my_core.result_str_ticker), step=1,
                         value_track=True, value_track_color=[1, 0, 0, 1])
 
+        layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
+        # Make sure the height is such that there is something to scroll.
+        layout.bind(minimum_height=layout.setter('height'))
+        for i in range(100):
+            btn = Button(text=str(i), size_hint_y=None, height=40)
+            layout.add_widget(btn)
+        root = ScrollView(size_hint=(1, None), size=(Window.width, Window.height))
+        root.add_widget(layout)
+
+        # runTouchApp(root)
+
         while i < len(my_core.result_str_ticker)-60:
             boxlayout_col_0_0.add_widget(Button(
                 text=my_core.result_str_ticker[i],
@@ -143,7 +147,7 @@ class MainScreen(Screen):
         boxlayout_col_0_1.add_widget(slider)
         boxlayout_col_0_1.size_hint_x = 0.05
 
-        boxlayout_row_0_0.add_widget(boxlayout_col_0_0)
+        boxlayout_row_0_0.add_widget(root)
         boxlayout_row_0_0.add_widget(boxlayout_col_0_1)
         boxlayout_col_0.add_widget(boxlayout_row_0_0)
 
@@ -296,12 +300,32 @@ class DoublerScreen(Screen):
         self.manager.transition.direction = 'right'
         self.manager.current = 'PasswordScreen'
 
+class ExampleViewer(RecycleView):
+    def __init__(self, **kwargs):
+        super(ExampleViewer, self).__init__(**kwargs)
+        self.data = [{'text': str(x)} for x in range(100)]
+
+
+class MyViewer(RecycleView):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.viewclass = 'Button'  # defines the viewtype for the data items.
+        self.orientation = "vertical"
+        self.spacing = 40
+        self.padding = (10, 10)
+        self.space_x = self.size[0]/3
+
+
+class TestApp(App):
+    def build(self):
+        return ExampleViewer()
+
 
 class Investment_analysis(App):
 
     def build(self):
         sm = ScreenManager()
-        return ExampleViewer()
+
         sm.add_widget(PasswordScreen(name='PasswordScreen'))
         sm.add_widget(MainScreen(name='MainScreen'))
         sm.add_widget(DoublerScreen(name='DoublerScreen'))
