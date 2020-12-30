@@ -806,6 +806,21 @@ class Portfolio:
 
         print("\n________ print_market() <---\n")
 
+    def print_graph_(self, list_name_tickers, depart_market, list_name_indicators,
+                    user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
+                    user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
+                                                             my_general.datetime.datetime.now().month,
+                                                             my_general.datetime.datetime.now().day),
+                    user_time_frame='HOURLY'):
+        print("print_graph_")
+
+        my_general.plt.plot([1, 2, 2, 4])
+        my_general.plt.ylabel('some numbers')
+
+        my_general.plt.legend()
+        my_general.plt.show()
+
+
     def print_graph(self, list_name_tickers, depart_market, list_name_indicators,
                     user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
                     user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,

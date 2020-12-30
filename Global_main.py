@@ -6,6 +6,7 @@ import lib_core as my_core
 from backend_kivyagg import FigureCanvasKivyAgg
 
 from kivy.core.window import Window
+from kivy.clock import Clock
 
 from kivy.properties import OptionProperty
 from kivy.properties import BooleanProperty
@@ -98,12 +99,17 @@ class PasswordScreen(Screen):
 
 
 class MainScreen(Screen):
+
+    gridlayout = GridLayout(cols=2, spacing=10)
+    current_graph = FigureCanvasKivyAgg(my_general.plt.gcf())
+    boxlayout_col_0_0_0 = BoxLayout()
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
         print("MainScreen")
 
-        gridlayout = GridLayout(cols=2, spacing=10)
+        gridlayout = self.gridlayout
         boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
         boxlayout_row_0 = BoxLayout(orientation="horizontal", spacing=10)
         boxlayout_col_1 = BoxLayout(orientation="vertical", spacing=10)
@@ -116,8 +122,7 @@ class MainScreen(Screen):
             width=250,
         ))
 
-
-        boxlayout_col_0_0 = BoxLayout(orientation="vertical", spacing=2)
+        boxlayout_col_0_0_0 = self.boxlayout_col_0_0_0
         boxlayout_col_0_1 = BoxLayout(orientation="vertical", spacing=2)
         boxlayout_row_0_0 = BoxLayout(orientation="horizontal", spacing=2)
         slider = Slider(orientation='vertical', min=0, max=len(my_core.result_str_ticker),
@@ -171,8 +176,9 @@ class MainScreen(Screen):
 
         my_general.plt.plot([1, 23, 2, 4])
         my_general.plt.ylabel('some numbers')
+        boxlayout_col_0_0_0.add_widget(self.current_graph)
 
-        boxlayout_col_1.add_widget(FigureCanvasKivyAgg(my_general.plt.gcf()))
+        boxlayout_col_1.add_widget(boxlayout_col_0_0_0)
         boxlayout_col_1.size_hint_x = None
         boxlayout_col_1.size_hint_y = 200
         boxlayout_col_1.width = 1750
@@ -200,16 +206,25 @@ class MainScreen(Screen):
 
         self.add_widget(gridlayout)
 
-
     def _on_press_change_ticker(self, l_result_str_ticker, *args):
         print(l_result_str_ticker)
-        my_portfolio.print_graph(list_name_tickers=[l_result_str_ticker], depart_market='STCK',
-                                 list_name_indicators=[''],
-                                 user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
-                                 user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
-                                                                          my_general.datetime.datetime.now().month,
-                                                                          my_general.datetime.datetime.now().day),
-                                 user_time_frame='HOURLY')
+        # my_portfolio.print_graph_(list_name_tickers=[l_result_str_ticker], depart_market='STCK',
+        #                           list_name_indicators=[''],
+        #                           user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
+        #                           user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
+        #                                                                    my_general.datetime.datetime.now().month,
+        #                                                                    my_general.datetime.datetime.now().day),
+        #                           user_time_frame='HOURLY')
+        print("print_graph_")
+        my_general.plt.clf()
+        self.gridlayout.remove_widget(self.current_graph)
+
+        my_general.plt.plot([1, 2, 2, 4])
+        my_general.plt.ylabel('some numbers')
+        self.current_graph = FigureCanvasKivyAgg(my_general.plt.gcf())
+
+        self.gridlayout.add_widget(self.current_graph)
+
 
     def _on_press_button_to_doubler_screen(self, *args):
         self.manager.transition.direction = 'left'
