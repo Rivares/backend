@@ -32,6 +32,8 @@ from kivy.lang import Builder
 from kivy.base import runTouchApp
 from kivy.app import App
 
+from functools import partial
+
 my_general.logging.getLogger('matplotlib.font_manager').disabled = True
 
 root_path = my_general.root_path
@@ -131,7 +133,7 @@ class MainScreen(Screen):
                 size_hint_x=None,
                 height=10,
                 width=250,
-                on_press=self._on_press_change_ticker(my_core.result_str_ticker[i]),
+                on_press=partial(self._on_press_change_ticker, my_core.result_str_ticker[i]),
             ))
 
             i += 1
@@ -197,7 +199,7 @@ class MainScreen(Screen):
         self.add_widget(gridlayout)
 
 
-    def _on_press_change_ticker(self, l_result_str_ticker):
+    def _on_press_change_ticker(self, l_result_str_ticker, *args):
         print(l_result_str_ticker)
 
     def _on_press_button_to_doubler_screen(self, *args):
