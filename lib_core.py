@@ -1,7 +1,6 @@
 # coding: UTF-8
 
 import lib_general as my_general
-import lib_gui as my_gui
 
 root_path = my_general.root_path
 
