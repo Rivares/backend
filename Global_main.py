@@ -174,8 +174,15 @@ class MainScreen(Screen):
         boxlayout_row_0.size_hint = [1, 0.1]
         boxlayout_col_1.add_widget(boxlayout_row_0)
 
-        my_general.plt.plot([1, 23, 2, 4])
-        my_general.plt.ylabel('some numbers')
+        my_portfolio.print_graph(list_name_tickers=['CHMF'], depart_market='STCK',
+                                 list_name_indicators=['MACD', 'RSI', 'ATR', 'EMA'],
+                                 user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1,
+                                                                            1),
+                                 user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
+                                                                          my_general.datetime.datetime.now().month,
+                                                                          my_general.datetime.datetime.now().day),
+                                 user_time_frame='HOURLY')
+
         boxlayout_col_0_0_0.add_widget(self.current_graph)
 
         boxlayout_col_1.add_widget(boxlayout_col_0_0_0)
@@ -208,19 +215,22 @@ class MainScreen(Screen):
 
     def _on_press_change_ticker(self, l_result_str_ticker, *args):
         print(l_result_str_ticker)
-        # my_portfolio.print_graph_(list_name_tickers=[l_result_str_ticker], depart_market='STCK',
-        #                           list_name_indicators=[''],
-        #                           user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
-        #                           user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
-        #                                                                    my_general.datetime.datetime.now().month,
-        #                                                                    my_general.datetime.datetime.now().day),
-        #                           user_time_frame='HOURLY')
-        print("print_graph_")
+
         my_general.plt.clf()
         self.gridlayout.remove_widget(self.current_graph)
 
-        my_general.plt.plot([1, 2, 2, 4])
-        my_general.plt.ylabel('some numbers')
+        l_result_str_ticker = l_result_str_ticker[:(l_result_str_ticker.index('|'))]
+        l_result_str_ticker = l_result_str_ticker.replace(' ', '')
+        print(l_result_str_ticker)
+
+        my_portfolio.print_graph(list_name_tickers=[l_result_str_ticker], depart_market='STCK',
+                                 list_name_indicators=['MACD', 'RSI', 'ATR', 'EMA'],
+                                 user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
+                                 user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
+                                                                          my_general.datetime.datetime.now().month,
+                                                                          my_general.datetime.datetime.now().day),
+                                 user_time_frame='HOURLY')
+
         self.current_graph = FigureCanvasKivyAgg(my_general.plt.gcf())
 
         self.gridlayout.add_widget(self.current_graph)

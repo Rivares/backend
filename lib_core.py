@@ -820,7 +820,6 @@ class Portfolio:
         my_general.plt.legend()
         my_general.plt.show()
 
-
     def print_graph(self, list_name_tickers, depart_market, list_name_indicators,
                     user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
                     user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
@@ -870,99 +869,99 @@ class Portfolio:
 
         curr_path = root_path + '\\data\\'
         t_i = []
-        i = 0
-        for ticker in list_name_tickers:
-            my_general.time.sleep(1)  # sec
-            ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
-                                          name_comparator=my_general.LookupComparator.EQUALS)
-            data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
-                                     timeframe=time_frame)
-            data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
-
-            # print(data)
-            file_name_tickers = 'print_graph_'
-
-            date_value = data.get('<DATE>')
-            time_value = data.get('<TIME>')
-            open_value = data.get('<OPEN>')
-            close_value = data.get('<CLOSE>')
-            high_value = data.get('<HIGH>')
-            low_value = data.get('<LOW>')
-            volume_value = data.get('<VOL>')
-
-            list_date_value = date_value.to_list()
-            list_time_value = time_value.to_list()
-            list_open_value = open_value.to_list()
-            list_close_value = close_value.to_list()
-            list_high_value = high_value.to_list()
-            list_low_value = low_value.to_list()
-            list_volume_value = volume_value.to_list()
-
-            # Convert price to %
-            max_val = max(list_close_value)
-
-            j = 0
-            t_i.append([])
-            while j < len(list_close_value):
-                list_close_value[j] = (list_close_value[j] * 100) / max_val
-                # print("Before: ", list_date_value[j])
-                buf_Y = str(list_date_value[j])
-                buf_M = str(list_date_value[j])
-                buf_D = str(list_date_value[j])
-                buf_h = str(list_time_value[j])
-                buf_m = str(list_time_value[j])
-                list_date_value[j] = ""
-                buf_Y = buf_Y[:4] + "-"
-                buf_M = buf_M[4:6] + "-"
-                buf_D = buf_D[-2:]
-                list_date_value[j] = buf_Y + buf_M + buf_D
-                buf_h = buf_h[:2] + ":"
-                buf_m = buf_m[3:5]
-                list_time_value[j] = buf_h + buf_m
-                # print("After: ", list_date_value[j])
-                t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
-                # print(t_i[i][j])
-
-                j += 1
-
-            list_tickers.append({"date_value": list_date_value,
-                                 "time_value": list_time_value,
-                                 "open_value": list_open_value,
-                                 "close_value": list_close_value,
-                                 "high_value": list_high_value,
-                                 "low_value": list_low_value,
-                                 "volume_value": list_volume_value})
-
-            if len(list_open_value) < 1:
-                print("It's time little boy!")
-                return
-
-            my_general.write_data_json(list_tickers,
-                                       curr_path, file_name_tickers + str(list_name_tickers[i]))
-
-            # _________________________________________________________________________________
-
-            # Check on repeat
-            hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
-
-            file_name = 'hash_print_graph'
-            new_hash = my_general.md5(curr_path + file_name + '.json')
-
-            if new_hash == hash_market[0]["hash"]:
-                print("___ No the new market values ___")
-                return
-
-            hash_market = [{"hash": new_hash}]
-            file_name = 'hash_print_graph'
-            my_general.write_data_json(hash_market, curr_path, file_name)
-
-            i += 1
-
-        # __________________________________ Load data _____________________________________
-
-        curr_path = root_path + '\\'
-        # Launch of script which get indicators
-        my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
+        # i = 0
+        # for ticker in list_name_tickers:
+        #     my_general.time.sleep(1)  # sec
+        #     ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
+        #                                   name_comparator=my_general.LookupComparator.EQUALS)
+        #     data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
+        #                              timeframe=time_frame)
+        #     data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
+        #
+        #     # print(data)
+        #     file_name_tickers = 'print_graph_'
+        #
+        #     date_value = data.get('<DATE>')
+        #     time_value = data.get('<TIME>')
+        #     open_value = data.get('<OPEN>')
+        #     close_value = data.get('<CLOSE>')
+        #     high_value = data.get('<HIGH>')
+        #     low_value = data.get('<LOW>')
+        #     volume_value = data.get('<VOL>')
+        #
+        #     list_date_value = date_value.to_list()
+        #     list_time_value = time_value.to_list()
+        #     list_open_value = open_value.to_list()
+        #     list_close_value = close_value.to_list()
+        #     list_high_value = high_value.to_list()
+        #     list_low_value = low_value.to_list()
+        #     list_volume_value = volume_value.to_list()
+        #
+        #     # Convert price to %
+        #     max_val = max(list_close_value)
+        #
+        #     j = 0
+        #     t_i.append([])
+        #     while j < len(list_close_value):
+        #         list_close_value[j] = (list_close_value[j] * 100) / max_val
+        #         # print("Before: ", list_date_value[j])
+        #         buf_Y = str(list_date_value[j])
+        #         buf_M = str(list_date_value[j])
+        #         buf_D = str(list_date_value[j])
+        #         buf_h = str(list_time_value[j])
+        #         buf_m = str(list_time_value[j])
+        #         list_date_value[j] = ""
+        #         buf_Y = buf_Y[:4] + "-"
+        #         buf_M = buf_M[4:6] + "-"
+        #         buf_D = buf_D[-2:]
+        #         list_date_value[j] = buf_Y + buf_M + buf_D
+        #         buf_h = buf_h[:2] + ":"
+        #         buf_m = buf_m[3:5]
+        #         list_time_value[j] = buf_h + buf_m
+        #         # print("After: ", list_date_value[j])
+        #         t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
+        #         # print(t_i[i][j])
+        #
+        #         j += 1
+        #
+        #     list_tickers.append({"date_value": list_date_value,
+        #                          "time_value": list_time_value,
+        #                          "open_value": list_open_value,
+        #                          "close_value": list_close_value,
+        #                          "high_value": list_high_value,
+        #                          "low_value": list_low_value,
+        #                          "volume_value": list_volume_value})
+        #
+        #     if len(list_open_value) < 1:
+        #         print("It's time little boy!")
+        #         return
+        #
+        #     my_general.write_data_json(list_tickers,
+        #                                curr_path, file_name_tickers + str(list_name_tickers[i]))
+        #
+        #     # _________________________________________________________________________________
+        #
+        #     # Check on repeat
+        #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
+        #
+        #     file_name = 'hash_print_graph'
+        #     new_hash = my_general.md5(curr_path + file_name + '.json')
+        #
+        #     if new_hash == hash_market[0]["hash"]:
+        #         print("___ No the new market values ___")
+        #         return
+        #
+        #     hash_market = [{"hash": new_hash}]
+        #     file_name = 'hash_print_graph'
+        #     my_general.write_data_json(hash_market, curr_path, file_name)
+        #
+        #     i += 1
+        #
+        # # __________________________________ Load data _____________________________________
+        #
+        # curr_path = root_path + '\\'
+        # # Launch of script which get indicators
+        # my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
 
         # Load result_ta
         curr_path = root_path + '\\data\\'
