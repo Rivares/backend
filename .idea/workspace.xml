@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,8 +23,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="998b4ef4-ff1f-44cd-b332-2d4d6c22f92c" name="Default Changelist" comment="Connect Core to GUI_15">
+      <change afterPath="$PROJECT_DIR$/data/print_graph_AFLT.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_ETLN.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_LKOH.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_MRKV.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_QIWI.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/print_graph_TCSG.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_AFLT_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_ETLN_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_LKOH_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_MRKV_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_QIWI_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result_ta_TCSG_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_AFLT.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_ETLN.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_LKOH.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_MRKV.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_QIWI.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/target_ticker_TCSG.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Global_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Global_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_stocks/TA_stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/TA_stocks/TA_stocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hash_print_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hash_print_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/print_graph_CHMF.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/print_graph_CHMF.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/result_ta_CHMF_MACD_RSI_ATR_EMA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/result_ta_CHMF_MACD_RSI_ATR_EMA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/target_ticker_CHMF.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/target_ticker_CHMF.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Global_main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -57,7 +85,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\Anaconda\envs\ManimTest\python.exe" />
+      <option name="SDK_HOME" value="A:\Programs\Anaconda\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -455,47 +483,40 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="573" y="149" key="#Inspections/0.0.1920.1032@0.0.1920.1032" timestamp="1608842022054" />
-    <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608376908407">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="414" y="178" width="1092" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610311625835">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="55" width="1100" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1608376908407" />
-    <state x="414" y="178" width="1092" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602610482935" />
-    <state x="414" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602662383919" />
+    <state x="414" y="178" width="1092" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610311625835" />
     <state x="740" y="193" key="FileChooserDialogImpl" timestamp="1608407402508">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="740" y="193" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1608407402508" />
-    <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602610464554" />
-    <state width="1892" height="264" key="GridCell.Tab.0.bottom" timestamp="1609427849691">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="1898" height="297" key="GridCell.Tab.0.bottom" timestamp="1611776212045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1609427849691" />
-    <state width="1898" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
-    <state width="1898" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1892" height="264" key="GridCell.Tab.0.center" timestamp="1609427849691">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="1898" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1611776212045" />
+    <state width="1898" height="297" key="GridCell.Tab.0.center" timestamp="1611776212045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="264" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1609427849691" />
-    <state width="1898" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
-    <state width="1898" height="374" key="GridCell.Tab.0.center/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1892" height="264" key="GridCell.Tab.0.left" timestamp="1609427849691">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="1898" height="297" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1611776212045" />
+    <state width="1898" height="297" key="GridCell.Tab.0.left" timestamp="1611776212045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="264" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1609427849691" />
-    <state width="1898" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945433" />
-    <state width="1898" height="374" key="GridCell.Tab.0.left/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state width="1892" height="264" key="GridCell.Tab.0.right" timestamp="1609427849691">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="1898" height="297" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1611776212045" />
+    <state width="1898" height="297" key="GridCell.Tab.0.right" timestamp="1611776212045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="264" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1609427849691" />
-    <state width="1898" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602613945434" />
-    <state width="1898" height="374" key="GridCell.Tab.0.right/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602852197771" />
-    <state x="241" y="60" key="SettingsEditor" timestamp="1608931550615">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="1898" height="297" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1611776212045" />
+    <state x="461" y="155" key="SettingsEditor" timestamp="1610476617632">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="241" y="60" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1608931550615" />
-    <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602613454806" />
-    <state x="461" y="171" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1200@0.0.1920.1160" timestamp="1602663560840" />
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1610476617632" />
     <state x="251" y="57" key="Vcs.Push.Dialog.v2" timestamp="1609368217425">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

@@ -108,6 +108,7 @@ class MainScreen(Screen):
         super().__init__(**kwargs)
 
         print("MainScreen")
+        my_general.plt.close()
 
         gridlayout = self.gridlayout
         boxlayout_col_0 = BoxLayout(orientation="vertical", spacing=10)
@@ -174,15 +175,6 @@ class MainScreen(Screen):
         boxlayout_row_0.size_hint = [1, 0.1]
         boxlayout_col_1.add_widget(boxlayout_row_0)
 
-        my_portfolio.print_graph(list_name_tickers=['CHMF'], depart_market='STCK',
-                                 list_name_indicators=['MACD', 'RSI', 'ATR', 'EMA'],
-                                 user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1,
-                                                                            1),
-                                 user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
-                                                                          my_general.datetime.datetime.now().month,
-                                                                          my_general.datetime.datetime.now().day),
-                                 user_time_frame='HOURLY')
-
         boxlayout_col_0_0_0.add_widget(self.current_graph)
 
         boxlayout_col_1.add_widget(boxlayout_col_0_0_0)
@@ -223,7 +215,7 @@ class MainScreen(Screen):
         l_result_str_ticker = l_result_str_ticker.replace(' ', '')
         print(l_result_str_ticker)
 
-        my_portfolio.print_graph(list_name_tickers=[l_result_str_ticker], depart_market='STCK',
+        my_portfolio.print_graph(list_name_tickers=[str(l_result_str_ticker)], depart_market='STCK',
                                  list_name_indicators=['MACD', 'RSI', 'ATR', 'EMA'],
                                  user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
                                  user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,

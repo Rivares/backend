@@ -806,19 +806,6 @@ class Portfolio:
 
         print("\n________ print_market() <---\n")
 
-    def print_graph_(self, list_name_tickers, depart_market, list_name_indicators,
-                    user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
-                    user_end_moment=my_general.datetime.date(my_general.datetime.datetime.now().year,
-                                                             my_general.datetime.datetime.now().month,
-                                                             my_general.datetime.datetime.now().day),
-                    user_time_frame='HOURLY'):
-        print("print_graph_")
-
-        my_general.plt.plot([1, 2, 2, 4])
-        my_general.plt.ylabel('some numbers')
-
-        my_general.plt.legend()
-        my_general.plt.show()
 
     def print_graph(self, list_name_tickers, depart_market, list_name_indicators,
                     user_start_moment=my_general.datetime.date(my_general.datetime.datetime.now().year, 1, 1),
@@ -829,6 +816,7 @@ class Portfolio:
 
         print("\n______________ print_graph() ______________\n")
 
+        my_general.plt.close()
         list_tickers = []
 
         my_general.name_tickers = list_name_tickers
@@ -869,99 +857,101 @@ class Portfolio:
 
         curr_path = root_path + '\\data\\'
         t_i = []
-        # i = 0
-        # for ticker in list_name_tickers:
-        #     my_general.time.sleep(1)  # sec
-        #     ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
-        #                                   name_comparator=my_general.LookupComparator.EQUALS)
-        #     data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
-        #                              timeframe=time_frame)
-        #     data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
-        #
-        #     # print(data)
-        #     file_name_tickers = 'print_graph_'
-        #
-        #     date_value = data.get('<DATE>')
-        #     time_value = data.get('<TIME>')
-        #     open_value = data.get('<OPEN>')
-        #     close_value = data.get('<CLOSE>')
-        #     high_value = data.get('<HIGH>')
-        #     low_value = data.get('<LOW>')
-        #     volume_value = data.get('<VOL>')
-        #
-        #     list_date_value = date_value.to_list()
-        #     list_time_value = time_value.to_list()
-        #     list_open_value = open_value.to_list()
-        #     list_close_value = close_value.to_list()
-        #     list_high_value = high_value.to_list()
-        #     list_low_value = low_value.to_list()
-        #     list_volume_value = volume_value.to_list()
-        #
-        #     # Convert price to %
-        #     max_val = max(list_close_value)
-        #
-        #     j = 0
-        #     t_i.append([])
-        #     while j < len(list_close_value):
-        #         list_close_value[j] = (list_close_value[j] * 100) / max_val
-        #         # print("Before: ", list_date_value[j])
-        #         buf_Y = str(list_date_value[j])
-        #         buf_M = str(list_date_value[j])
-        #         buf_D = str(list_date_value[j])
-        #         buf_h = str(list_time_value[j])
-        #         buf_m = str(list_time_value[j])
-        #         list_date_value[j] = ""
-        #         buf_Y = buf_Y[:4] + "-"
-        #         buf_M = buf_M[4:6] + "-"
-        #         buf_D = buf_D[-2:]
-        #         list_date_value[j] = buf_Y + buf_M + buf_D
-        #         buf_h = buf_h[:2] + ":"
-        #         buf_m = buf_m[3:5]
-        #         list_time_value[j] = buf_h + buf_m
-        #         # print("After: ", list_date_value[j])
-        #         t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
-        #         # print(t_i[i][j])
-        #
-        #         j += 1
-        #
-        #     list_tickers.append({"date_value": list_date_value,
-        #                          "time_value": list_time_value,
-        #                          "open_value": list_open_value,
-        #                          "close_value": list_close_value,
-        #                          "high_value": list_high_value,
-        #                          "low_value": list_low_value,
-        #                          "volume_value": list_volume_value})
-        #
-        #     if len(list_open_value) < 1:
-        #         print("It's time little boy!")
-        #         return
-        #
-        #     my_general.write_data_json(list_tickers,
-        #                                curr_path, file_name_tickers + str(list_name_tickers[i]))
-        #
-        #     # _________________________________________________________________________________
-        #
-        #     # Check on repeat
-        #     hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
-        #
-        #     file_name = 'hash_print_graph'
-        #     new_hash = my_general.md5(curr_path + file_name + '.json')
-        #
-        #     if new_hash == hash_market[0]["hash"]:
-        #         print("___ No the new market values ___")
-        #         return
-        #
-        #     hash_market = [{"hash": new_hash}]
-        #     file_name = 'hash_print_graph'
-        #     my_general.write_data_json(hash_market, curr_path, file_name)
-        #
-        #     i += 1
-        #
-        # # __________________________________ Load data _____________________________________
-        #
-        # curr_path = root_path + '\\'
-        # # Launch of script which get indicators
-        # my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
+        i = 0
+        for ticker in list_name_tickers:
+            my_general.time.sleep(1)  # sec
+            ticker_data = exporter.lookup(code=ticker, market=my_general.Market.SHARES,
+                                          name_comparator=my_general.LookupComparator.EQUALS)
+            data = exporter.download(id_=ticker_data.index[0], market=my_general.Market.SHARES, start_date=start_moment,
+                                     timeframe=time_frame)
+            data.to_csv(curr_path + 'target_ticker_' + ticker + '.csv')
+
+            # print(data)
+            file_name_tickers = 'print_graph_'
+
+            date_value = data.get('<DATE>')
+            time_value = data.get('<TIME>')
+            open_value = data.get('<OPEN>')
+            close_value = data.get('<CLOSE>')
+            high_value = data.get('<HIGH>')
+            low_value = data.get('<LOW>')
+            volume_value = data.get('<VOL>')
+
+            list_date_value = date_value.to_list()
+            list_time_value = time_value.to_list()
+            list_open_value = open_value.to_list()
+            list_close_value = close_value.to_list()
+            list_high_value = high_value.to_list()
+            list_low_value = low_value.to_list()
+            list_volume_value = volume_value.to_list()
+
+            # Convert price to %
+            max_val = max(list_close_value)
+
+            j = 0
+            t_i.append([])
+            while j < len(list_close_value):
+                list_close_value[j] = (list_close_value[j] * 100) / max_val
+                # print("Before: ", list_date_value[j])
+                buf_Y = str(list_date_value[j])
+                buf_M = str(list_date_value[j])
+                buf_D = str(list_date_value[j])
+                buf_h = str(list_time_value[j])
+                buf_m = str(list_time_value[j])
+                buf_s = str(list_time_value[j])
+                list_date_value[j] = ""
+                buf_Y = buf_Y[:4]
+                buf_M = "-" + buf_M[4:6]
+                buf_D = "-" + buf_D[-2:]
+                list_date_value[j] = buf_Y + buf_M + buf_D
+                buf_h = buf_h[:2]
+                buf_m = ":" + buf_m[3:5]
+                buf_s = ":" + buf_s[-2:]
+                list_time_value[j] = buf_h + buf_m  # + buf_s
+                # print("After: ", list_date_value[j])
+                t_i[i].append(str(list_date_value[j]) + ' ' + str(list_time_value[j]))
+                # print(t_i[i][j])
+
+                j += 1
+
+            list_tickers.append({"date_value": list_date_value,
+                                 "time_value": list_time_value,
+                                 "open_value": list_open_value,
+                                 "close_value": list_close_value,
+                                 "high_value": list_high_value,
+                                 "low_value": list_low_value,
+                                 "volume_value": list_volume_value})
+
+            if len(list_open_value) < 1:
+                print("It's time little boy!")
+                return
+
+            my_general.write_data_json(list_tickers,
+                                       curr_path, file_name_tickers + str(list_name_tickers[i]))
+
+            # _________________________________________________________________________________
+
+            # Check on repeat
+            hash_market = my_general.read_data_json(curr_path, 'hash_print_graph')
+
+            file_name = 'hash_print_graph'
+            new_hash = my_general.md5(curr_path + file_name + '.json')
+
+            if new_hash == hash_market[0]["hash"]:
+                print("___ No the new market values ___")
+                return
+
+            hash_market = [{"hash": new_hash}]
+            file_name = 'hash_print_graph'
+            my_general.write_data_json(hash_market, curr_path, file_name)
+
+            i += 1
+
+        # __________________________________ Load data _____________________________________
+
+        curr_path = root_path + '\\'
+        # Launch of script which get indicators
+        my_general.exec_full(curr_path + "TA_stocks\\TA_stocks.py")
 
         # Load result_ta
         curr_path = root_path + '\\data\\'
@@ -1016,10 +1006,16 @@ class Portfolio:
 
         # subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
         my_general.plt.tight_layout()
-        m_time_format = my_general.mdates.date2num(t_i[0])
-
+        print("---->1<----")
+        # print(t_i[0])
+        time_format = '%Y-%m-%d %H:%M'  # :%S'
+        # m_time_format = my_general.mdates.date2num(t_i[0])
+        m_time_format = [my_general.datetime.datetime.strptime(i, time_format) for i in t_i[0]]
+        # m_time_format = my_general.mdates.date2num(m_time_format)
+        print("---->2<----")
+        # print(m_time_format)
         axes[0].set_xticks(m_time_format[::10])  # для X оси берем в качестве тиков 1/10 часть дат из нашего фрейма
-
+        print("---->3<----")
         #  делаем тики на оси X вертикальными
         xlabels = axes[0].xaxis.get_ticklabels()
         for label in xlabels:
@@ -1029,20 +1025,24 @@ class Portfolio:
             label.set_rotation(45)
             # размер шрифта подписей делений оси OX
             label.set_fontsize(8)
-
+        print("---->4<----")
         # Изменим локатор, используемый по умолчанию
         locator = my_general.mdates.AutoDateLocator()
+        print("---->4/1<----")
         # Если локатор привяжет риски к месяцам, то риски должны идти с указанным нами интервалом
         locator.intervald[my_general.mdates.MONTHLY] = [1]
+        print("---->4/2<----")
         # Если локатор привяжет риски к дням, то риски должны идти с указанным нами интервалом
-        locator.intervald[my_general.mdates.DAILY] = [5]
+        locator.intervald[my_general.mdates.DAILY] = [1]
+        print("---->4/3<----")
         axes[0].xaxis.set_major_locator(locator)
+        print("---->4/4<----")
 
         # форматирование дат для оси X  -
         # иначе вместо дат увидим просто чиселки (дни) григорианского календаря  с которыми matplotlib и работает внутри
         axes[0].xaxis.set_major_formatter(my_general.mdates.DateFormatter('%Y-%b-%d %H:%M'))
-
-        print("Time --> ", m_time_format)
+        print("---->5<----")
+        # print("Time --> ", m_time_format)
         i = 0
         for it in list_name_tickers:
             # m_time_format
@@ -1052,32 +1052,38 @@ class Portfolio:
                               label=it)
 
             i += 1
-
+        print("---->6<----")
         price_buy = 60
         price_sell = 70
         axes[0].legend(loc='upper left', frameon=True)
-        axes[0].text('2019-01-03 00:00', price_buy, "Bought", size=12, color='blue')
-        axes[0].text('2020-09-02 00:00', price_sell, "Sold", ha='center', size=12, color='blue')
-
+        axes[0].text(my_general.datetime.datetime(2021, 1, 4, 10, 0), price_buy, "Bought", size=12, color='blue')
+        axes[0].text(my_general.datetime.datetime(2021, 1, 10, 10, 0), price_sell, "Sold", ha='center', size=12, color='blue')
+        print("----> <----")
         if price_buy < price_sell:
-            axes[0].text('2020-09-02 00:00', price_sell + 10, "Profit", ha='center', size=14, color='green')
+            axes[0].text(my_general.datetime.datetime(my_general.datetime.datetime.now().year,
+                                                      my_general.datetime.datetime.now().month,
+                                                      my_general.datetime.datetime.now().day,
+                                                      10, 0), price_sell + 10, "Profit", ha='center', size=14, color='green')
         else:
-            axes[0].text('2020-09-02 00:00', price_sell - 10, "Profit", ha='center', size=14, color='red')
+            axes[0].text(my_general.datetime.datetime(my_general.datetime.datetime.now().year,
+                                                      my_general.datetime.datetime.now().month,
+                                                      my_general.datetime.datetime.now().day,
+                                                      10, 0), price_sell - 10, "Profit", ha='center', size=14, color='red')
 
         # Get name indicators from array
-
+        print("---->7<----")
         i = 0
         list_keys_indicators = []
         while i < len(result_ta):
             list_keys_indicators += result_ta[i].keys()
             i += 1
-
+        print("---->8<----")
         list_name_indicators.pop(0)
         sublist_keys = []
 
         # print("----1> ", list_keys_indicators)
         # print("----2> ", list_name_indicators)
-
+        print("---->9<----")
         i = 0
         vector_sizes = []
         while i < len(list_name_indicators):
@@ -1104,7 +1110,7 @@ class Portfolio:
 
             vector_sizes.append(cnt)
             i += 1
-
+        print("---->10<----")
         # print("----------> ", len(axes)) # 5
         # print("----------> ", list_name_indicators) # ['MACD', 'RSI', 'ATR', 'EMA']
         # print("----------> ", list_keys_indicators) # ['atr_i', 'ema_i', 'macd', 'macd_diff', 'macd_sig', 'rsi_i']
@@ -1138,8 +1144,8 @@ class Portfolio:
             axes[i].legend(loc='upper left', frameon=True)
 
             i += 1
-
+        print("---->11<----")
         my_general.plt.legend()
-        my_general.plt.show()
+        # my_general.plt.show()
 
     # def print_active_bids(self, depart_market): TODO (2)

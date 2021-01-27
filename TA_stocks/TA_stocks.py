@@ -17,7 +17,7 @@ curr_moment = my_general.datetime.date(my_general.datetime.datetime.now().year,
 
 def main():
 
-    print("\n                TA __________________ --->\n")
+    print("\n__________________ TA __________________ --->\n")
 
     target_ticker = my_general.name_tickers[0]
     list_indicators_target_ticker = []
